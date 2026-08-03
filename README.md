@@ -92,6 +92,10 @@ O conteúdo das perguntas frequentes tem fonte única em `src/js/modules/faq-dat
 
 O material original enviado pelo cliente citava a marca **"Greenjob"** em vez de "Upjobs" em alguns trechos — o texto foi adaptado para Upjobs. Os telefones de contato usados são os oficiais já configurados em `config.js` ((21) 2042-0068 e (21) 99938-9009 WhatsApp).
 
+## Página de Consultoria
+
+`consultoria.html` usa o conteúdo real do serviço (fornecido pelo cliente a partir do site anterior): Prontuário de Instalações Elétricas (PIE) com a lista de exigências da NR-10, as etapas da Adequação à NR-12 (numeradas, pois representam uma sequência real do processo) e um grid de Treinamentos de NRs (NR-10/12/33/34/35) linkando para os cursos correspondentes quando existem. Inclui também um formulário de orçamento de treinamento (converte em WhatsApp, mesmo padrão dos demais formulários do site).
+
 ## Conteúdo a validar / substituir
 
 Itens marcados como *placeholder* no site (não invente dados — confirme antes de publicar):

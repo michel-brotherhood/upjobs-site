@@ -111,7 +111,7 @@ export async function initCoursePage() {
               <h2>Ainda com dúvidas sobre o ${course.title}?</h2>
               <p class="lead">Fale agora com nossa equipe e receba orientação sobre a carreira, datas e formas de pagamento.</p>
             </div>
-            <div class="cluster" style="justify-content:flex-end">
+            <div class="cluster cluster--end">
               <a class="btn btn--whatsapp btn--lg" href="${waLink(waMsg)}" target="_blank" rel="noopener">${icon("whatsapp")} Falar no WhatsApp</a>
             </div>
           </div>
