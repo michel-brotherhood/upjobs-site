@@ -53,7 +53,8 @@ upjobs-site/
 │   ├── images/   (logos da marca)
 │   ├── fonts/    (Barlow Condensed + Inter, .woff2 auto-hospedadas)
 │   ├── og/       (imagem Open Graph)
-│   └── favicon/  (favicon.svg)
+│   └── favicon/  (favicon.svg + favicon-32.png/favicon-512.png/apple-touch-icon.png,
+│                  gerados a partir de "icone circular.webp" enviada pelo cliente)
 └── src/
     ├── css/  (fonts, tokens, reset, base, typography, layout, components,
     │          utilities, pages/, styles.css = entrada única de dev)
@@ -96,15 +97,19 @@ O material original enviado pelo cliente citava a marca **"Greenjob"** em vez de
 
 `consultoria.html` usa o conteúdo real do serviço (fornecido pelo cliente a partir do site anterior): Prontuário de Instalações Elétricas (PIE) com a lista de exigências da NR-10, as etapas da Adequação à NR-12 (numeradas, pois representam uma sequência real do processo) e um grid de Treinamentos de NRs (NR-10/12/33/34/35) linkando para os cursos correspondentes quando existem. Inclui também um formulário de orçamento de treinamento (converte em WhatsApp, mesmo padrão dos demais formulários do site).
 
-## Conteúdo a validar / substituir
+## Textos e imagens pendentes de conteúdo real (uso interno — não expor no site)
 
-Itens marcados como *placeholder* no site (não invente dados — confirme antes de publicar):
+Para não expor rascunho/nota de desenvolvedor ao visitante, os textos visíveis no site **não citam
+"placeholder" nem "ver README"** — usam frases neutras como "em breve". O controle de pendências fica
+só aqui:
 
-- **Número "+3.000 alunos"** e estatísticas — marcados com `*`. Confirmar/ajustar.
-- **Depoimentos** (home) — textos ilustrativos; substituir por relatos reais autorizados.
+- **Número "+3.000 alunos"** e estatísticas — marcados com `*` no site. Confirmar/ajustar.
+- **Depoimentos** (home) — falas ilustrativas (não atribuídas a pessoas identificáveis), com o
+  ícone de marca como avatar. Substituir pelos relatos e fotos reais dos alunos assim que
+  aprovados. Ver `index.html`, seção "DEPOIMENTOS".
 - **Logos de empresas parceiras** (ESG) — inserir marcas autorizadas.
-- **Fotos** (infraestrutura, equipe, certificado, consultoria/in company) — todos os blocos com
-  tarja "IMAGEM / Substituir por foto real" precisam de imagens reais autorizadas.
+- **Fotos** (infraestrutura, equipe, certificado, consultoria/in company) — todos os blocos com a
+  tarja visual "IMAGEM" (`.img-ph`) precisam de fotos reais autorizadas.
 
 ### Assets de imagem recomendados
 
