@@ -25,8 +25,10 @@ export function mountFooter() {
           <h4>Navegação</h4>
           <ul role="list">
             <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="matricula.html">Matrícula</a></li>
             <li><a href="quem-somos.html">Quem Somos</a></li>
             <li><a href="diferenciais.html">Diferenciais</a></li>
+            <li><a href="consultoria.html">Consultoria</a></li>
             <li><a href="infraestrutura.html">Infraestrutura</a></li>
             <li><a href="empregabilidade.html">Empregabilidade</a></li>
           </ul>
@@ -38,6 +40,7 @@ export function mountFooter() {
             <li><a href="certificacoes.html">Certificações</a></li>
             <li><a href="esg.html">ESG / Empresas</a></li>
             <li><a href="grupo-vip.html">Grupo VIP</a></li>
+            <li><a href="faq.html">Perguntas frequentes</a></li>
             <li><a href="contato.html">Contato</a></li>
             <li><a href="privacidade.html">Privacidade</a></li>
           </ul>
@@ -55,7 +58,7 @@ export function mountFooter() {
       </div>
 
       <div class="footer-bottom">
-        <p>© ${YEAR} ${SITE.name}. Todos os direitos reservados.</p>
+        <p>© ${YEAR} ${SITE.name}. CNPJ ${SITE.cnpj}. Todos os direitos reservados.</p>
         <p>Feito com foco em empregabilidade • São Gonçalo/RJ</p>
       </div>
     </div>

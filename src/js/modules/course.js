@@ -95,7 +95,8 @@ export async function initCoursePage() {
               <li>${icon("check")} Presencial em São Gonçalo/RJ</li>
               <li>${icon("check")} Apoio à empregabilidade</li>
             </ul>
-            <a class="btn btn--primary btn--block btn--lg" href="${waLink(waMsg)}" target="_blank" rel="noopener">${icon("whatsapp")} Quero me matricular</a>
+            <a class="btn btn--primary btn--block btn--lg" href="matricula.html?curso=${encodeURIComponent(course.id)}">${icon("pencil")} Quero me matricular</a>
+            <a class="btn btn--ghost btn--block" href="${waLink(waMsg)}" target="_blank" rel="noopener">${icon("whatsapp")} Falar no WhatsApp</a>
             <a class="btn btn--ghost btn--block" href="cursos.html">Ver outros cursos</a>
           </div>
         </aside>

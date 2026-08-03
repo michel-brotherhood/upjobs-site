@@ -41,3 +41,12 @@ if (page === "cursos") {
 if (page === "curso") {
   import("./modules/course.js").then((m) => m.initCoursePage());
 }
+if (page === "faq") {
+  import("./modules/faq-widget.js").then((m) => m.renderFaq("faq-list", { openFirst: true }));
+}
+if (["quem-somos", "diferenciais", "contato"].includes(page)) {
+  import("./modules/faq-widget.js").then((m) => m.renderFaq("faq-embed"));
+}
+if (page === "matricula") {
+  import("./modules/matricula.js").then((m) => m.initMatricula());
+}

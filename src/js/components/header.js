@@ -9,14 +9,14 @@ function socialLinks(cls = "") {
     <a class="${cls}" href="${SITE.social.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">${icon("linkedin")}</a>`;
 }
 
+/** Menu padrão do site. "Início" é adicionado à frente apenas nas páginas internas. */
 const NAV = [
-  { id: "inicio", label: "Início", href: "index.html" },
-  { id: "cursos", label: "Cursos", href: "cursos.html" },
   { id: "quem-somos", label: "Quem Somos", href: "quem-somos.html" },
-  { id: "diferenciais", label: "Diferenciais", href: "diferenciais.html" },
-  { id: "empregabilidade", label: "Empregabilidade", href: "empregabilidade.html" },
-  { id: "esg", label: "ESG", href: "esg.html" },
-  { id: "contato", label: "Contato", href: "contato.html" },
+  { id: "cursos", label: "Cursos", href: "cursos.html" },
+  { id: "faq", label: "Dúvidas", href: "faq.html" },
+  { id: "treinamentos", label: "Treinamentos", href: "cursos.html?seg=nr-seguranca" },
+  { id: "consultoria", label: "Consultoria", href: "consultoria.html" },
+  { id: "contato", label: "Atendimento", href: "contato.html" },
 ];
 
 /** Monta o header no elemento com id "site-header". */
@@ -24,7 +24,10 @@ export function mountHeader(active) {
   const el = document.getElementById("site-header");
   if (!el) return;
 
-  const links = NAV.map(
+  const items =
+    active === "inicio" ? NAV : [{ id: "inicio", label: "Início", href: "index.html" }, ...NAV];
+
+  const links = items.map(
     (n) =>
       `<li><a href="${n.href}"${n.id === active ? ' aria-current="page"' : ""}>${n.label}</a></li>`
   ).join("");

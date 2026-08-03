@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrícula — Upjobs Cursos e Treinamentos</title>
+  <meta name="description" content="Faça sua matrícula na Upjobs: preencha o formulário com seus dados e curso de interesse. Retornamos por e-mail e WhatsApp.">
+  <link rel="canonical" href="https://www.upjobscursos.com.br/matricula.html">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Matrícula — Upjobs">
+  <meta property="og:description" content="Garanta sua vaga: preencha o formulário de matrícula da Upjobs.">
+  <meta property="og:image" content="https://www.upjobscursos.com.br/public/og/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.upjobscursos.com.br/public/og/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="public/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="public/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="public/fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="dist/styles.min.css">
+</head>
+<body data-page="matricula" class="full-bleed-safe">
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <nav class="breadcrumb" aria-label="Você está aqui"><ol><li><a href="index.html">Início</a></li><li>Matrícula</li></ol></nav>
+        <span class="eyebrow eyebrow--light">Matrícula</span>
+        <h1>Garanta sua vaga na Upjobs</h1>
+        <p class="lead">Preencha o formulário abaixo com seus dados e o curso de interesse. Nossa equipe recebe por e-mail e você é direcionado ao WhatsApp para finalizar.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split split--wide-left" style="align-items:start">
+          <div data-reveal>
+            <div class="form-card">
+              <h2 style="font-size:var(--fs-500)">Formulário de matrícula</h2>
+              <p class="text-muted" style="margin:.35rem 0 1.25rem">Campos com <span class="req">*</span> são obrigatórios. Seus dados são usados apenas para contato sobre a matrícula.</p>
+
+              <form class="form" id="matricula-form" novalidate>
+                <div class="field">
+                  <label for="m-nome">Nome completo <span class="req">*</span></label>
+                  <input id="m-nome" name="nome" type="text" autocomplete="name" required>
+                  <span class="field__error" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
+                  <label for="m-email">E-mail <span class="req">*</span></label>
+                  <input id="m-email" name="email" type="email" autocomplete="email" required>
+                  <span class="field__error" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
+                  <label for="m-endereco">Endereço</label>
+                  <input id="m-endereco" name="endereco" type="text" autocomplete="street-address" placeholder="Rua, número, bairro, cidade">
+                  <span class="field__error" aria-live="polite"></span>
+                </div>
+
+                <div class="grid grid--2" style="gap:1rem">
+                  <div class="field">
+                    <label for="m-telefone">Telefone</label>
+                    <input id="m-telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 0000-0000" data-mask="phone">
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                  <div class="field">
+                    <label for="m-celular">Celular / WhatsApp <span class="req">*</span></label>
+                    <input id="m-celular" name="celular" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 90000-0000" data-mask="phone" required>
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="grid grid--2" style="gap:1rem">
+                  <div class="field">
+                    <label for="m-cpf">CPF <span class="req">*</span></label>
+                    <input id="m-cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" data-mask="cpf" required>
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                  <div class="field">
+                    <label for="m-rg">RG</label>
+                    <input id="m-rg" name="rg" type="text" inputmode="numeric" placeholder="00.000.000-0">
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="m-curso">Curso de interesse <span class="req">*</span></label>
+                  <select id="m-curso" name="curso" required>
+                    <option value="" disabled selected>Selecione um curso</option>
+                  </select>
+                  <span class="field__error" aria-live="polite"></span>
+                </div>
+
+                <div class="field">
+                  <label for="m-pagamento">Forma de pagamento</label>
+                  <select id="m-pagamento" name="pagamento">
+                    <option value="" selected>Prefiro combinar na matrícula</option>
+                    <option value="À vista (10% de desconto)">À vista (10% de desconto)</option>
+                    <option value="Boleto / carnê em até 3x">Boleto / carnê em até 3x</option>
+                    <option value="Cartão de crédito em até 4x sem juros">Cartão de crédito em até 4x sem juros</option>
+                    <option value="Cartão de crédito em até 6x com juros">Cartão de crédito em até 6x com juros</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="m-msg">Mensagem</label>
+                  <textarea id="m-msg" name="mensagem" placeholder="Alguma observação? (turno de preferência, dúvidas, etc.)"></textarea>
+                </div>
+
+                <div class="field field--check">
+                  <input id="m-consent" name="consentimento" type="checkbox" required>
+                  <label for="m-consent">Autorizo o contato da Upjobs sobre esta matrícula e concordo com a <a href="privacidade.html">Política de Privacidade</a>. <span class="req">*</span></label>
+                  <span class="field__error" aria-live="polite"></span>
+                </div>
+
+                <button class="btn btn--primary btn--lg btn--block" type="submit"><span data-icon="pencil"></span> Enviar matrícula</button>
+                <p class="form__status" role="status" aria-live="polite"></p>
+                <p class="text-muted" style="font-size:var(--fs-100)">Ao enviar, abrimos seu aplicativo de e-mail com a mensagem pronta para <strong>contato@upjobscursos.com.br</strong> e, em seguida, o WhatsApp da Upjobs para agilizar o atendimento.</p>
+              </form>
+            </div>
+          </div>
+
+          <aside data-reveal="120">
+            <div class="card enroll-card">
+              <h3>Precisa de ajuda?</h3>
+              <p class="price-note">Prefere falar diretamente com a equipe? Chame no WhatsApp ou ligue para a Central de Atendimento.</p>
+              <ul role="list">
+                <li><span data-icon="check"></span> Matrícula rápida e sem burocracia</li>
+                <li><span data-icon="check"></span> Presencial em São Gonçalo/RJ</li>
+                <li><span data-icon="check"></span> Dúvidas sobre turmas e valores na hora</li>
+              </ul>
+              <a class="btn btn--whatsapp btn--block" data-wa="Olá! Quero fazer minha matrícula na Upjobs." href="#"><span data-icon="whatsapp"></span> Falar no WhatsApp</a>
+              <a class="btn btn--ghost btn--block" href="tel:+552120420068"><span data-icon="phone"></span> (21) 2042-0068</a>
+              <a class="btn btn--ghost btn--block" href="faq.html">Ver perguntas frequentes</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>

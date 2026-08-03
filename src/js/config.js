@@ -24,9 +24,15 @@ export const SITE = {
     mapsQuery: "Av. Dezoito do Forte, 2096, Mutuá, São Gonçalo - RJ",
   },
   social: {
-    instagram: "https://instagram.com/",
-    facebook: "https://facebook.com/",
-    linkedin: "https://linkedin.com/",
+    instagram: "https://www.instagram.com/upjobscursos",
+    facebook: "https://www.facebook.com/watch/upjobscursos/",
+    linkedin: "https://www.linkedin.com/company/upjobscursos/",
+  },
+  cnpj: "33.017.908/0001-67",
+  // Atendimento presencial (secretaria/matrícula)
+  hours: {
+    weekdays: "Segunda a sexta, 14h às 19h",
+    saturday: "Sábado, 9h às 17h",
   },
   // Mensagem padrão para o WhatsApp
   defaultMessage:
