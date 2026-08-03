@@ -48,33 +48,33 @@ export function mountHeader(active) {
       <div class="header-actions">
         <span class="header-social header-social--desktop">${socialLinks()}</span>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
-          <span class="icon-open">${icon("menu")}</span>
-          <span class="icon-close">${icon("close")}</span>
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
       </div>
     </div>
   `;
 
-  // Toggle do menu mobile
+  // Menu mobile: overlay em tela cheia com bloqueio de rolagem do fundo
   const toggle = el.querySelector(".nav-toggle");
   const nav = el.querySelector(".main-nav");
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
+
+  const setOpen = (open) => {
+    nav.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-  });
-  // Fecha ao navegar/clicar num link
+    // Impede a rolagem da página enquanto o menu está aberto
+    document.documentElement.classList.toggle("nav-open", open);
+  };
+
+  toggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+  // Fecha ao clicar num link (navegação)
   nav.addEventListener("click", (e) => {
-    if (e.target.closest("a")) {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    }
+    if (e.target.closest("a")) setOpen(false);
   });
-  // Fecha com Esc
+  // Fecha com Esc e devolve o foco ao botão
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && nav.classList.contains("is-open")) {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
+      setOpen(false);
       toggle.focus();
     }
   });
