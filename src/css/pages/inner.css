@@ -30,6 +30,9 @@
   margin-bottom: var(--space-xl);
 }
 .filter-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 0.55rem 1.05rem;
   border-radius: var(--radius-pill);
   font-size: var(--fs-200);
@@ -37,7 +40,7 @@
   background: var(--white);
   border: 1.5px solid var(--color-border-strong);
   color: var(--color-text-muted);
-  transition: all var(--dur) var(--ease);
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease), background var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .filter-btn:hover { border-color: var(--green); color: var(--green); }
 .filter-btn[aria-pressed="true"] {

@@ -61,7 +61,7 @@ export async function initCoursePage() {
 
           <div class="course-section" data-reveal>
             <h2>O que você vai aprender</h2>
-            <ul class="check-list">
+            <ul class="check-list" role="list">
               ${course.learn.map((i) => `<li>${i}</li>`).join("")}
             </ul>
           </div>
@@ -75,7 +75,7 @@ export async function initCoursePage() {
 
           <div class="course-section" data-reveal>
             <h2>Está incluso</h2>
-            <ul class="check-list">
+            <ul class="check-list" role="list">
               ${COURSE_INCLUDES.map((i) => `<li>${i}</li>`).join("")}
             </ul>
           </div>
