@@ -10,7 +10,7 @@ Objetivo: apresentar a instituição, construir autoridade e **gerar matrículas
 - **CSS3 moderno** — Custom Properties, Grid, Flexbox, `clamp()` (sem Tailwind; design autoral)
 - **JavaScript puro (ES Modules)** — sem React/Next/TypeScript
 - **Sem backend** nesta fase: os formulários convertem em **WhatsApp** (`wa.me` com mensagem pré-preenchida)
-- Fontes via Google Fonts (Barlow Condensed + Inter)
+- **Fontes auto-hospedadas** (Barlow Condensed + Inter, subset latin) em `public/fonts/` — sem dependência de CDN externo, melhor performance e privacidade/LGPD
 
 Escolhas justificadas: o projeto é altamente autoral e com muitas seções customizadas, o que favorece CSS tradicional em vez de Tailwind. Como não há persistência de dados nesta fase, não há backend — o WhatsApp é o canal principal de conversão, reduzindo fricção.
 
@@ -20,12 +20,22 @@ O site usa ES Modules e `fetch` (catálogo de cursos), então precisa ser servid
 
 ```bash
 # Qualquer servidor estático. Exemplos:
-python3 -m http.server 8080
+python3 -m http.server 8080   # ou: npm start
 # ou
 npx serve .
 ```
 
 Acesse `http://localhost:8080`.
+
+## Build de CSS
+
+As páginas em produção referenciam **`dist/styles.min.css`** — um bundle único, minificado, que inlina todos os `@import` de `src/css/` (incluindo as fontes). Isso elimina o encadeamento de requisições de CSS e melhora o LCP.
+
+```bash
+npm run build   # gera dist/styles.min.css (script Node puro, sem dependências)
+```
+
+**Sempre que editar qualquer arquivo em `src/css/`, rode `npm run build`** e faça commit do `dist/styles.min.css` atualizado. O bundle é versionado justamente para o site funcionar no host sem etapa de build.
 
 ## Estrutura
 
@@ -36,12 +46,16 @@ upjobs-site/
 │   empregabilidade.html, esg.html, contato.html, grupo-vip.html,
 │   privacidade.html, 404.html
 ├── sitemap.xml, robots.txt, manifest.webmanifest
+├── build.js, package.json      (build de CSS sem dependências)
+├── dist/styles.min.css         (bundle de produção — versionado)
 ├── public/
 │   ├── images/   (logos da marca)
+│   ├── fonts/    (Barlow Condensed + Inter, .woff2 auto-hospedadas)
+│   ├── og/       (imagem Open Graph)
 │   └── favicon/  (favicon.svg)
 └── src/
-    ├── css/  (tokens, reset, base, typography, layout, components,
-    │          utilities, pages/, styles.css = entrada única)
+    ├── css/  (fonts, tokens, reset, base, typography, layout, components,
+    │          utilities, pages/, styles.css = entrada única de dev)
     ├── js/   (config.js, main.js, components/, modules/, utils/)
     └── data/cursos.json  (fonte única do catálogo e das páginas de curso)
 ```

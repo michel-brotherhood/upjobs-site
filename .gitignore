@@ -12,6 +12,9 @@ Thumbs.db
 # Logs
 *.log
 
-# Build (caso seja adicionado no futuro)
-dist/
+# Artefatos de revisão (screenshots locais)
 .review/
+.review-*.png
+
+# Observação: dist/styles.min.css É versionado (o site em produção o referencia).
+# Regenere com `npm run build` sempre que editar arquivos em src/css/.

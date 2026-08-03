@@ -1,0 +1,11 @@
+{
+  "name": "upjobs-site",
+  "version": "1.0.0",
+  "description": "Site institucional da Upjobs Cursos e Treinamentos",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "start": "python3 -m http.server 8080"
+  }
+}
