@@ -119,6 +119,14 @@
 
 /* ---------- Infra galeria ---------- */
 .gallery { display: grid; gap: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.gallery-photo {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt, #f2f2f2);
+}
+.gallery-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- Vídeo "Nossa história" (home + quem-somos) ---------- */
 .historia-media { display: flex; justify-content: center; }
@@ -154,18 +162,44 @@
 /* Botão central para ativar o som */
 .historia-video__play {
   position: absolute; inset: 0; z-index: 1;
-  display: flex; align-items: center; justify-content: center;
-  border: 0; background: rgb(4 5 5 / 0.12); cursor: pointer;
-  transition: background var(--dur) var(--ease), opacity var(--dur) var(--ease);
+  border: 0; cursor: pointer;
+  background: linear-gradient(rgb(4 5 5 / 0.05), rgb(4 5 5 / 0.28));
+  transition: opacity var(--dur) var(--ease);
 }
+/* Disco branco sólido com sombra — leitura limpa sobre o vídeo */
 .historia-video__play::before {
-  content: ""; width: 4.2rem; height: 4.2rem; border-radius: 50%;
-  background: rgb(4 5 5 / 0.5); backdrop-filter: blur(4px);
-  border: 2px solid rgb(255 255 255 / 0.85);
+  content: ""; position: absolute; top: 50%; left: 50%;
+  width: 4.6rem; height: 4.6rem; border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgb(4 5 5 / 0.4);
+  transform: translate(-50%, -50%);
   transition: transform var(--dur) var(--ease), background var(--dur) var(--ease);
 }
-.historia-video__play svg { position: absolute; width: 1.7rem; height: 1.7rem; color: var(--white); margin-left: 0.25rem; }
-.historia-video__play:hover::before { transform: scale(1.06); background: var(--green); border-color: var(--green); }
+/* Anel pulsante para chamar atenção ao play */
+.historia-video__play::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  width: 4.6rem; height: 4.6rem; border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 0.9);
+  transform: translate(-50%, -50%);
+  animation: historiaPulse 2.2s ease-out infinite;
+}
+/* Triângulo de play (leve deslocamento óptico para a direita) */
+.historia-video__play svg {
+  position: absolute; top: 50%; left: 50%;
+  width: 1.7rem; height: 1.7rem; color: var(--green);
+  transform: translate(calc(-50% + 2px), -50%);
+  transition: color var(--dur) var(--ease);
+}
+.historia-video__play:hover::before { transform: translate(-50%, -50%) scale(1.08); background: var(--green); }
+.historia-video__play:hover svg { color: var(--white); }
+@keyframes historiaPulse {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.7; }
+  70%  { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .historia-video__play::after { animation: none; opacity: 0; }
+}
 /* Com som ativo: esconde o botão de play; badge continua indicando o estado */
 .historia-video:not(.is-muted) .historia-video__play { opacity: 0; pointer-events: none; }
 
