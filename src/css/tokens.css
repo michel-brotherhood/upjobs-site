@@ -58,6 +58,13 @@
   /* --- Tipografia --- */
   --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+
+  /* Blueprint / anotação técnica */
+  --blueprint-line: rgb(0 146 69 / 0.14);
+  --blueprint-line-dark: rgb(34 197 94 / 0.10);
+  --tick: var(--green);
+  --tick-dark: var(--green-bright);
 
   --fs-100: 0.75rem;   /* 12 */
   --fs-200: 0.875rem;  /* 14 */

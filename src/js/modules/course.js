@@ -1,4 +1,4 @@
-import { loadCourses, segmentOf, COURSE_INCLUDES } from "./courses-data.js";
+import { loadCourses, segmentOf, COURSE_INCLUDES, courseCode } from "./courses-data.js";
 import { icon } from "../utils/icons.js";
 import { waLink } from "../config.js";
 import { initForms } from "./forms.js";
@@ -39,7 +39,7 @@ export async function initCoursePage() {
             <li>${course.title}</li>
           </ol>
         </nav>
-        <span class="chip chip--dark">${seg ? seg.label : ""}</span>
+        <span class="course-hero-code"><span class="tech-code" style="color:var(--green-bright)">${courseCode(data, course)}</span> <span class="tech-label" style="color:rgba(255,255,255,.65)">${seg ? seg.label : ""}</span></span>
         <h1>${course.title}</h1>
         <p class="lead">${course.short}</p>
         <div class="course-hero-meta">

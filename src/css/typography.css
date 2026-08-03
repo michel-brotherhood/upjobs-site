@@ -1,24 +1,35 @@
 /* Tipografia — títulos display condensados + corpo Inter */
 
+/* Rótulo técnico monoespaçado com marca de corte (assinatura blueprint). */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.55em;
-  font-family: var(--font-body);
-  font-size: var(--fs-200);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.14em;
+  gap: 0.7em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-100);
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--green);
 }
 .eyebrow::before {
   content: "";
-  width: 1.75rem;
-  height: 2px;
-  background: var(--grad-green);
-  border-radius: 2px;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-left: 2px solid currentColor;
+  border-top: 2px solid currentColor;
 }
 .eyebrow--light { color: var(--green-bright); }
+
+/* Utilitário mono para dados técnicos (códigos, carga horária, métricas). */
+.mono { font-family: var(--font-mono); }
+.tech-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-100);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
 
 h1, .h1,
 h2, .h2,

@@ -1,25 +1,26 @@
-import { loadCourses, segmentOf } from "./courses-data.js";
+import { loadCourses, segmentOf, segCode, courseCode } from "./courses-data.js";
 import { icon } from "../utils/icons.js";
 import { waLink } from "../config.js";
 
-/** Card de curso para o catálogo e destaques da home. */
+/** Card de curso — estilo ficha técnica (código mono + segmento + spec). */
 export function courseCard(course, data) {
   const seg = segmentOf(data, course.segment);
+  const code = courseCode(data, course);
   return `
     <article class="card course-card card--link" data-reveal>
       <a href="curso.html?id=${course.id}" class="course-card__media" aria-label="${course.title}">
-        <span class="course-card__seg"><span class="chip chip--dark">${seg ? seg.label : ""}</span></span>
-        <span class="icon-badge">${icon(seg ? seg.icon : "bolt")}</span>
+        <span class="course-card__code tech-code">${code}</span>
+        <span class="icon-badge icon-badge--dark">${icon(seg ? seg.icon : "bolt")}</span>
       </a>
       <div class="course-card__body">
+        <span class="tech-label course-card__seg">${seg ? seg.label : ""}</span>
         <h3><a href="curso.html?id=${course.id}">${course.title}</a></h3>
         <p class="text-muted">${course.short}</p>
         <div class="course-card__meta">
-          <span>${icon("users")} Turmas reduzidas</span>
-          <span>${icon("cert")} Certificado</span>
+          <span>Presencial</span><span>Certificado</span><span>EPIs inclusos</span>
         </div>
         <div class="course-card__foot">
-          <a class="btn btn--ghost btn--block" href="curso.html?id=${course.id}">Ver curso ${icon("arrow")}</a>
+          <a class="btn btn--ghost btn--block" href="curso.html?id=${course.id}">Ver ficha do curso ${icon("arrow")}</a>
         </div>
       </div>
     </article>
@@ -90,7 +91,10 @@ export async function initSegments() {
       const count = data.courses.filter((c) => c.segment === s.id).length;
       return `
         <a class="seg-card" href="cursos.html?seg=${s.id}" data-reveal>
-          <span class="icon-badge">${icon(s.icon)}</span>
+          <div class="seg-card__head">
+            <span class="icon-badge">${icon(s.icon)}</span>
+            <span class="tech-code seg-card__code">${segCode(s.id)}</span>
+          </div>
           <h3>${s.label}</h3>
           <p>${s.desc}</p>
           <span class="seg-card__count">${count} curso${count > 1 ? "s" : ""} ${icon("arrow")}</span>
