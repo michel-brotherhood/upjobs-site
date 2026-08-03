@@ -38,6 +38,7 @@ export function mountFooter() {
             <li><a href="certificacoes.html">Certificações</a></li>
             <li><a href="esg.html">ESG / Empresas</a></li>
             <li><a href="grupo-vip.html">Grupo VIP</a></li>
+            <li><a href="faq.html">Perguntas frequentes</a></li>
             <li><a href="contato.html">Contato</a></li>
             <li><a href="privacidade.html">Privacidade</a></li>
           </ul>
@@ -55,7 +56,7 @@ export function mountFooter() {
       </div>
 
       <div class="footer-bottom">
-        <p>© ${YEAR} ${SITE.name}. Todos os direitos reservados.</p>
+        <p>© ${YEAR} ${SITE.name}. CNPJ ${SITE.cnpj}. Todos os direitos reservados.</p>
         <p>Feito com foco em empregabilidade • São Gonçalo/RJ</p>
       </div>
     </div>
