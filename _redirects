@@ -1,0 +1,9 @@
+# Cloudflare Pages — redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# O 404 é servido automaticamente pelo arquivo /404.html — não precisa de regra.
+#
+# Se você padronizar o domínio em "www", faça o redirect do apex no painel
+# da Cloudflare (Rules > Redirect Rules) apontando upjobscursos.com.br -> www.
+# Mantenha a escolha (www ou apex) consistente com as tags <link rel="canonical">
+# e og:image das páginas (hoje estão em https://www.upjobscursos.com.br/).
