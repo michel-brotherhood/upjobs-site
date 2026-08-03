@@ -18,3 +18,4 @@ Thumbs.db
 
 # Observação: dist/styles.min.css É versionado (o site em produção o referencia).
 # Regenere com `npm run build` sempre que editar arquivos em src/css/.
+.rev/

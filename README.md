@@ -53,7 +53,8 @@ upjobs-site/
 │   ├── images/   (logos da marca)
 │   ├── fonts/    (Barlow Condensed + Inter, .woff2 auto-hospedadas)
 │   ├── og/       (imagem Open Graph)
-│   └── favicon/  (favicon.svg)
+│   └── favicon/  (favicon.svg + favicon-32.png/favicon-512.png/apple-touch-icon.png,
+│                  gerados a partir de "icone circular.webp" enviada pelo cliente)
 └── src/
     ├── css/  (fonts, tokens, reset, base, typography, layout, components,
     │          utilities, pages/, styles.css = entrada única de dev)
@@ -70,7 +71,7 @@ ainda **precisa ser informado pelo cliente**.
 
 ## Navegação e menu flutuante
 
-O menu principal segue um conjunto fixo — **Quem Somos, Cursos, Dúvidas, Treinamentos, Consultoria, Atendimento** — definido em `src/js/components/header.js`. O item **"Início"** só aparece nas páginas internas (a home nunca linka para si mesma). "Treinamentos" reaproveita o catálogo filtrado por NRs (`cursos.html?seg=nr-seguranca`), sem precisar de página própria.
+O menu principal segue um conjunto fixo — **Quem Somos, Cursos, Treinamentos, Consultoria, Blog, Atendimento** — definido em `src/js/components/header.js`. O item **"Início"** só aparece nas páginas internas (a home nunca linka para si mesma). "Treinamentos" reaproveita o catálogo filtrado por NRs (`cursos.html?seg=nr-seguranca`), sem precisar de página própria. O FAQ deixou de ter item próprio no menu: agora aparece embutido na home, em Quem Somos e em Contato (accordion), além da página completa `faq.html` (linkada a partir desses blocos e do botão flutuante).
 
 O botão flutuante (`src/js/components/wa-float.js`) é um menu speed-dial com 3 atalhos — **Matrícula, Dúvidas, Contato** — com animação de abertura escalonada (respeitando `prefers-reduced-motion`).
 
@@ -88,19 +89,37 @@ Se no futuro for adicionado um backend (Node/PHP/Python) ou um serviço de formu
 
 O conteúdo das perguntas frequentes tem fonte única em `src/js/modules/faq-data.js`, renderizado via `faq-widget.js`:
 - `faq.html`: lista completa (9 perguntas), com a primeira já aberta.
-- `quem-somos.html`, `diferenciais.html` e `contato.html`: a mesma lista embutida como accordion, com link para a página completa.
+- `index.html` (home), `quem-somos.html`, `diferenciais.html` e `contato.html`: a mesma lista embutida como accordion, com link para a página completa.
+
+## Blog (SEO)
+
+O Blog é gerado como **páginas estáticas** (não renderizadas por JS) porque é a principal porta de entrada de SEO orgânico — título, meta description, canonical, Open Graph e dados estruturados `BlogPosting` precisam estar no HTML servido.
+
+- Fonte única do conteúdo: **`src/data/blog.json`** (5 artigos, com slug, título SEO, meta description, palavras-chave, imagem, resumo e corpo estruturado em H2 + parágrafos).
+- Gerador: **`build-blog.cjs`** produz `blog.html` (índice) e uma página por artigo na raiz (`<slug>.html`), com JSON-LD `Blog`/`BlogPosting`.
+- Rode `npm run build:blog` (ou `npm run build`, que também gera o CSS) após editar `blog.json`, e faça commit dos arquivos gerados.
+- Imagens: as originais (~5 MB cada) foram redimensionadas para 1600×900 (~100 KB, WebP) em `public/images/blog/`. Para trocar por fotos reais, mantenha essas dimensões/otimização.
+- Os artigos referenciam os cursos correspondentes e convertem em WhatsApp/matrícula (mesmo padrão do site).
 
 O material original enviado pelo cliente citava a marca **"Greenjob"** em vez de "Upjobs" em alguns trechos — o texto foi adaptado para Upjobs. Os telefones de contato usados são os oficiais já configurados em `config.js` ((21) 2042-0068 e (21) 99938-9009 WhatsApp).
 
-## Conteúdo a validar / substituir
+## Página de Consultoria
 
-Itens marcados como *placeholder* no site (não invente dados — confirme antes de publicar):
+`consultoria.html` usa o conteúdo real do serviço (fornecido pelo cliente a partir do site anterior): Prontuário de Instalações Elétricas (PIE) com a lista de exigências da NR-10, as etapas da Adequação à NR-12 (numeradas, pois representam uma sequência real do processo) e um grid de Treinamentos de NRs (NR-10/12/33/34/35) linkando para os cursos correspondentes quando existem. Inclui também um formulário de orçamento de treinamento (converte em WhatsApp, mesmo padrão dos demais formulários do site).
 
-- **Número "+3.000 alunos"** e estatísticas — marcados com `*`. Confirmar/ajustar.
-- **Depoimentos** (home) — textos ilustrativos; substituir por relatos reais autorizados.
+## Textos e imagens pendentes de conteúdo real (uso interno — não expor no site)
+
+Para não expor rascunho/nota de desenvolvedor ao visitante, os textos visíveis no site **não citam
+"placeholder" nem "ver README"** — usam frases neutras como "em breve". O controle de pendências fica
+só aqui:
+
+- **Número "+3.000 alunos"** e estatísticas — marcados com `*` no site. Confirmar/ajustar.
+- **Depoimentos** (home) — falas ilustrativas (não atribuídas a pessoas identificáveis), com o
+  ícone de marca como avatar. Substituir pelos relatos e fotos reais dos alunos assim que
+  aprovados. Ver `index.html`, seção "DEPOIMENTOS".
 - **Logos de empresas parceiras** (ESG) — inserir marcas autorizadas.
-- **Fotos** (infraestrutura, equipe, certificado, consultoria/in company) — todos os blocos com
-  tarja "IMAGEM / Substituir por foto real" precisam de imagens reais autorizadas.
+- **Fotos** (infraestrutura, equipe, certificado, consultoria/in company) — todos os blocos com a
+  tarja visual "IMAGEM" (`.img-ph`) precisam de fotos reais autorizadas.
 
 ### Assets de imagem recomendados
 

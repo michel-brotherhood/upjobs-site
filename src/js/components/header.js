@@ -13,9 +13,9 @@ function socialLinks(cls = "") {
 const NAV = [
   { id: "quem-somos", label: "Quem Somos", href: "quem-somos.html" },
   { id: "cursos", label: "Cursos", href: "cursos.html" },
-  { id: "faq", label: "Dúvidas", href: "faq.html" },
   { id: "treinamentos", label: "Treinamentos", href: "cursos.html?seg=nr-seguranca" },
   { id: "consultoria", label: "Consultoria", href: "consultoria.html" },
+  { id: "blog", label: "Blog", href: "blog.html" },
   { id: "contato", label: "Atendimento", href: "contato.html" },
 ];
 

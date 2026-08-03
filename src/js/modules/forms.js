@@ -6,7 +6,7 @@ import { SITE, waLink } from "../config.js";
  * Validação nativa + validação leve no cliente.
  *
  * Uso: <form data-wa-form data-context="Curso X"> ... </form>
- * Campos reconhecidos por name: nome, telefone, curso, mensagem, consentimento.
+ * Campos reconhecidos por name: nome, telefone, email, empresa, curso, mensagem, consentimento.
  */
 export function initForms() {
   const forms = document.querySelectorAll("[data-wa-form]");
@@ -73,8 +73,15 @@ function bindForm(form) {
     const data = new FormData(form);
     const lines = ["*Novo contato pelo site Upjobs*"];
     if (context) lines.push(`Interesse: ${context}`);
-    const labels = { nome: "Nome", telefone: "Telefone", curso: "Curso", mensagem: "Mensagem" };
-    for (const key of ["nome", "telefone", "curso", "mensagem"]) {
+    const labels = {
+      nome: "Nome",
+      telefone: "Telefone",
+      email: "E-mail",
+      empresa: "Empresa",
+      curso: "Curso",
+      mensagem: "Mensagem",
+    };
+    for (const key of ["nome", "telefone", "email", "empresa", "curso", "mensagem"]) {
       const v = (data.get(key) || "").toString().trim();
       if (v) lines.push(`${labels[key]}: ${v}`);
     }

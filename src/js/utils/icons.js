@@ -65,6 +65,12 @@ const P = {
     '<path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M12 5v14M5 12h14"/>',
   clipboard:
     '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1ZM6 6h12v14H6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 11h6M9 15h6"/>',
+  mute:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5 6 9H2v6h4l5 4V5ZM22 9l-6 6M16 9l6 6"/>',
+  sound:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5 6 9H2v6h4l5 4V5ZM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>',
+  play:
+    '<path fill="currentColor" d="M8 5v14l11-7z"/>',
 };
 
 export function icon(name, cls = "") {
