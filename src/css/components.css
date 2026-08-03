@@ -152,41 +152,94 @@
 
 .nav-toggle {
   display: none;
+  position: relative;
+  z-index: 2; /* acima do overlay para permanecer clicável (vira "X") */
   width: 2.75rem; height: 2.75rem;
   border-radius: var(--radius-sm);
   color: var(--white);
   align-items: center;
   justify-content: center;
 }
-.nav-toggle svg { width: 1.6rem; height: 1.6rem; }
-.nav-toggle .icon-close { display: none; }
-.nav-toggle[aria-expanded="true"] .icon-open { display: none; }
-.nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+/* Hambúrguer animado que se transforma em "X" ao abrir */
+.nav-toggle__bars { position: relative; width: 1.5rem; height: 1.1rem; }
+.nav-toggle__bars span {
+  position: absolute; left: 0; height: 2px; width: 100%;
+  background: currentColor; border-radius: 2px;
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease), top var(--dur) var(--ease);
+}
+.nav-toggle__bars span:nth-child(1) { top: 0; }
+.nav-toggle__bars span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-toggle__bars span:nth-child(3) { top: 100%; transform: translateY(-100%); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(3) { top: 50%; transform: translateY(-50%) rotate(-45deg); }
+
+/* Bloqueia a rolagem da página com o menu aberto */
+html.nav-open, html.nav-open body { overflow: hidden; }
 
 @media (max-width: 68rem) {
   .header-social--desktop { display: none; }
   .nav-toggle { display: inline-flex; }
+  .brand { position: relative; z-index: 2; } /* logo permanece acima do overlay */
+
+  /* Menu em tela cheia (overlay) */
   .main-nav {
     position: fixed;
-    inset: 5rem 0 auto 0;
-    background: var(--grad-dark);
-    border-bottom: 1px solid rgb(255 255 255 / 0.08);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--dur-slow) var(--ease);
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem var(--gutter) 2.5rem;
+    background:
+      radial-gradient(120% 60% at 100% 0%, rgb(0 146 69 / 0.28) 0%, transparent 55%),
+      var(--grad-dark, linear-gradient(160deg, #14161a, #050505));
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility var(--dur) var(--ease);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
-  .main-nav.is-open { max-height: min(85vh, 42rem); overflow-y: auto; }
-  .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: var(--space-sm) var(--gutter) var(--space-xl); }
+  .main-nav.is-open { opacity: 1; visibility: visible; transform: none; }
+
+  .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: 0; }
+
+  /* Entrada escalonada dos itens */
+  .main-nav li {
+    opacity: 0; transform: translateY(10px);
+    transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+  }
+  .main-nav.is-open li { opacity: 1; transform: none; }
+  .main-nav.is-open li:nth-child(1) { transition-delay: 0.06s; }
+  .main-nav.is-open li:nth-child(2) { transition-delay: 0.10s; }
+  .main-nav.is-open li:nth-child(3) { transition-delay: 0.14s; }
+  .main-nav.is-open li:nth-child(4) { transition-delay: 0.18s; }
+  .main-nav.is-open li:nth-child(5) { transition-delay: 0.22s; }
+  .main-nav.is-open li:nth-child(6) { transition-delay: 0.26s; }
+  .main-nav.is-open li:nth-child(7) { transition-delay: 0.30s; }
+
   .main-nav a:not(.btn) {
-    padding: 0.95rem 0;
-    font-size: var(--fs-400);
+    display: block;
+    padding: 0.85rem 0;
+    font-family: var(--font-display, sans-serif);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-semibold);
+    color: rgb(255 255 255 / 0.9);
     border-bottom: 1px solid rgb(255 255 255 / 0.08);
+    border-bottom-width: 1px;
   }
   .main-nav a[aria-current="page"]:not(.btn) { border-bottom-color: rgb(255 255 255 / 0.08); color: var(--green-bright); }
   .main-nav .nav-cta { display: block; margin-top: var(--space-lg); }
-  .main-nav .nav-social { display: block; margin-top: var(--space-md); }
-  .main-nav .nav-social .header-social { justify-content: flex-start; }
+  .main-nav .nav-social { display: block; margin-top: var(--space-lg); }
+  .main-nav .nav-social .header-social { justify-content: center; }
   .main-nav .nav-social .header-social a { color: rgb(255 255 255 / 0.85); }
+}
+@media (max-width: 68rem) and (prefers-reduced-motion: reduce) {
+  .main-nav, .main-nav li, .nav-toggle__bars span { transition: none; }
+  .main-nav li { transform: none; }
 }
 
 /* ---------- Menu flutuante (speed-dial): Matrícula / Dúvidas / Contato ---------- */
