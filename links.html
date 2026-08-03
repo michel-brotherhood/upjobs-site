@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upjobs Cursos Profissionalizantes — Links</title>
+  <meta name="description" content="Links oficiais da Upjobs Cursos e Treinamentos: site, matrícula, contato, localização e redes sociais.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#050505">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="public/favicon/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="public/favicon/favicon-512.png" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="public/favicon/apple-touch-icon.png">
+  <link rel="preload" href="public/fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="public/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="dist/styles.min.css">
+  <style>
+    .links-page {
+      min-height: 100dvh;
+      display: flex; flex-direction: column; align-items: center;
+      padding: clamp(2rem, 5vw, 3.5rem) var(--gutter);
+      background:
+        radial-gradient(120% 90% at 50% -10%, rgb(0 146 69 / 0.28) 0%, transparent 55%),
+        var(--grad-dark, linear-gradient(160deg, #14161a, #050505));
+      color: var(--white, #fff);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Grade blueprint sutil ao fundo */
+    .links-page::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(120% 80% at 50% 0%, #000 25%, transparent 75%);
+    }
+    .links-card {
+      position: relative;
+      width: 100%; max-width: 30rem;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      gap: 0.35rem;
+    }
+    .links-avatar {
+      width: 118px; height: 118px; border-radius: 50%;
+      padding: 4px; background: var(--white, #fff);
+      box-shadow: 0 10px 30px rgb(0 0 0 / 0.45), 0 0 0 3px rgb(0 146 69 / 0.5);
+      margin-bottom: 0.9rem;
+    }
+    .links-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+    .links-name {
+      color: var(--white, #fff);
+      font-family: var(--font-display, "Barlow Condensed", sans-serif);
+      font-weight: 700; letter-spacing: 0.01em; text-transform: uppercase;
+      font-size: clamp(1.5rem, 1.2rem + 2vw, 2rem); line-height: 1.05;
+    }
+    .links-bio { margin: 0.2rem 0 0.1rem; color: rgb(255 255 255 / 0.9); font-size: 0.98rem; line-height: 1.65; }
+    .links-bio span { display: block; }
+    .links-segments {
+      display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 0.55rem;
+      margin-top: 0.5rem;
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgb(255 255 255 / 0.72);
+    }
+    .links-segments b { color: var(--green-bright, #22c55e); font-weight: 600; }
+
+    .links-list { width: 100%; max-width: 30rem; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.6rem; }
+    .link-btn {
+      display: flex; align-items: center; gap: 0.85rem;
+      width: 100%; padding: 0.95rem 1.15rem;
+      border-radius: 999px;
+      background: rgb(255 255 255 / 0.07);
+      border: 1px solid rgb(255 255 255 / 0.16);
+      color: var(--white, #fff);
+      font-weight: 600; font-size: 1rem;
+      backdrop-filter: blur(6px);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .link-btn:hover { transform: translateY(-2px); background: rgb(255 255 255 / 0.13); border-color: rgb(255 255 255 / 0.32); }
+    .link-btn:focus-visible { outline: 3px solid var(--green-bright, #22c55e); outline-offset: 3px; }
+    .link-btn svg { width: 22px; height: 22px; flex: none; }
+    .link-btn .link-btn__label { flex: 1; text-align: center; margin-right: 22px; }
+    /* Destaque para o CTA de matrícula */
+    .link-btn--primary {
+      background: linear-gradient(135deg, #009245, #006B35);
+      border-color: transparent;
+      box-shadow: 0 8px 24px rgb(0 146 69 / 0.45);
+    }
+    .link-btn--primary:hover { background: linear-gradient(135deg, #00a34e, #00793b); border-color: transparent; }
+
+    .links-footer { margin-top: 1.8rem; font-size: 0.75rem; color: rgb(255 255 255 / 0.5); text-align: center; }
+    .links-footer a { color: rgb(255 255 255 / 0.7); text-decoration: underline; text-underline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) { .link-btn { transition: none; } }
+  </style>
+</head>
+<body class="links-page">
+  <main class="links-card">
+    <div class="links-avatar">
+      <img src="public/images/links-perfil.webp" alt="Upjobs Cursos e Treinamentos" width="512" height="512">
+    </div>
+    <h1 class="links-name">Upjobs Cursos Profissionalizantes</h1>
+    <p class="links-bio">
+      <span>🧑‍🎓 Técnico por competência</span>
+      <span>🎓 Cursos profissionalizantes</span>
+      <span>👷 Treinamentos de NRs</span>
+    </p>
+    <p class="links-segments"><b>Naval</b> <span aria-hidden="true">|</span> <b>Elétrica</b> <span aria-hidden="true">|</span> <b>Refrigeração</b></p>
+  </main>
+
+  <nav class="links-list" aria-label="Links da Upjobs">
+    <a class="link-btn" href="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" stroke-linecap="round"/></svg>
+      <span class="link-btn__label">Acesse nosso site</span>
+    </a>
+    <a class="link-btn link-btn--primary" href="matricula.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      <span class="link-btn__label">Quero me matricular</span>
+    </a>
+    <a class="link-btn" href="contato.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/><path d="M12 8.5v3M12 14h.01"/></svg>
+      <span class="link-btn__label">Preciso tirar dúvidas</span>
+    </a>
+    <a class="link-btn" href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Dezoito%20do%20Forte%2C%202096%2C%20Mutu%C3%A1%2C%20S%C3%A3o%20Gon%C3%A7alo%20-%20RJ" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+      <span class="link-btn__label">Como chegar</span>
+    </a>
+    <a class="link-btn" href="https://www.instagram.com/upjobscursos" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      <span class="link-btn__label">Instagram</span>
+    </a>
+    <a class="link-btn" href="https://www.linkedin.com/company/upjobscursos/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+      <span class="link-btn__label">LinkedIn</span>
+    </a>
+  </nav>
+
+  <footer class="links-footer">
+    © 2026 Upjobs Cursos e Treinamentos · São Gonçalo/RJ · <a href="index.html">upjobscursos.com.br</a>
+  </footer>
+</body>
+</html>
