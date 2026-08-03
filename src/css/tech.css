@@ -1,0 +1,186 @@
+/* =========================================================
+   Sistema "Ficha Técnica / Blueprint"
+   Marcas de corte, selos técnicos, linhas de cota e grade.
+   Aplica-se a componentes existentes por seletor de classe
+   (sem exigir mudança no HTML).
+   ========================================================= */
+
+/* ---------- Marcas de corte (corner ticks) ---------- */
+[data-crop],
+.hero__panel,
+.cta-band,
+.form-card,
+.enroll-card {
+  position: relative;
+}
+[data-crop]::before, [data-crop]::after,
+.hero__panel::before, .hero__panel::after,
+.cta-band::before, .cta-band::after,
+.form-card::before, .form-card::after,
+.enroll-card::before, .enroll-card::after {
+  content: "";
+  position: absolute;
+  width: 0.85rem;
+  height: 0.85rem;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero__panel::before, .cta-band::before, .form-card::before, .enroll-card::before, [data-crop]::before {
+  top: 0.55rem; left: 0.55rem;
+  border-top: 2px solid var(--tick);
+  border-left: 2px solid var(--tick);
+}
+.hero__panel::after, .cta-band::after, .form-card::after, .enroll-card::after, [data-crop]::after {
+  bottom: 0.55rem; right: 0.55rem;
+  border-bottom: 2px solid var(--tick);
+  border-right: 2px solid var(--tick);
+}
+/* Painéis escuros usam o verde claro nas marcas */
+.hero__panel::before, .hero__panel::after,
+.cta-band::before, .cta-band::after {
+  border-color: var(--tick-dark);
+}
+/* A faixa do CTA já tem ::after decorativo próprio — recria só as marcas */
+.cta-band::after {
+  background: none;
+  inset: auto 0.55rem 0.55rem auto;
+  width: 0.85rem; height: 0.85rem;
+}
+
+/* ---------- Selo técnico (substitui o ícone-em-quadradinho) ---------- */
+.icon-badge {
+  border-radius: var(--radius-xs);
+  background: transparent;
+  border: 1px solid var(--green-100);
+  color: var(--green);
+  position: relative;
+}
+.icon-badge::after {
+  content: "";
+  position: absolute;
+  top: -1px; right: -1px;
+  width: 0.5rem; height: 0.5rem;
+  border-top: 2px solid var(--green);
+  border-right: 2px solid var(--green);
+}
+.icon-badge--dark {
+  background: transparent;
+  border-color: rgb(34 197 94 / 0.32);
+  color: var(--green-bright);
+}
+.icon-badge--dark::after { border-color: var(--green-bright); }
+
+/* ---------- Linha de cota (divisor técnico) ---------- */
+.dim-line {
+  position: relative;
+  height: 1px;
+  background: var(--color-border);
+  margin-block: var(--space-md);
+}
+.dim-line::before, .dim-line::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1px; height: 7px;
+  background: var(--green);
+}
+.dim-line::before { left: 0; }
+.dim-line::after { right: 0; }
+
+/* ---------- Grade blueprint em seções escuras ---------- */
+.section--dark { position: relative; overflow: hidden; }
+.section--dark > .container { position: relative; z-index: 1; }
+.section--dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--blueprint-line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line-dark) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(120% 90% at 100% 0%, #000 15%, transparent 70%);
+  -webkit-mask-image: radial-gradient(120% 90% at 100% 0%, #000 15%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---------- Rótulos técnicos monoespaçados ---------- */
+.stat__label,
+.footer-col h4,
+.course-card__meta,
+.breadcrumb,
+.filter-btn,
+.chip,
+.badge-dot {
+  font-family: var(--font-mono);
+}
+.stat__label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: var(--fs-100);
+}
+.footer-col h4 { letter-spacing: 0.12em; }
+.chip {
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--fs-100);
+}
+.filter-btn { letter-spacing: 0.04em; }
+
+/* Código técnico (usado em cards de curso e selos) */
+.tech-code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-100);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--green);
+}
+
+/* ---------- Card de curso (ficha técnica) ---------- */
+.course-card__code {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-md);
+  color: var(--green-bright);
+  z-index: 1;
+}
+.course-card__media::after {
+  /* marca de corte no canto do "cabeçalho" da ficha */
+  content: "";
+  position: absolute;
+  top: 0.5rem; right: 0.5rem;
+  width: 0.7rem; height: 0.7rem;
+  border-top: 2px solid rgb(34 197 94 / 0.6);
+  border-right: 2px solid rgb(34 197 94 / 0.6);
+}
+.course-card__body .course-card__seg {
+  color: var(--green);
+  margin-bottom: 0.15rem;
+}
+.course-card__meta {
+  gap: 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+}
+.course-card__meta span { display: inline-flex; align-items: center; }
+.course-card__meta span:not(:last-child)::after {
+  content: "·";
+  margin: 0 0.5em;
+  color: var(--green);
+}
+
+/* ---------- Card de segmento (home) ---------- */
+.seg-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.seg-card__code {
+  font-size: var(--fs-300);
+  color: var(--color-border-strong);
+}
+.seg-card:hover .seg-card__code { color: var(--green); }
+
+/* ---------- Meta do hero de curso ---------- */
+.course-hero-meta span { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; font-size: var(--fs-100); }

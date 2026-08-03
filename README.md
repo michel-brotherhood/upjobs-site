@@ -10,7 +10,8 @@ Objetivo: apresentar a instituição, construir autoridade e **gerar matrículas
 - **CSS3 moderno** — Custom Properties, Grid, Flexbox, `clamp()` (sem Tailwind; design autoral)
 - **JavaScript puro (ES Modules)** — sem React/Next/TypeScript
 - **Sem backend** nesta fase: os formulários convertem em **WhatsApp** (`wa.me` com mensagem pré-preenchida)
-- **Fontes auto-hospedadas** (Barlow Condensed + Inter, subset latin) em `public/fonts/` — sem dependência de CDN externo, melhor performance e privacidade/LGPD
+- **Fontes auto-hospedadas** (Barlow Condensed · Inter · IBM Plex Mono, subset latin) em `public/fonts/` — sem dependência de CDN externo, melhor performance e privacidade/LGPD
+- **Direção de arte "Ficha Técnica / Blueprint":** rótulos técnicos monoespaçados, códigos de segmento/curso, marcas de corte e grade blueprint (ver `src/css/tech.css`)
 
 Escolhas justificadas: o projeto é altamente autoral e com muitas seções customizadas, o que favorece CSS tradicional em vez de Tailwind. Como não há persistência de dados nesta fase, não há backend — o WhatsApp é o canal principal de conversão, reduzindo fricção.
 

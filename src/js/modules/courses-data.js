@@ -13,6 +13,27 @@ export function segmentOf(data, id) {
   return data.segments.find((s) => s.id === id);
 }
 
+/** Código curto de segmento (para os rótulos técnicos). */
+const SEG_CODES = {
+  "energia-eletrica": "EL",
+  "refrigeracao": "RF",
+  "seguranca-eletronica": "SE",
+  "naval-offshore": "NV",
+  "construcao-civil": "CC",
+  "administrativo": "AD",
+  "nr-seguranca": "NR",
+};
+export function segCode(segmentId) {
+  return SEG_CODES[segmentId] || "UP";
+}
+
+/** Código técnico do curso, ex.: "EL-03" (posição dentro do segmento). */
+export function courseCode(data, course) {
+  const within = data.courses.filter((c) => c.segment === course.segment);
+  const n = within.findIndex((c) => c.id === course.id) + 1;
+  return `${segCode(course.segment)}-${String(n).padStart(2, "0")}`;
+}
+
 /** Benefícios inclusos comuns a todos os cursos (diferenciais da escola). */
 export const COURSE_INCLUDES = [
   "Aulas 100% práticas com ferramentas reais",

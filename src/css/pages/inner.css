@@ -20,7 +20,9 @@
 /* Itens de grid não devem esticar chips/botões como se fossem campos. */
 .page-hero__inner > .chip,
 .page-hero__inner > .eyebrow,
+.page-hero__inner > .course-hero-code,
 .page-hero__inner > .breadcrumb { justify-self: start; }
+.course-hero-code { display: inline-flex; align-items: center; gap: 0.6rem; }
 .page-hero h1 { color: var(--white); }
 .page-hero .lead { color: rgb(255 255 255 / 0.8); }
 
