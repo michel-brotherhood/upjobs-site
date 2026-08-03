@@ -1,5 +1,10 @@
 /* Base — elementos globais, tipografia de documento, foco, seleção */
 
+/* O site tem design de tema claro. Declaramos color-scheme: light para o
+   navegador NÃO aplicar "dark mode" forçado (ex.: Auto Dark Theme do Chrome),
+   que escurecia o fundo branco e deixava o texto ilegível. */
+:root { color-scheme: light; }
+
 body {
   font-family: var(--font-body);
   font-size: var(--fs-300);
