@@ -44,8 +44,8 @@ npm run build   # gera dist/styles.min.css (script Node puro, sem dependências)
 upjobs-site/
 ├── index.html, cursos.html, curso.html, quem-somos.html,
 │   diferenciais.html, infraestrutura.html, certificacoes.html,
-│   empregabilidade.html, esg.html, contato.html, grupo-vip.html,
-│   privacidade.html, 404.html
+│   empregabilidade.html, esg.html, consultoria.html, matricula.html,
+│   faq.html, contato.html, grupo-vip.html, privacidade.html, 404.html
 ├── sitemap.xml, robots.txt, manifest.webmanifest
 ├── build.js, package.json      (build de CSS sem dependências)
 ├── dist/styles.min.css         (bundle de produção — versionado)
@@ -68,6 +68,30 @@ telefone, WhatsApp, e-mails, endereço, redes sociais e **link do Grupo VIP**.
 Ajuste ali para refletir os canais oficiais. O link oficial do Grupo VIP (`vipGroupUrl`)
 ainda **precisa ser informado pelo cliente**.
 
+## Navegação e menu flutuante
+
+O menu principal segue um conjunto fixo — **Quem Somos, Cursos, Dúvidas, Treinamentos, Consultoria, Atendimento** — definido em `src/js/components/header.js`. O item **"Início"** só aparece nas páginas internas (a home nunca linka para si mesma). "Treinamentos" reaproveita o catálogo filtrado por NRs (`cursos.html?seg=nr-seguranca`), sem precisar de página própria.
+
+O botão flutuante (`src/js/components/wa-float.js`) é um menu speed-dial com 3 atalhos — **Matrícula, Dúvidas, Contato** — com animação de abertura escalonada (respeitando `prefers-reduced-motion`).
+
+## Página de Matrícula (sem backend)
+
+`matricula.html` + `src/js/modules/matricula.js` implementam o formulário de matrícula com máscaras de telefone e CPF (validação de dígitos verificadores) e o curso pré-selecionado quando acessado via `?curso=<id>` (usado pelo CTA das páginas de curso).
+
+**Importante — como o site é 100% estático (sem backend), o envio funciona assim:**
+1. Ao enviar, o formulário monta um link `mailto:` para `contato@upjobscursos.com.br` com todos os dados preenchidos e aciona o **cliente de e-mail do próprio usuário** (não há envio automático/silencioso — isso exigiria um backend ou serviço de formulário, fora do escopo atual).
+2. Em seguida, abre o **WhatsApp** da Upjobs com a mesma mensagem pré-preenchida, para agilizar o atendimento.
+
+Se no futuro for adicionado um backend (Node/PHP/Python) ou um serviço de formulário (ex.: Formspree), o `mailto:` pode ser substituído por um envio real de e-mail sem alterar o restante do fluxo.
+
+## Perguntas frequentes (FAQ)
+
+O conteúdo das perguntas frequentes tem fonte única em `src/js/modules/faq-data.js`, renderizado via `faq-widget.js`:
+- `faq.html`: lista completa (9 perguntas), com a primeira já aberta.
+- `quem-somos.html`, `diferenciais.html` e `contato.html`: a mesma lista embutida como accordion, com link para a página completa.
+
+O material original enviado pelo cliente citava a marca **"Greenjob"** em vez de "Upjobs" em alguns trechos — o texto foi adaptado para Upjobs. Os telefones de contato usados são os oficiais já configurados em `config.js` ((21) 2042-0068 e (21) 99938-9009 WhatsApp).
+
 ## Conteúdo a validar / substituir
 
 Itens marcados como *placeholder* no site (não invente dados — confirme antes de publicar):
@@ -75,9 +99,8 @@ Itens marcados como *placeholder* no site (não invente dados — confirme antes
 - **Número "+3.000 alunos"** e estatísticas — marcados com `*`. Confirmar/ajustar.
 - **Depoimentos** (home) — textos ilustrativos; substituir por relatos reais autorizados.
 - **Logos de empresas parceiras** (ESG) — inserir marcas autorizadas.
-- **Fotos** (infraestrutura, equipe, certificado) — todos os blocos com tarja
-  "IMAGEM / Substituir por foto real" precisam de imagens reais autorizadas.
-- **Redes sociais** em `config.js` — inserir URLs oficiais.
+- **Fotos** (infraestrutura, equipe, certificado, consultoria/in company) — todos os blocos com
+  tarja "IMAGEM / Substituir por foto real" precisam de imagens reais autorizadas.
 
 ### Assets de imagem recomendados
 

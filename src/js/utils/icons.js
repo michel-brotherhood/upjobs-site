@@ -55,6 +55,16 @@ const P = {
     '<path fill="currentColor" d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.4 8.4h3.1V21H3.4V8.4Zm5.06 0h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.13c0-1.22-.02-2.8-1.7-2.8-1.7 0-1.97 1.33-1.97 2.71V21H8.46V8.4Z"/>',
   spark:
     '<path fill="currentColor" d="M12 2c.5 3.5 2.5 5.5 6 6-3.5.5-5.5 2.5-6 6-.5-3.5-2.5-5.5-6-6 3.5-.5 5.5-2.5 6-6Z"/>',
+  chat:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 0 1-11.6 7.14L4 20l1.1-4.2A8 8 0 1 1 21 12Z"/><path fill="currentColor" d="M8 11h.01M12 11h.01M16 11h.01"/>',
+  help:
+    '<path fill="none" stroke="currentColor" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9.2 9a2.8 2.8 0 1 1 4.3 2.4c-.9.6-1.5 1.1-1.5 2.1"/><path fill="currentColor" d="M12 17.2a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Z"/>',
+  pencil:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m16.5 3.5 4 4L7 21l-4.5 1L3.5 17.5 16.5 3.5Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m14 6 4 4"/>',
+  plus:
+    '<path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M12 5v14M5 12h14"/>',
+  clipboard:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1ZM6 6h12v14H6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 11h6M9 15h6"/>',
 };
 
 export function icon(name, cls = "") {

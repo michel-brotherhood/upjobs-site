@@ -25,8 +25,10 @@ export function mountFooter() {
           <h4>Navegação</h4>
           <ul role="list">
             <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="matricula.html">Matrícula</a></li>
             <li><a href="quem-somos.html">Quem Somos</a></li>
             <li><a href="diferenciais.html">Diferenciais</a></li>
+            <li><a href="consultoria.html">Consultoria</a></li>
             <li><a href="infraestrutura.html">Infraestrutura</a></li>
             <li><a href="empregabilidade.html">Empregabilidade</a></li>
           </ul>
