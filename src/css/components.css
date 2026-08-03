@@ -113,10 +113,11 @@
 
 .main-nav ul {
   display: flex;
+  align-items: center;
   gap: clamp(0.5rem, 1.5vw, 1.4rem);
   list-style: none;
 }
-.main-nav a {
+.main-nav a:not(.btn) {
   display: inline-block;
   padding: 0.5rem 0.35rem;
   font-size: var(--fs-200);
@@ -126,11 +127,13 @@
   transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
   white-space: nowrap;
 }
-.main-nav a:hover { color: var(--white); }
-.main-nav a[aria-current="page"] {
+.main-nav a:not(.btn):hover { color: var(--white); }
+.main-nav a[aria-current="page"]:not(.btn) {
   color: var(--white);
   border-bottom-color: var(--green-bright);
 }
+/* O CTA do menu é só para a versão mobile — no desktop já existe o botão "Matricular". */
+.main-nav .nav-cta { display: none; }
 
 .header-actions { display: flex; align-items: center; gap: var(--space-sm); }
 
@@ -160,14 +163,14 @@
     transition: max-height var(--dur-slow) var(--ease);
   }
   .main-nav.is-open { max-height: min(80vh, 40rem); overflow-y: auto; }
-  .main-nav ul { flex-direction: column; gap: 0; padding: var(--space-sm) var(--gutter) var(--space-xl); }
-  .main-nav a {
+  .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: var(--space-sm) var(--gutter) var(--space-xl); }
+  .main-nav a:not(.btn) {
     padding: 0.95rem 0;
     font-size: var(--fs-400);
     border-bottom: 1px solid rgb(255 255 255 / 0.08);
   }
-  .main-nav a[aria-current="page"] { border-bottom-color: rgb(255 255 255 / 0.08); color: var(--green-bright); }
-  .main-nav .nav-cta { margin-top: var(--space-lg); }
+  .main-nav a[aria-current="page"]:not(.btn) { border-bottom-color: rgb(255 255 255 / 0.08); color: var(--green-bright); }
+  .main-nav .nav-cta { display: block; margin-top: var(--space-lg); }
 }
 
 /* ---------- Botão WhatsApp flutuante ---------- */

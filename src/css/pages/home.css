@@ -29,10 +29,11 @@
 @media (min-width: 64rem) {
   .hero__inner { grid-template-columns: 1.1fr 0.9fr; }
 }
-.hero h1 { font-size: var(--fs-800); color: var(--white); }
+.hero h1 { font-size: var(--fs-800); color: var(--white); text-wrap: balance; }
 .hero h1 .accent {
   color: var(--green-bright);
-  display: inline-block;
+  display: block;
+  margin-top: 0.12em;
 }
 .hero .lead { color: rgb(255 255 255 / 0.8); max-width: 52ch; font-size: var(--fs-400); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-md); }
