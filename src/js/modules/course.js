@@ -29,8 +29,13 @@ export async function initCoursePage() {
 
   const waMsg = `Olá! Tenho interesse no curso ${course.title}. Gostaria de saber valores, datas e como me matricular.`;
 
+  const heroImg = course.img ? `public/images/cursos/heros/hero-${course.img}.webp` : "";
+  // Background aplicado inline (url resolve relativo ao HTML, não ao dist/).
+  const heroStyle = heroImg
+    ? ` style="background:linear-gradient(90deg,rgb(4 5 5 / 0.92) 0%,rgb(4 5 5 / 0.72) 48%,rgb(4 5 5 / 0.45) 100%),linear-gradient(0deg,rgb(4 5 5 / 0.85) 0%,rgb(4 5 5 / 0.25) 55%),url('${heroImg}') center / cover no-repeat, #050505"`
+    : "";
   root.innerHTML = `
-    <section class="page-hero">
+    <section class="page-hero${heroImg ? " page-hero--photo" : ""}"${heroStyle}>
       <div class="container page-hero__inner">
         <nav class="breadcrumb" aria-label="Você está aqui">
           <ol>

@@ -1,6 +1,14 @@
 import { SITE, waLink } from "../config.js";
 import { icon } from "../utils/icons.js";
 
+/** Ícones de redes sociais (Facebook, Instagram, LinkedIn). */
+function socialLinks(cls = "") {
+  return `
+    <a class="${cls}" href="${SITE.social.facebook}" target="_blank" rel="noopener" aria-label="Facebook">${icon("facebook")}</a>
+    <a class="${cls}" href="${SITE.social.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon("instagram")}</a>
+    <a class="${cls}" href="${SITE.social.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">${icon("linkedin")}</a>`;
+}
+
 const NAV = [
   { id: "inicio", label: "Início", href: "index.html" },
   { id: "cursos", label: "Cursos", href: "cursos.html" },
@@ -25,16 +33,17 @@ export function mountHeader(active) {
     <a class="skip-link" href="#main">Pular para o conteúdo</a>
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="${SITE.name} — página inicial">
-        <img src="public/images/upjobs-logo-verde-branco.webp" alt="${SITE.name}" width="150" height="38" fetchpriority="high">
+        <img src="public/images/upjobs-logo-verde-branco.webp" alt="${SITE.name}" width="76" height="43" fetchpriority="high">
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <ul role="list">
           ${links}
           <li class="nav-cta"><a class="btn btn--whatsapp btn--block" href="${waLink()}" target="_blank" rel="noopener">${icon("whatsapp")} Falar no WhatsApp</a></li>
+          <li class="nav-social" aria-hidden="false"><span class="header-social">${socialLinks()}</span></li>
         </ul>
       </nav>
       <div class="header-actions">
-        <a class="btn btn--primary btn--desktop" href="${waLink()}" target="_blank" rel="noopener">${icon("whatsapp")} Matricular</a>
+        <span class="header-social header-social--desktop">${socialLinks()}</span>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
           <span class="icon-open">${icon("menu")}</span>
           <span class="icon-close">${icon("close")}</span>
