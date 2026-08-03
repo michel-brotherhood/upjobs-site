@@ -137,12 +137,25 @@
 }
 
 /* ---------- Card de curso (ficha técnica) ---------- */
+.course-card__media--photo {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--ink-800);
+}
+.course-card__media--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(4 5 5 / 0.62) 0%, rgb(4 5 5 / 0.12) 38%, rgb(4 5 5 / 0.28) 100%);
+  pointer-events: none;
+}
 .course-card__code {
   position: absolute;
   top: var(--space-sm);
   left: var(--space-md);
   color: var(--green-bright);
   z-index: 1;
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.6);
 }
 .course-card__media::after {
   /* marca de corte no canto do "cabeçalho" da ficha */

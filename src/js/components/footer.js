@@ -12,12 +12,12 @@ export function mountFooter() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="public/images/upjobs-logo-verde-branco.webp" alt="${SITE.name}" width="170" height="42" loading="lazy">
+          <img src="public/images/upjobs-logo-verde-branco.webp" alt="${SITE.name}" width="150" height="84" loading="lazy">
           <p>Cursos profissionalizantes, técnicos, industriais e treinamentos de segurança do trabalho com foco em empregabilidade em São Gonçalo, Niterói e região metropolitana do Rio de Janeiro.</p>
           <div class="footer-social" style="margin-top:1.25rem">
-            <a href="${SITE.social.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon("instagram")}</a>
             <a href="${SITE.social.facebook}" target="_blank" rel="noopener" aria-label="Facebook">${icon("facebook")}</a>
-            <a href="${SITE.social.youtube}" target="_blank" rel="noopener" aria-label="YouTube">${icon("youtube")}</a>
+            <a href="${SITE.social.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon("instagram")}</a>
+            <a href="${SITE.social.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">${icon("linkedin")}</a>
           </div>
         </div>
 

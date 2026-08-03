@@ -1,12 +1,47 @@
 {
   "segments": [
-    { "id": "energia-eletrica", "label": "Energia e Elétrica", "icon": "bolt", "desc": "Instalações residenciais, prediais e industriais, comandos e energia solar." },
-    { "id": "refrigeracao", "label": "Refrigeração e Climatização", "icon": "snow", "desc": "Instalação e manutenção de ar-condicionado e refrigeração." },
-    { "id": "seguranca-eletronica", "label": "Segurança Eletrônica", "icon": "cam", "desc": "CFTV, alarmes, redes e automação residencial." },
-    { "id": "naval-offshore", "label": "Naval e Offshore", "icon": "ship", "desc": "Atuação em estaleiros, plataformas e indústria marítima." },
-    { "id": "construcao-civil", "label": "Construção Civil", "icon": "bricks", "desc": "Instalações, manutenção predial e serviços técnicos." },
-    { "id": "administrativo", "label": "Administrativo e Gestão", "icon": "briefcase", "desc": "Rotinas de escritório, atendimento e gestão." },
-    { "id": "nr-seguranca", "label": "Segurança do Trabalho (NRs)", "icon": "helmet", "desc": "Certificação em Normas Regulamentadoras." }
+    {
+      "id": "energia-eletrica",
+      "label": "Energia e Elétrica",
+      "icon": "bolt",
+      "desc": "Instalações residenciais, prediais e industriais, comandos e energia solar."
+    },
+    {
+      "id": "refrigeracao",
+      "label": "Refrigeração e Climatização",
+      "icon": "snow",
+      "desc": "Instalação e manutenção de ar-condicionado e refrigeração."
+    },
+    {
+      "id": "seguranca-eletronica",
+      "label": "Segurança Eletrônica",
+      "icon": "cam",
+      "desc": "CFTV, alarmes, redes e automação residencial."
+    },
+    {
+      "id": "naval-offshore",
+      "label": "Naval e Offshore",
+      "icon": "ship",
+      "desc": "Atuação em estaleiros, plataformas e indústria marítima."
+    },
+    {
+      "id": "construcao-civil",
+      "label": "Construção Civil",
+      "icon": "bricks",
+      "desc": "Instalações, manutenção predial e serviços técnicos."
+    },
+    {
+      "id": "administrativo",
+      "label": "Administrativo e Gestão",
+      "icon": "briefcase",
+      "desc": "Rotinas de escritório, atendimento e gestão."
+    },
+    {
+      "id": "nr-seguranca",
+      "label": "Segurança do Trabalho (NRs)",
+      "icon": "helmet",
+      "desc": "Certificação em Normas Regulamentadoras."
+    }
   ],
   "courses": [
     {
@@ -29,7 +64,8 @@
         "Circuitos residenciais na prática",
         "Quadros de distribuição e proteção",
         "Instalações prediais e projeto final"
-      ]
+      ],
+      "img": "eletricista-predial"
     },
     {
       "id": "comandos-eletricos",
@@ -51,7 +87,8 @@
         "Partidas de motores na bancada",
         "Montagem de painéis",
         "Manutenção e diagnóstico"
-      ]
+      ],
+      "img": "comandos-eletricos"
     },
     {
       "id": "redes-distribuicao",
@@ -73,7 +110,8 @@
         "Segurança e NRs aplicadas",
         "Práticas de montagem",
         "Rotina de campo"
-      ]
+      ],
+      "img": "redes-distribuicao"
     },
     {
       "id": "energia-solar-fotovoltaica",
@@ -95,7 +133,8 @@
         "Instalação na prática",
         "Conexão e homologação",
         "Manutenção do sistema"
-      ]
+      ],
+      "img": "energia-solar"
     },
     {
       "id": "refrigeracao-ar-condicionado",
@@ -117,7 +156,8 @@
         "Instalação de split na prática",
         "Manutenção e recarga",
         "Diagnóstico de falhas"
-      ]
+      ],
+      "img": "refrigeracao"
     },
     {
       "id": "seguranca-eletronica-cftv",
@@ -139,7 +179,8 @@
         "Instalação e cabeamento",
         "Alarmes e sensores",
         "Acesso remoto e entrega"
-      ]
+      ],
+      "img": "seguranca-eletronica"
     },
     {
       "id": "automacao-portoes",
@@ -161,7 +202,8 @@
         "Ligação elétrica e central",
         "Sensores e segurança",
         "Manutenção"
-      ]
+      ],
+      "img": "automacao-portoes"
     },
     {
       "id": "eletricista-naval",
@@ -183,7 +225,8 @@
         "Segurança e normas",
         "Manutenção na prática",
         "Rotina de bordo e estaleiro"
-      ]
+      ],
+      "img": "eletricista-naval"
     },
     {
       "id": "drywall",
@@ -205,7 +248,8 @@
         "Forros e detalhes",
         "Acabamento e pintura",
         "Projeto prático"
-      ]
+      ],
+      "img": "drywall"
     },
     {
       "id": "rotinas-administrativas",
@@ -227,7 +271,8 @@
         "Documentos e processos",
         "Ferramentas digitais",
         "Preparação para o mercado"
-      ]
+      ],
+      "img": "administrativo"
     },
     {
       "id": "nr-10",
@@ -249,7 +294,8 @@
         "Procedimentos seguros",
         "Documentação e responsabilidades",
         "Avaliação e certificação"
-      ]
+      ],
+      "img": "nr10"
     },
     {
       "id": "nr-33",
@@ -271,7 +317,8 @@
         "Permissão de entrada",
         "Equipamentos e resgate",
         "Avaliação"
-      ]
+      ],
+      "img": "nr33"
     },
     {
       "id": "nr-34",
@@ -293,7 +340,8 @@
         "Trabalho a quente e altura",
         "Permissões e sinalização",
         "Avaliação"
-      ]
+      ],
+      "img": "nr34"
     },
     {
       "id": "nr-35",
@@ -315,7 +363,8 @@
         "Equipamentos de proteção",
         "Práticas seguras",
         "Resgate e avaliação"
-      ]
+      ],
+      "img": "nr35"
     }
   ]
 }

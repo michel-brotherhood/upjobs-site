@@ -91,14 +91,12 @@
   box-shadow: 0 0 0 4px rgb(34 197 94 / 0.18);
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header (transparente, integrado ao fundo escuro do hero) ---------- */
 .site-header {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  inset: 0 0 auto 0;
   z-index: var(--z-header);
-  background: rgb(5 5 5 / 0.82);
-  backdrop-filter: saturate(140%) blur(12px);
-  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+  background: transparent;
   color: var(--white);
 }
 .header-inner {
@@ -106,10 +104,25 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-lg);
-  min-height: 4.75rem;
+  min-height: 5rem;
 }
 .brand { display: inline-flex; align-items: center; }
-.brand img { height: 2.35rem; width: auto; }
+.brand img { height: 2.7rem; width: auto; }
+
+/* Redes sociais no header */
+.header-social { display: inline-flex; align-items: center; gap: 0.35rem; }
+.header-social a {
+  display: grid;
+  place-items: center;
+  width: 2.5rem; height: 2.5rem;
+  border-radius: var(--radius-xs);
+  color: rgb(255 255 255 / 0.8);
+  border: 1px solid rgb(255 255 255 / 0.14);
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.header-social a svg { width: 1.15rem; height: 1.15rem; }
+.header-social a:hover { color: var(--white); border-color: var(--green-bright); background: rgb(34 197 94 / 0.12); }
+.nav-social { display: none; }
 
 .main-nav ul {
   display: flex;
@@ -151,18 +164,18 @@
 .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 
 @media (max-width: 68rem) {
-  .header-actions .btn--desktop { display: none; }
+  .header-social--desktop { display: none; }
   .nav-toggle { display: inline-flex; }
   .main-nav {
     position: fixed;
-    inset: 4.75rem 0 auto 0;
+    inset: 5rem 0 auto 0;
     background: var(--grad-dark);
     border-bottom: 1px solid rgb(255 255 255 / 0.08);
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--dur-slow) var(--ease);
   }
-  .main-nav.is-open { max-height: min(80vh, 40rem); overflow-y: auto; }
+  .main-nav.is-open { max-height: min(85vh, 42rem); overflow-y: auto; }
   .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: var(--space-sm) var(--gutter) var(--space-xl); }
   .main-nav a:not(.btn) {
     padding: 0.95rem 0;
@@ -171,6 +184,9 @@
   }
   .main-nav a[aria-current="page"]:not(.btn) { border-bottom-color: rgb(255 255 255 / 0.08); color: var(--green-bright); }
   .main-nav .nav-cta { display: block; margin-top: var(--space-lg); }
+  .main-nav .nav-social { display: block; margin-top: var(--space-md); }
+  .main-nav .nav-social .header-social { justify-content: flex-start; }
+  .main-nav .nav-social .header-social a { color: rgb(255 255 255 / 0.85); }
 }
 
 /* ---------- Botão WhatsApp flutuante ---------- */

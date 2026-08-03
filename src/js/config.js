@@ -26,7 +26,7 @@ export const SITE = {
   social: {
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
-    youtube: "https://youtube.com/",
+    linkedin: "https://linkedin.com/",
   },
   // Mensagem padrão para o WhatsApp
   defaultMessage:
