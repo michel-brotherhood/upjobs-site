@@ -80,6 +80,15 @@
   border-top: 1px solid rgb(255 255 255 / 0.14);
 }
 
+/* ---------- Grid de métricas (2×2) ---------- */
+.stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.stat-grid .card { padding: var(--space-lg); }
+@media (max-width: 22rem) { .stat-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Localização / unidade ---------- */
+.location-grid { display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (min-width: 60rem) { .location-grid { grid-template-columns: 0.85fr 1.15fr; } }
+
 /* ---------- Faixa de segmentos ---------- */
 .seg-grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .seg-card {
