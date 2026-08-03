@@ -28,6 +28,28 @@ document.querySelectorAll("[data-wa]").forEach((el) => {
 initReveal();
 initForms();
 
+// Vídeo "Nossa história": autoplay mudo em loop; clique ativa/desativa o som.
+document.querySelectorAll(".historia-video[data-video-toggle]").forEach((fig) => {
+  const video = fig.querySelector("video");
+  const badge = fig.querySelector("[data-vsound]");
+  const btn = fig.querySelector(".historia-video__play");
+  if (!video) return;
+  const sync = () => {
+    fig.classList.toggle("is-muted", video.muted);
+    if (badge) badge.innerHTML = `${icon(video.muted ? "mute" : "sound")} ${video.muted ? "Sem som" : "Com som"}`;
+    if (btn) btn.setAttribute("aria-label", video.muted ? "Ativar som do vídeo" : "Silenciar vídeo");
+  };
+  const toggle = () => {
+    video.muted = !video.muted;
+    if (!video.muted && video.paused) video.play().catch(() => {});
+    sync();
+  };
+  btn?.addEventListener("click", toggle);
+  video.addEventListener("click", toggle);
+  video.addEventListener("volumechange", sync);
+  sync();
+});
+
 // Carregamentos específicos por página (code splitting nativo via import dinâmico)
 if (page === "inicio") {
   import("./modules/catalog.js").then((m) => {

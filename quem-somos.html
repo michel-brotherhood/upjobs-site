@@ -44,10 +44,12 @@
           <p class="text-muted">Nossa promessa é simples e direta: <strong>Renda + Emprego + Sucesso</strong>. Mais de 3.000 alunos já passaram pela escola*.</p>
         </div>
         <div class="historia-media" data-reveal="120">
-          <figure class="historia-video">
+          <figure class="historia-video is-muted" data-video-toggle>
             <video src="public/video/nossa-historia.mp4" poster="public/images/nossa-historia-poster.jpg"
-                   playsinline muted loop autoplay controls preload="metadata"
+                   playsinline muted loop autoplay preload="metadata"
                    aria-label="Vídeo institucional da Upjobs Cursos e Treinamentos"></video>
+            <span class="historia-video__badge" data-vsound><span data-icon="mute" aria-hidden="true"></span> Sem som</span>
+            <button class="historia-video__play" type="button" aria-label="Ativar som do vídeo"><span data-icon="play"></span></button>
           </figure>
         </div>
       </div>

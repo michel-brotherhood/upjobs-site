@@ -192,10 +192,12 @@
     <section class="section" aria-labelledby="historia-title">
       <div class="container split split--media-first">
         <div class="historia-media" data-reveal>
-          <figure class="historia-video">
+          <figure class="historia-video is-muted" data-video-toggle>
             <video src="public/video/nossa-historia.mp4" poster="public/images/nossa-historia-poster.jpg"
-                   playsinline muted loop autoplay controls preload="metadata"
+                   playsinline muted loop autoplay preload="metadata"
                    aria-label="Vídeo institucional da Upjobs Cursos e Treinamentos"></video>
+            <span class="historia-video__badge" data-vsound><span data-icon="mute" aria-hidden="true"></span> Sem som</span>
+            <button class="historia-video__play" type="button" aria-label="Ativar som do vídeo"><span data-icon="play"></span></button>
           </figure>
         </div>
         <div class="stack--lg" data-reveal="120">
