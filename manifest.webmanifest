@@ -1,0 +1,13 @@
+{
+  "name": "Upjobs Cursos e Treinamentos",
+  "short_name": "Upjobs",
+  "description": "Cursos profissionalizantes, técnicos e industriais em São Gonçalo/RJ.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "public/favicon/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

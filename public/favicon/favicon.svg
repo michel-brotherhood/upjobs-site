@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Upjobs">
+  <rect width="64" height="64" rx="14" fill="#050505"/>
+  <path d="M18 16v18a14 14 0 0 0 28 0V16h-9v18a5 5 0 0 1-10 0V16z" fill="#ffffff"/>
+  <rect x="18" y="42" width="20" height="5" rx="2.5" fill="#009245"/>
+  <path d="M44 16h3.5c4.5 0 7.5 2.6 7.5 6.7S52 29.5 47.5 29.5H44z" fill="#22c55e"/>
+</svg>

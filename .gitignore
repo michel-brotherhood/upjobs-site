@@ -1,0 +1,20 @@
+# Dependências
+node_modules/
+
+# Ambiente
+.env
+.env.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Artefatos de revisão (screenshots locais)
+.review/
+.review-*.png
+
+# Observação: dist/styles.min.css É versionado (o site em produção o referencia).
+# Regenere com `npm run build` sempre que editar arquivos em src/css/.

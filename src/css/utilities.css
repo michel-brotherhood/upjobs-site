@@ -1,0 +1,32 @@
+/* Utilitários enxutos */
+.flow > * + * { margin-top: var(--space-md); }
+.flow--lg > * + * { margin-top: var(--space-lg); }
+
+.text-center { text-align: center; }
+.mx-auto { margin-inline: auto; }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+
+.max-narrow { max-width: 46ch; }
+.full-bleed-safe { overflow-x: clip; }
+
+.hidden { display: none !important; }
+
+/* Reveal on-scroll (progressive enhancement via JS) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* Divisor visual proprietário (barra verde da marca) */
+.brand-rule {
+  width: 3.5rem; height: 4px;
+  border-radius: 4px;
+  background: var(--grad-green);
+}
