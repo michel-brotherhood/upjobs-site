@@ -26,12 +26,16 @@
     var(--hero-img) center / cover no-repeat,
     var(--black);
 }
-.page-hero__inner { position: relative; display: grid; gap: var(--space-md); max-width: 60ch; }
-/* Itens de grid não devem esticar chips/botões como se fossem campos. */
-.page-hero__inner > .chip,
-.page-hero__inner > .eyebrow,
-.page-hero__inner > .course-hero-code,
-.page-hero__inner > .breadcrumb { justify-self: start; }
+/* Conteúdo do hero alinhado ao container (mesma margem das seções abaixo). */
+.page-hero__inner {
+  position: relative;
+  display: grid;
+  gap: var(--space-md);
+  max-width: var(--container);
+  justify-items: start;
+}
+.page-hero h1 { max-width: 24ch; }
+.page-hero .lead { max-width: 58ch; }
 .course-hero-code { display: inline-flex; align-items: center; gap: 0.6rem; }
 .page-hero h1 { color: var(--white); }
 .page-hero .lead { color: rgb(255 255 255 / 0.8); }
