@@ -1,0 +1,321 @@
+{
+  "segments": [
+    { "id": "energia-eletrica", "label": "Energia e Elétrica", "icon": "bolt", "desc": "Instalações residenciais, prediais e industriais, comandos e energia solar." },
+    { "id": "refrigeracao", "label": "Refrigeração e Climatização", "icon": "snow", "desc": "Instalação e manutenção de ar-condicionado e refrigeração." },
+    { "id": "seguranca-eletronica", "label": "Segurança Eletrônica", "icon": "cam", "desc": "CFTV, alarmes, redes e automação residencial." },
+    { "id": "naval-offshore", "label": "Naval e Offshore", "icon": "ship", "desc": "Atuação em estaleiros, plataformas e indústria marítima." },
+    { "id": "construcao-civil", "label": "Construção Civil", "icon": "bricks", "desc": "Instalações, manutenção predial e serviços técnicos." },
+    { "id": "administrativo", "label": "Administrativo e Gestão", "icon": "briefcase", "desc": "Rotinas de escritório, atendimento e gestão." },
+    { "id": "nr-seguranca", "label": "Segurança do Trabalho (NRs)", "icon": "helmet", "desc": "Certificação em Normas Regulamentadoras." }
+  ],
+  "courses": [
+    {
+      "id": "eletricista-predial-residencial",
+      "title": "Eletricista Predial e Residencial",
+      "segment": "energia-eletrica",
+      "featured": true,
+      "short": "Domine instalações elétricas de baixa tensão em residências e prédios, do projeto à execução com segurança.",
+      "forWho": "Quem quer entrar rápido no mercado da elétrica, autônomos e profissionais da manutenção predial.",
+      "learn": [
+        "Leitura e interpretação de projetos elétricos",
+        "Dimensionamento de circuitos, fios e disjuntores",
+        "Instalação de quadros, tomadas, iluminação e proteção",
+        "Aterramento, DR e boas práticas da NBR 5410",
+        "Diagnóstico de falhas e manutenção corretiva"
+      ],
+      "syllabus": [
+        "Fundamentos de eletricidade e segurança",
+        "Ferramentas, materiais e simbologia",
+        "Circuitos residenciais na prática",
+        "Quadros de distribuição e proteção",
+        "Instalações prediais e projeto final"
+      ]
+    },
+    {
+      "id": "comandos-eletricos",
+      "title": "Comandos Elétricos — Força e Controle",
+      "segment": "energia-eletrica",
+      "featured": true,
+      "short": "Painéis, partida de motores e automação industrial: a base para atuar na indústria.",
+      "forWho": "Eletricistas que querem migrar para o setor industrial e ampliar a faixa salarial.",
+      "learn": [
+        "Leitura de diagramas de força e comando",
+        "Contatores, relés, disjuntores e proteção de motores",
+        "Partida direta, estrela-triângulo e reversão",
+        "Montagem e teste de painéis de comando",
+        "Introdução a inversores de frequência"
+      ],
+      "syllabus": [
+        "Componentes de força e comando",
+        "Diagramas e simbologia industrial",
+        "Partidas de motores na bancada",
+        "Montagem de painéis",
+        "Manutenção e diagnóstico"
+      ]
+    },
+    {
+      "id": "redes-distribuicao",
+      "title": "Redes de Distribuição",
+      "segment": "energia-eletrica",
+      "featured": false,
+      "short": "Formação voltada à rede aérea de distribuição de energia, com foco em segurança e prática.",
+      "forWho": "Quem busca atuar em concessionárias, empreiteiras e serviços de rede.",
+      "learn": [
+        "Estrutura da rede de distribuição",
+        "Materiais, condutores e equipamentos",
+        "Procedimentos de segurança em altura e energizado",
+        "Montagem de estruturas e conexões",
+        "Boas práticas de campo"
+      ],
+      "syllabus": [
+        "Introdução às redes de distribuição",
+        "Equipamentos e materiais",
+        "Segurança e NRs aplicadas",
+        "Práticas de montagem",
+        "Rotina de campo"
+      ]
+    },
+    {
+      "id": "energia-solar-fotovoltaica",
+      "title": "Energia Solar Fotovoltaica",
+      "segment": "energia-eletrica",
+      "featured": true,
+      "short": "Projete e instale sistemas fotovoltaicos, um dos mercados que mais cresce no Brasil.",
+      "forWho": "Eletricistas e empreendedores que querem trabalhar com energia solar.",
+      "learn": [
+        "Componentes de um sistema fotovoltaico",
+        "Dimensionamento de geração e consumo",
+        "Instalação de módulos, inversores e proteções",
+        "Conexão à rede e homologação",
+        "Manutenção e comissionamento"
+      ],
+      "syllabus": [
+        "Fundamentos de energia solar",
+        "Projeto e dimensionamento",
+        "Instalação na prática",
+        "Conexão e homologação",
+        "Manutenção do sistema"
+      ]
+    },
+    {
+      "id": "refrigeracao-ar-condicionado",
+      "title": "Refrigeração e Ar Condicionado",
+      "segment": "refrigeracao",
+      "featured": true,
+      "short": "Instalação e manutenção de split, inverter e refrigeração doméstica — serviço de alta demanda.",
+      "forWho": "Quem quer atuar como técnico autônomo em climatização e refrigeração.",
+      "learn": [
+        "Ciclo de refrigeração e componentes",
+        "Instalação de split e inverter",
+        "Carga de gás, vácuo e solda",
+        "Manutenção preventiva e corretiva",
+        "Diagnóstico de defeitos e atendimento ao cliente"
+      ],
+      "syllabus": [
+        "Fundamentos da refrigeração",
+        "Ferramentas e segurança",
+        "Instalação de split na prática",
+        "Manutenção e recarga",
+        "Diagnóstico de falhas"
+      ]
+    },
+    {
+      "id": "seguranca-eletronica-cftv",
+      "title": "Segurança Eletrônica — CFTV e Alarmes",
+      "segment": "seguranca-eletronica",
+      "featured": true,
+      "short": "Instale câmeras, alarmes e sistemas de monitoramento para residências e empresas.",
+      "forWho": "Quem quer empreender em instalação e manutenção de segurança eletrônica.",
+      "learn": [
+        "Câmeras analógicas e IP, DVR e NVR",
+        "Cabeamento, conectores e infraestrutura",
+        "Configuração de alarmes e sensores",
+        "Acesso remoto e monitoramento",
+        "Redes e configuração básica de IP"
+      ],
+      "syllabus": [
+        "Introdução à segurança eletrônica",
+        "CFTV analógico e IP",
+        "Instalação e cabeamento",
+        "Alarmes e sensores",
+        "Acesso remoto e entrega"
+      ]
+    },
+    {
+      "id": "automacao-portoes",
+      "title": "Automação de Portões",
+      "segment": "seguranca-eletronica",
+      "featured": false,
+      "short": "Instalação e manutenção de motores e automatizadores de portões residenciais e comerciais.",
+      "forWho": "Profissionais que querem agregar um serviço rentável e de rápida execução.",
+      "learn": [
+        "Tipos de automatizadores e aplicações",
+        "Instalação mecânica e elétrica",
+        "Ajuste de centrais e controles",
+        "Sensores de segurança e travas",
+        "Manutenção e solução de problemas"
+      ],
+      "syllabus": [
+        "Tipos de portões e motores",
+        "Instalação mecânica",
+        "Ligação elétrica e central",
+        "Sensores e segurança",
+        "Manutenção"
+      ]
+    },
+    {
+      "id": "eletricista-naval",
+      "title": "Eletricista Naval",
+      "segment": "naval-offshore",
+      "featured": true,
+      "short": "Qualificação para atuar em estaleiros, embarcações e plataformas — um dos setores mais fortes do RJ.",
+      "forWho": "Eletricistas que querem acessar as oportunidades da indústria naval e offshore.",
+      "learn": [
+        "Sistemas elétricos embarcados",
+        "Normas e segurança do setor naval",
+        "Leitura de diagramas navais",
+        "Manutenção elétrica em embarcações",
+        "Boas práticas em ambiente offshore"
+      ],
+      "syllabus": [
+        "Introdução ao setor naval e offshore",
+        "Sistemas elétricos embarcados",
+        "Segurança e normas",
+        "Manutenção na prática",
+        "Rotina de bordo e estaleiro"
+      ]
+    },
+    {
+      "id": "drywall",
+      "title": "Drywall",
+      "segment": "construcao-civil",
+      "featured": false,
+      "short": "Execução de paredes, forros e revestimentos em drywall com acabamento profissional.",
+      "forWho": "Quem quer atuar na construção a seco, reformas e acabamentos.",
+      "learn": [
+        "Materiais, perfis e ferramentas",
+        "Montagem de paredes e divisórias",
+        "Forros e sancas",
+        "Tratamento de juntas e acabamento",
+        "Instalações embutidas"
+      ],
+      "syllabus": [
+        "Fundamentos do drywall",
+        "Estruturas e montagem",
+        "Forros e detalhes",
+        "Acabamento e pintura",
+        "Projeto prático"
+      ]
+    },
+    {
+      "id": "rotinas-administrativas",
+      "title": "Rotinas Administrativas",
+      "segment": "administrativo",
+      "featured": false,
+      "short": "Prepare-se para vagas em escritório: atendimento, organização e ferramentas do dia a dia.",
+      "forWho": "Quem busca o primeiro emprego ou recolocação na área administrativa.",
+      "learn": [
+        "Rotinas de escritório e organização",
+        "Atendimento e comunicação profissional",
+        "Noções de departamento pessoal e financeiro",
+        "Ferramentas de produtividade",
+        "Postura e mercado de trabalho"
+      ],
+      "syllabus": [
+        "Rotina administrativa",
+        "Atendimento e comunicação",
+        "Documentos e processos",
+        "Ferramentas digitais",
+        "Preparação para o mercado"
+      ]
+    },
+    {
+      "id": "nr-10",
+      "title": "NR-10 — Segurança em Instalações Elétricas",
+      "segment": "nr-seguranca",
+      "featured": true,
+      "short": "Certificação obrigatória para trabalhar com eletricidade com segurança conforme a norma.",
+      "forWho": "Eletricistas e profissionais que atuam ou vão atuar com instalações elétricas.",
+      "learn": [
+        "Riscos elétricos e medidas de controle",
+        "Procedimentos de trabalho seguro",
+        "Equipamentos de proteção coletiva e individual",
+        "Responsabilidades e documentação",
+        "Primeiros socorros e emergências"
+      ],
+      "syllabus": [
+        "Introdução à NR-10",
+        "Riscos e proteção",
+        "Procedimentos seguros",
+        "Documentação e responsabilidades",
+        "Avaliação e certificação"
+      ]
+    },
+    {
+      "id": "nr-33",
+      "title": "NR-33 — Espaços Confinados",
+      "segment": "nr-seguranca",
+      "featured": false,
+      "short": "Capacitação para trabalho seguro em espaços confinados, exigência de muitas indústrias.",
+      "forWho": "Trabalhadores e supervisores que atuam em espaços confinados.",
+      "learn": [
+        "Identificação de espaços confinados",
+        "Riscos e monitoramento atmosférico",
+        "Permissão de entrada e trabalho",
+        "Equipamentos e resgate",
+        "Procedimentos de emergência"
+      ],
+      "syllabus": [
+        "Conceitos da NR-33",
+        "Riscos e atmosfera",
+        "Permissão de entrada",
+        "Equipamentos e resgate",
+        "Avaliação"
+      ]
+    },
+    {
+      "id": "nr-34",
+      "title": "NR-34 — Construção e Reparação Naval",
+      "segment": "nr-seguranca",
+      "featured": false,
+      "short": "Segurança do trabalho na indústria naval, essencial para estaleiros do Rio de Janeiro.",
+      "forWho": "Profissionais que atuam em estaleiros e reparação naval.",
+      "learn": [
+        "Riscos da atividade naval",
+        "Trabalho a quente e em altura",
+        "Sinalização e permissões",
+        "Equipamentos de proteção",
+        "Procedimentos e responsabilidades"
+      ],
+      "syllabus": [
+        "Introdução à NR-34",
+        "Riscos do setor naval",
+        "Trabalho a quente e altura",
+        "Permissões e sinalização",
+        "Avaliação"
+      ]
+    },
+    {
+      "id": "nr-35",
+      "title": "NR-35 — Trabalho em Altura",
+      "segment": "nr-seguranca",
+      "featured": true,
+      "short": "Certificação para atividades acima de 2 metros com segurança e conforme a norma.",
+      "forWho": "Todo profissional que executa trabalho em altura em qualquer setor.",
+      "learn": [
+        "Análise de risco e planejamento",
+        "Sistemas de proteção contra quedas",
+        "Uso de cinturão, trava-quedas e ancoragem",
+        "Procedimentos de resgate",
+        "Responsabilidades e documentação"
+      ],
+      "syllabus": [
+        "Conceitos da NR-35",
+        "Análise de risco",
+        "Equipamentos de proteção",
+        "Práticas seguras",
+        "Resgate e avaliação"
+      ]
+    }
+  ]
+}

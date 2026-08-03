@@ -1,0 +1,102 @@
+/* Páginas internas — cabeçalho de página, catálogo, curso, contato */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--grad-hero);
+  color: var(--white);
+  padding-block: clamp(2.5rem, 2rem + 4vw, 4.5rem);
+}
+.page-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(120% 120% at 85% 0%, #000 20%, transparent 72%);
+}
+.page-hero__inner { position: relative; display: grid; gap: var(--space-md); max-width: 60ch; }
+/* Itens de grid não devem esticar chips/botões como se fossem campos. */
+.page-hero__inner > .chip,
+.page-hero__inner > .eyebrow,
+.page-hero__inner > .breadcrumb { justify-self: start; }
+.page-hero h1 { color: var(--white); }
+.page-hero .lead { color: rgb(255 255 255 / 0.8); }
+
+/* ---------- Catálogo de cursos ---------- */
+.catalog-toolbar {
+  display: flex; flex-wrap: wrap; gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+.filter-btn {
+  padding: 0.55rem 1.05rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-200);
+  font-weight: var(--fw-medium);
+  background: var(--white);
+  border: 1.5px solid var(--color-border-strong);
+  color: var(--color-text-muted);
+  transition: all var(--dur) var(--ease);
+}
+.filter-btn:hover { border-color: var(--green); color: var(--green); }
+.filter-btn[aria-pressed="true"] {
+  background: var(--grad-green);
+  border-color: transparent;
+  color: var(--white);
+  box-shadow: var(--shadow-green);
+}
+.catalog-grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+.catalog-empty { padding: var(--space-2xl); text-align: center; color: var(--color-text-muted); }
+
+/* ---------- Página de curso ---------- */
+.course-layout { display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (min-width: 64rem) { .course-layout { grid-template-columns: 1fr 22rem; } }
+
+.course-hero-meta { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-md); }
+.course-hero-meta span { display: inline-flex; align-items: center; gap: 0.4rem; font-size: var(--fs-200); color: rgb(255 255 255 / 0.82); }
+.course-hero-meta svg { width: 1.1rem; height: 1.1rem; color: var(--green-bright); }
+
+.course-section { margin-top: var(--space-2xl); }
+.course-section h2 { font-size: var(--fs-500); margin-bottom: var(--space-md); }
+.course-section ul { display: grid; gap: var(--space-sm); }
+
+.syllabus { counter-reset: mod; display: grid; gap: var(--space-sm); }
+.syllabus li {
+  display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--space-md); align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+}
+.syllabus li::before {
+  counter-increment: mod; content: counter(mod, decimal-leading-zero);
+  font-family: var(--font-display); font-weight: var(--fw-bold); color: var(--green); font-size: var(--fs-400);
+}
+
+/* Card lateral (sticky) de matrícula */
+.enroll-card { position: sticky; top: 6rem; }
+.enroll-card .price-note { font-size: var(--fs-100); color: var(--color-text-muted); }
+.enroll-card ul { list-style: none; display: grid; gap: 0.5rem; margin-block: var(--space-md); font-size: var(--fs-200); }
+.enroll-card ul li { display: grid; grid-template-columns: 1.2rem 1fr; gap: 0.5rem; }
+.enroll-card ul li svg { width: 1.1rem; height: 1.1rem; color: var(--green); margin-top: 0.15rem; }
+
+/* ---------- Contato ---------- */
+.contact-grid { display: grid; gap: clamp(1.5rem, 4vw, 3rem); }
+@media (min-width: 60rem) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+.contact-item { display: flex; gap: var(--space-md); align-items: flex-start; }
+.contact-item .icon-badge { flex: none; }
+.contact-item strong { display: block; color: var(--color-heading); }
+.contact-item a, .contact-item p { color: var(--color-text-muted); }
+.contact-item a:hover { color: var(--green); }
+.map-embed {
+  border: 0; width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-md);
+  filter: grayscale(0.2);
+}
+
+/* ---------- ESG ---------- */
+.pillar { padding: var(--space-xl); border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--white); }
+.pillar--active { border-color: var(--green); box-shadow: var(--shadow-md); }
+.pillar .tag { font-family: var(--font-display); font-size: var(--fs-600); color: var(--color-border-strong); }
+.pillar--active .tag { color: var(--green); }
+
+/* ---------- Infra galeria ---------- */
+.gallery { display: grid; gap: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }

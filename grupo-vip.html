@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grupo VIP no WhatsApp — Upjobs Cursos e Treinamentos</title>
+  <meta name="description" content="Entre no Grupo VIP da Upjobs no WhatsApp e receba vagas de emprego e promoções de cursos exclusivas em primeira mão.">
+  <link rel="canonical" href="https://www.upjobscursos.com.br/grupo-vip.html">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Grupo VIP no WhatsApp — Upjobs">
+  <meta property="og:description" content="Vagas e promoções exclusivas antes de todo mundo.">
+  <meta property="og:image" content="public/images/upjobs-logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="public/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body data-page="grupo-vip" class="full-bleed-safe">
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <nav class="breadcrumb" aria-label="Você está aqui"><ol><li><a href="index.html">Início</a></li><li>Grupo VIP</li></ol></nav>
+        <span class="eyebrow eyebrow--light">Grupo VIP no WhatsApp</span>
+        <h1>Vagas e promoções exclusivas antes de todo mundo</h1>
+        <p class="lead">Participe da nossa comunidade e receba oportunidades de emprego, dicas de carreira e condições especiais de matrícula em primeira mão.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items:center">
+        <div class="stack--lg" data-reveal>
+          <ul class="check-list">
+            <li>Vagas de emprego divulgadas pelas empresas parceiras</li>
+            <li>Promoções e descontos exclusivos em cursos</li>
+            <li>Avisos de novas turmas antes da divulgação geral</li>
+            <li>Dicas práticas de carreira e do mercado técnico</li>
+          </ul>
+          <div class="cluster">
+            <a class="btn btn--whatsapp btn--lg" id="vip-link" href="grupo-vip.html" target="_blank" rel="noopener"><span data-icon="whatsapp"></span> Entrar no Grupo VIP</a>
+            <a class="btn btn--ghost" data-wa="Olá! Quero entrar no Grupo VIP da Upjobs." href="#">Prefiro falar no WhatsApp</a>
+          </div>
+          <p class="text-muted" style="font-size:var(--fs-100)">Ao entrar, você concorda em receber mensagens da Upjobs. Você pode sair do grupo quando quiser. Consulte a <a class="text-green" href="privacidade.html">Política de Privacidade</a>.</p>
+        </div>
+        <div data-reveal="120">
+          <div class="cta-band">
+            <span class="badge-dot" style="color:#fff">Comunidade Upjobs</span>
+            <h2 style="margin-top:1rem">+ oportunidades<br>para a sua carreira</h2>
+            <p class="lead">Quem está no grupo fica sempre à frente. Não perca a próxima vaga.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="src/js/main.js"></script>
+  <script type="module">
+    import { SITE } from "./src/js/config.js";
+    // Link oficial do grupo VIP (a confirmar pelo cliente em config.js)
+    const el = document.getElementById("vip-link");
+    if (el && SITE.vipGroupUrl && SITE.vipGroupUrl !== "https://chat.whatsapp.com/") el.href = SITE.vipGroupUrl;
+    else if (el) el.href = "https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent("Olá! Quero entrar no Grupo VIP da Upjobs.");
+  </script>
+</body>
+</html>
