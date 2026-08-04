@@ -24,30 +24,6 @@ function maskPhone(value) {
   });
 }
 
-/** Aplica máscara de CPF: 000.000.000-00. */
-function maskCPF(value) {
-  const d = value.replace(/\D/g, "").slice(0, 11);
-  return d
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-}
-
-function isValidCPF(cpf) {
-  const d = cpf.replace(/\D/g, "");
-  if (d.length !== 11 || /^(\d)\1{10}$/.test(d)) return false;
-  let sum = 0;
-  for (let i = 0; i < 9; i++) sum += Number(d[i]) * (10 - i);
-  let check = (sum * 10) % 11;
-  if (check === 10) check = 0;
-  if (check !== Number(d[9])) return false;
-  sum = 0;
-  for (let i = 0; i < 10; i++) sum += Number(d[i]) * (11 - i);
-  check = (sum * 10) % 11;
-  if (check === 10) check = 0;
-  return check === Number(d[10]);
-}
-
 function setError(field, msg) {
   if (!field) return;
   const box = field.querySelector(".field__error");
@@ -84,11 +60,6 @@ export async function initMatricula() {
       input.value = maskPhone(input.value);
     });
   });
-  const cpfInput = form.querySelector("#m-cpf");
-  cpfInput.addEventListener("input", () => {
-    cpfInput.value = maskCPF(cpfInput.value);
-  });
-
   // Limpa erro ao editar
   form.addEventListener("input", (e) => {
     const field = e.target.closest(".field");
@@ -104,7 +75,6 @@ export async function initMatricula() {
     const nome = form.querySelector("#m-nome");
     const email = form.querySelector("#m-email");
     const celular = form.querySelector("#m-celular");
-    const cpf = form.querySelector("#m-cpf");
     const curso = form.querySelector("#m-curso");
     const consent = form.querySelector("#m-consent");
 
@@ -118,10 +88,6 @@ export async function initMatricula() {
     }
     if (celular.value.replace(/\D/g, "").length < 10) {
       setError(celular.closest(".field"), "Informe um celular válido com DDD.");
-      ok = false;
-    }
-    if (!isValidCPF(cpf.value)) {
-      setError(cpf.closest(".field"), "Informe um CPF válido.");
       ok = false;
     }
     if (!curso.value) {
@@ -148,8 +114,6 @@ export async function initMatricula() {
       ["Endereço", fd.get("endereco")],
       ["Telefone", fd.get("telefone")],
       ["Celular/WhatsApp", fd.get("celular")],
-      ["CPF", fd.get("cpf")],
-      ["RG", fd.get("rg")],
       ["Curso de interesse", fd.get("curso")],
       ["Forma de pagamento", fd.get("pagamento")],
       ["Mensagem", fd.get("mensagem")],
