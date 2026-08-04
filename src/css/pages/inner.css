@@ -117,6 +117,17 @@
 .pillar .tag { font-family: var(--font-display); font-size: var(--fs-600); color: var(--color-border-strong); }
 .pillar--active .tag { color: var(--green); }
 
+/* ---------- Treinamentos: lista de referência das NRs ---------- */
+.nr-list {
+  display: grid;
+  gap: var(--space-md) var(--space-2xl);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 48rem) { .nr-list { grid-template-columns: 1fr 1fr; } }
+.nr-list ul { list-style: none; display: grid; gap: 0.55rem; }
+.nr-list li { font-size: var(--fs-200); color: var(--color-text-muted); line-height: 1.4; }
+.nr-list li b { color: var(--color-heading); font-family: var(--font-mono, inherit); margin-right: 0.35rem; }
+
 /* ---------- Infra galeria ---------- */
 .gallery { display: grid; gap: var(--space-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .gallery-photo {
