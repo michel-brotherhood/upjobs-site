@@ -365,6 +365,259 @@
         "Resgate e avaliação"
       ],
       "img": "nr35"
+    },
+    {
+      "id": "eletronica-basica",
+      "title": "Eletrônica Básica",
+      "segment": "energia-eletrica",
+      "featured": false,
+      "short": "Inicie na eletrônica com o conhecimento essencial e muita aplicação real.",
+      "forWho": "Quem quer começar na eletrônica e criar base para elétrica, automação e manutenção de equipamentos.",
+      "learn": [
+        "Grandezas elétricas: tensão, corrente e resistência",
+        "Componentes: resistores, capacitores, diodos e transistores",
+        "Leitura de esquemas e uso do multímetro",
+        "Montagem de circuitos em protoboard",
+        "Solda eletrônica e boas práticas"
+      ],
+      "syllabus": [
+        "Fundamentos de eletricidade e eletrônica",
+        "Componentes passivos e ativos",
+        "Instrumentos de medição",
+        "Circuitos práticos em bancada",
+        "Diagnóstico e manutenção básica"
+      ],
+      "img": "eletronica-basica"
+    },
+    {
+      "id": "inversor-frequencia",
+      "title": "Inversor de Frequência",
+      "segment": "energia-eletrica",
+      "featured": false,
+      "short": "Domine o controle de velocidade e a partida de motores elétricos com inversores de frequência.",
+      "forWho": "Eletricistas e profissionais de manutenção industrial que querem trabalhar com acionamento de motores.",
+      "learn": [
+        "Princípios de funcionamento do inversor",
+        "Parametrização e configuração",
+        "Controle de velocidade e rampas de aceleração",
+        "Proteções e diagnóstico de falhas",
+        "Aplicações industriais reais"
+      ],
+      "syllabus": [
+        "Motores elétricos e acionamentos",
+        "Introdução ao inversor de frequência",
+        "Parâmetros essenciais",
+        "Ligações e comando",
+        "Prática de configuração e testes"
+      ],
+      "img": "inversor-frequencia"
+    },
+    {
+      "id": "carregador-veicular",
+      "title": "Carregador Elétrico Veicular",
+      "segment": "energia-eletrica",
+      "featured": false,
+      "short": "Aprenda a instalar e manter estações de recarga para veículos elétricos, um mercado em plena expansão.",
+      "forWho": "Eletricistas que querem entrar no mercado da eletromobilidade e instaladores de infraestrutura de recarga.",
+      "learn": [
+        "Tipos de carregadores e conectores",
+        "Requisitos de instalação elétrica e proteção",
+        "Dimensionamento do ponto de recarga",
+        "Instalação e comissionamento",
+        "Manutenção e segurança"
+      ],
+      "syllabus": [
+        "Introdução à eletromobilidade",
+        "Normas e infraestrutura de recarga",
+        "Projeto do ponto de recarga",
+        "Instalação na prática",
+        "Testes, manutenção e segurança"
+      ],
+      "img": "carregador-veicular"
+    },
+    {
+      "id": "refrigeracao-domiciliar",
+      "title": "Refrigeração Domiciliar",
+      "segment": "refrigeracao",
+      "featured": false,
+      "short": "Aprenda manutenção e conserto de geladeiras e freezers. Transforme conhecimento em renda todos os meses.",
+      "forWho": "Quem quer atuar como técnico autônomo em refrigeração doméstica e comercial de pequeno porte.",
+      "learn": [
+        "Ciclo de refrigeração na prática",
+        "Componentes: compressor, condensador e evaporador",
+        "Carga de gás e detecção de vazamentos",
+        "Diagnóstico de falhas elétricas e mecânicas",
+        "Manutenção de geladeiras e freezers"
+      ],
+      "syllabus": [
+        "Fundamentos da refrigeração",
+        "Ferramentas e instrumentos",
+        "Sistema elétrico dos equipamentos",
+        "Solda e carga de gás",
+        "Diagnóstico e reparo na bancada"
+      ],
+      "img": "refrigeracao-domiciliar"
+    },
+    {
+      "id": "maquina-lavar",
+      "title": "Máquina de Lavar",
+      "segment": "refrigeracao",
+      "featured": false,
+      "short": "Aprenda manutenção e conserto de lavadoras na prática. Transforme conhecimento em renda rápida.",
+      "forWho": "Quem busca uma renda extra ou uma profissão como técnico em manutenção de eletrodomésticos.",
+      "learn": [
+        "Funcionamento mecânico e elétrico das lavadoras",
+        "Placas eletrônicas e sensores",
+        "Troca de rolamentos, correias e motores",
+        "Diagnóstico de defeitos comuns",
+        "Atendimento e orçamento ao cliente"
+      ],
+      "syllabus": [
+        "Tipos de lavadoras e componentes",
+        "Sistema elétrico e eletrônico",
+        "Desmontagem e montagem",
+        "Diagnóstico de falhas",
+        "Reparos práticos"
+      ],
+      "img": "maquina-lavar"
+    },
+    {
+      "id": "soldador",
+      "title": "Soldador",
+      "segment": "naval-offshore",
+      "featured": false,
+      "short": "Aprenda técnicas de soldagem com prática real. Uma habilidade que abre portas na indústria.",
+      "forWho": "Quem quer atuar em estaleiros, indústria e construção metálica com uma das profissões mais requisitadas.",
+      "learn": [
+        "Processos de soldagem (eletrodo revestido, MIG/MAG)",
+        "Leitura de símbolos de solda",
+        "Preparação de juntas e materiais",
+        "Segurança e uso de EPIs",
+        "Prática em diferentes posições de solda"
+      ],
+      "syllabus": [
+        "Fundamentos e segurança na soldagem",
+        "Equipamentos e consumíveis",
+        "Solda com eletrodo revestido",
+        "Solda MIG/MAG",
+        "Prática e inspeção visual"
+      ],
+      "img": "soldador"
+    },
+    {
+      "id": "mecanico-diesel",
+      "title": "Mecânico Diesel Naval e Industrial",
+      "segment": "naval-offshore",
+      "featured": false,
+      "short": "Aprenda manutenção de motores a diesel na prática. Alta demanda e grandes oportunidades de renda.",
+      "forWho": "Quem deseja atuar na manutenção de motores diesel em embarcações, geradores e máquinas industriais.",
+      "learn": [
+        "Funcionamento do motor diesel",
+        "Sistemas de injeção, arrefecimento e lubrificação",
+        "Diagnóstico de falhas",
+        "Manutenção preventiva e corretiva",
+        "Boas práticas em ambiente naval e industrial"
+      ],
+      "syllabus": [
+        "Fundamentos do motor diesel",
+        "Sistemas do motor",
+        "Ferramentas e medições",
+        "Desmontagem e montagem",
+        "Manutenção na prática"
+      ],
+      "img": "mecanico-diesel"
+    },
+    {
+      "id": "metrologia",
+      "title": "Metrologia",
+      "segment": "naval-offshore",
+      "featured": false,
+      "short": "Domine medições e instrumentos com precisão profissional. Detalhes fazem grandes profissionais.",
+      "forWho": "Profissionais da indústria, mecânica e naval que precisam medir com precisão e garantir qualidade.",
+      "learn": [
+        "Sistemas de medição e unidades",
+        "Uso de paquímetro e micrômetro",
+        "Instrumentos de precisão",
+        "Tolerâncias e ajustes",
+        "Controle de qualidade dimensional"
+      ],
+      "syllabus": [
+        "Introdução à metrologia",
+        "Instrumentos de medição",
+        "Paquímetro e micrômetro na prática",
+        "Tolerâncias e leitura",
+        "Controle e registro de medições"
+      ],
+      "img": "metrologia"
+    },
+    {
+      "id": "assistente-dp-rh",
+      "title": "Assistente de DP e RH",
+      "segment": "administrativo",
+      "featured": false,
+      "short": "Atue nos processos de rotinas trabalhistas, folha de pagamento e legislação.",
+      "forWho": "Quem quer ingressar na área de Departamento Pessoal e Recursos Humanos.",
+      "learn": [
+        "Admissão e demissão de funcionários",
+        "Folha de pagamento e encargos",
+        "Rotinas trabalhistas e eSocial",
+        "Legislação trabalhista (CLT)",
+        "Benefícios e controle de ponto"
+      ],
+      "syllabus": [
+        "Introdução ao DP e RH",
+        "Admissão e documentação",
+        "Folha de pagamento",
+        "Rotinas e obrigações legais",
+        "Rescisão e práticas"
+      ],
+      "img": "assistente-administrativo"
+    },
+    {
+      "id": "atendente-farmacia",
+      "title": "Atendente de Farmácia",
+      "segment": "administrativo",
+      "featured": false,
+      "short": "Capacitação para atuação na dispensação de medicamentos e atendimento técnico em farmácias.",
+      "forWho": "Quem deseja trabalhar em farmácias e drogarias com atendimento e vendas.",
+      "learn": [
+        "Noções de farmacologia",
+        "Dispensação de medicamentos",
+        "Atendimento e vendas",
+        "Controle de estoque e validade",
+        "Legislação sanitária"
+      ],
+      "syllabus": [
+        "Introdução ao setor farmacêutico",
+        "Medicamentos e classificação",
+        "Atendimento ao cliente",
+        "Estoque e organização",
+        "Rotinas e legislação"
+      ],
+      "img": "atendente-farmacia"
+    },
+    {
+      "id": "seguranca-geral-nrs",
+      "title": "Segurança Geral (NRs)",
+      "segment": "nr-seguranca",
+      "featured": false,
+      "short": "Treinamentos em Normas Regulamentadoras inclusos como bônus nos cursos da Upjobs.",
+      "forWho": "Todos os alunos que precisam de certificação em NRs para atuar com segurança no mercado.",
+      "learn": [
+        "Fundamentos de segurança do trabalho",
+        "Uso correto de EPIs e EPCs",
+        "Prevenção de acidentes",
+        "Normas Regulamentadoras aplicáveis",
+        "Boas práticas no ambiente de trabalho"
+      ],
+      "syllabus": [
+        "Introdução à segurança do trabalho",
+        "Riscos e prevenção",
+        "EPIs e EPCs",
+        "Normas Regulamentadoras",
+        "Avaliação e certificação"
+      ],
+      "img": "nr-seguranca"
     }
   ]
 }
