@@ -137,25 +137,25 @@
       "img": "energia-solar"
     },
     {
-      "id": "refrigeracao-ar-condicionado",
-      "title": "Refrigeração e Ar Condicionado",
+      "id": "ar-condicionado",
+      "title": "Ar Condicionado",
       "segment": "refrigeracao",
       "featured": true,
-      "short": "Instalação e manutenção de split, inverter e refrigeração doméstica — serviço de alta demanda.",
-      "forWho": "Quem quer atuar como técnico autônomo em climatização e refrigeração.",
+      "short": "Instalação e manutenção de ar-condicionado split e inverter — um dos serviços mais procurados do ano todo.",
+      "forWho": "Quem quer atuar como técnico autônomo instalando e fazendo manutenção de aparelhos de ar-condicionado.",
       "learn": [
-        "Ciclo de refrigeração e componentes",
-        "Instalação de split e inverter",
-        "Carga de gás, vácuo e solda",
-        "Manutenção preventiva e corretiva",
+        "Fundamentos do ciclo de refrigeração aplicado ao ar-condicionado",
+        "Instalação de aparelhos split e inverter",
+        "Carga de gás, vácuo e teste de estanqueidade",
+        "Manutenção preventiva e corretiva de splits",
         "Diagnóstico de defeitos e atendimento ao cliente"
       ],
       "syllabus": [
-        "Fundamentos da refrigeração",
-        "Ferramentas e segurança",
+        "Fundamentos da climatização",
+        "Ferramentas, manômetros e segurança",
         "Instalação de split na prática",
-        "Manutenção e recarga",
-        "Diagnóstico de falhas"
+        "Carga de gás e recarga do sistema",
+        "Diagnóstico de falhas em aparelhos inverter"
       ],
       "img": "refrigeracao"
     },
@@ -457,6 +457,29 @@
         "Diagnóstico e reparo na bancada"
       ],
       "img": "refrigeracao-domiciliar"
+    },
+    {
+      "id": "refrigeracao-comercial-industrial",
+      "title": "Refrigeração Comercial e Industrial",
+      "segment": "refrigeracao",
+      "featured": false,
+      "short": "Instalação e manutenção de câmaras frigoríficas e balcões refrigerados para comércios e indústrias.",
+      "forWho": "Quem quer atuar em supermercados, açougues, restaurantes e indústrias que dependem de refrigeração o ano todo.",
+      "learn": [
+        "Sistemas de refrigeração comercial e industrial",
+        "Câmaras frigoríficas e balcões refrigerados",
+        "Compressores, condensadores e evaporadores de maior porte",
+        "Carga de gás e manutenção de sistemas comerciais",
+        "Diagnóstico de falhas e manutenção preventiva"
+      ],
+      "syllabus": [
+        "Fundamentos da refrigeração comercial",
+        "Equipamentos e componentes de maior porte",
+        "Instalação de câmaras e balcões refrigerados",
+        "Manutenção e recarga de sistemas comerciais",
+        "Diagnóstico de falhas na prática"
+      ],
+      "img": "refrigeracao-comercial-industrial"
     },
     {
       "id": "maquina-lavar",
