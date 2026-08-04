@@ -120,6 +120,8 @@ só aqui:
 - **Logos de empresas parceiras** (ESG) — inserir marcas autorizadas.
 - **Fotos** (infraestrutura, equipe, certificado, consultoria/in company) — todos os blocos com a
   tarja visual "IMAGEM" (`.img-ph`) precisam de fotos reais autorizadas.
+- **Curso "Refrigeração Comercial e Industrial"** (`src/data/cursos.json`) — ainda sem foto própria
+  (câmara frigorífica/balcão refrigerado); usa o ícone do segmento como card até ter uma imagem real.
 
 ### Assets de imagem recomendados
 
