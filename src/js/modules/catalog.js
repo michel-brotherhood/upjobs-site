@@ -81,6 +81,16 @@ export async function initFeatured() {
   grid.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-visible"));
 }
 
+/** Renderiza uma lista fixa de cursos (por id, na ordem informada) num container. */
+export async function initCourseList(containerId, ids) {
+  const grid = document.getElementById(containerId);
+  if (!grid) return;
+  const data = await loadCourses();
+  const list = ids.map((id) => data.courses.find((c) => c.id === id)).filter(Boolean);
+  grid.innerHTML = list.map((c) => courseCard(c, data)).join("");
+  grid.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-visible"));
+}
+
 /** Renderiza a grade de segmentos na home (#segments-grid). */
 export async function initSegments() {
   const grid = document.getElementById("segments-grid");
