@@ -49,8 +49,8 @@
       "title": "Eletricista Predial e Residencial",
       "segment": "energia-eletrica",
       "featured": true,
-      "short": "Domine instalações elétricas de baixa tensão em residências e prédios, do projeto à execução com segurança.",
-      "forWho": "Quem quer entrar rápido no mercado da elétrica, autônomos e profissionais da manutenção predial.",
+      "short": "Aprenda na prática como instalar, manter e reparar sistemas elétricos em casas, apartamentos e prédios, seguindo todas as normas de segurança.",
+      "forWho": "Iniciantes que querem começar do zero, profissionais que buscam se especializar e quem procura uma nova fonte de renda.",
       "learn": [
         "Leitura e interpretação de projetos elétricos",
         "Dimensionamento de circuitos, fios e disjuntores",
@@ -65,15 +65,17 @@
         "Quadros de distribuição e proteção",
         "Instalações prediais e projeto final"
       ],
-      "img": "eletricista-predial"
+      "img": "eletricista-predial",
+      "duration": "60h",
+      "modality": "presencial"
     },
     {
       "id": "comandos-eletricos",
-      "title": "Comandos Elétricos — Força e Controle",
+      "title": "Eletricista Força e Controle",
       "segment": "energia-eletrica",
       "featured": true,
-      "short": "Painéis, partida de motores e automação industrial: a base para atuar na indústria.",
-      "forWho": "Eletricistas que querem migrar para o setor industrial e ampliar a faixa salarial.",
+      "short": "Ideal para quem deseja atuar na área industrial, aprendendo na prática a instalação, manutenção e comando de motores elétricos e sistemas automatizados.",
+      "forWho": "Eletricistas que querem entrar ou se especializar na área industrial, técnicos de manutenção e quem busca uma profissão com alta empregabilidade.",
       "learn": [
         "Leitura de diagramas de força e comando",
         "Contatores, relés, disjuntores e proteção de motores",
@@ -88,53 +90,66 @@
         "Montagem de painéis",
         "Manutenção e diagnóstico"
       ],
-      "img": "comandos-eletricos"
+      "img": "comandos-eletricos",
+      "duration": "60h",
+      "modality": "presencial"
     },
     {
       "id": "redes-distribuicao",
-      "title": "Redes de Distribuição",
+      "title": "Eletricista Redes de Distribuição",
       "segment": "energia-eletrica",
       "featured": false,
-      "short": "Formação voltada à rede aérea de distribuição de energia, com foco em segurança e prática.",
-      "forWho": "Quem busca atuar em concessionárias, empreiteiras e serviços de rede.",
+      "short": "Curso 100% online para quem deseja adquirir conhecimento técnico sobre o funcionamento das redes de distribuição de energia elétrica.",
+      "forWho": "Quem deseja atuar em concessionárias como Enel e Light, em empresas terceirizadas, ou construir uma base teórica sólida no setor elétrico.",
       "learn": [
-        "Estrutura da rede de distribuição",
-        "Materiais, condutores e equipamentos",
-        "Procedimentos de segurança em altura e energizado",
-        "Montagem de estruturas e conexões",
-        "Boas práticas de campo"
+        "Fundamentos de eletricidade aplicados às redes (tensão, corrente, resistência e potência)",
+        "Redes de baixa e média tensão: conceitos e aplicações",
+        "Componentes das redes: postes, isoladores, transformadores e condutores",
+        "Sistema de medição e princípios de transformadores",
+        "Identificação e análise de falhas em redes energizadas"
       ],
       "syllabus": [
-        "Introdução às redes de distribuição",
-        "Equipamentos e materiais",
-        "Segurança e NRs aplicadas",
-        "Práticas de montagem",
-        "Rotina de campo"
+        "Introdução à eletricidade aplicada às redes",
+        "Redes de distribuição de energia elétrica",
+        "Componentes das redes elétricas",
+        "Montagem de redes aéreas (conceitos)",
+        "Manutenção de redes de distribuição",
+        "Sistema de medição e transformadores",
+        "Cálculo de demanda e carga elétrica",
+        "Operação em redes energizadas (teoria)",
+        "Identificação e análise de falhas",
+        "Funcionamento das concessionárias e boas práticas"
       ],
-      "img": "redes-distribuicao"
+      "img": "redes-distribuicao",
+      "duration": "240h",
+      "modality": "ead"
     },
     {
       "id": "energia-solar-fotovoltaica",
-      "title": "Energia Solar Fotovoltaica",
+      "title": "Qualificação Instalação Energia Solar",
       "segment": "energia-eletrica",
       "featured": true,
-      "short": "Projete e instale sistemas fotovoltaicos, um dos mercados que mais cresce no Brasil.",
-      "forWho": "Eletricistas e empreendedores que querem trabalhar com energia solar.",
+      "short": "Aprenda a instalar, projetar e manter sistemas de energia solar com foco em aplicações residenciais e comerciais.",
+      "forWho": "Eletricistas e empreendedores que querem entrar no mercado de energia solar, um dos setores que mais cresce no Brasil.",
       "learn": [
-        "Componentes de um sistema fotovoltaico",
-        "Dimensionamento de geração e consumo",
-        "Instalação de módulos, inversores e proteções",
-        "Conexão à rede e homologação",
-        "Manutenção e comissionamento"
+        "Painéis fotovoltaicos, coletores solares e sistemas de armazenamento",
+        "Sistemas conectados à rede (grid-tied) e autônomos (off-grid)",
+        "Projeto e dimensionamento: avaliação do local, carga e sombreamento",
+        "Instalação segura, testes e comissionamento",
+        "Normas, conexão à rede e procedimentos de licenciamento",
+        "Bônus inclusos: NR-10 e NR-35 (EAD) + mentoria de carreira"
       ],
       "syllabus": [
-        "Fundamentos de energia solar",
-        "Projeto e dimensionamento",
-        "Instalação na prática",
-        "Conexão e homologação",
-        "Manutenção do sistema"
+        "Introdução à energia solar",
+        "Tecnologias de energia solar (fotovoltaico e térmico)",
+        "Sistemas grid-tied e off-grid",
+        "Projeto e dimensionamento de sistemas solares",
+        "Instalação e manutenção",
+        "Aspectos técnicos e regulatórios"
       ],
-      "img": "energia-solar"
+      "img": "energia-solar",
+      "duration": "32h",
+      "modality": "presencial"
     },
     {
       "id": "ar-condicionado",
@@ -371,8 +386,8 @@
       "title": "Eletrônica Básica",
       "segment": "energia-eletrica",
       "featured": false,
-      "short": "Inicie na eletrônica com o conhecimento essencial e muita aplicação real.",
-      "forWho": "Quem quer começar na eletrônica e criar base para elétrica, automação e manutenção de equipamentos.",
+      "short": "Conheça e identifique componentes eletrônicos básicos, além de aplicá-los em circuitos eletrônicos de menor complexidade.",
+      "forWho": "Quem quer iniciar na eletrônica e criar base sólida para elétrica, automação e manutenção de equipamentos.",
       "learn": [
         "Grandezas elétricas: tensão, corrente e resistência",
         "Componentes: resistores, capacitores, diodos e transistores",
@@ -387,14 +402,16 @@
         "Circuitos práticos em bancada",
         "Diagnóstico e manutenção básica"
       ],
-      "img": "eletronica-basica"
+      "img": "eletronica-basica",
+      "duration": "40h",
+      "modality": "presencial"
     },
     {
       "id": "inversor-frequencia",
-      "title": "Inversor de Frequência",
+      "title": "Soft Starter e Inversor de Frequência",
       "segment": "energia-eletrica",
       "featured": false,
-      "short": "Domine o controle de velocidade e a partida de motores elétricos com inversores de frequência.",
+      "short": "Conheça os dispositivos essenciais para proteger motores e reduzir custos de energia com partida em rampa — soft starter e inversor de frequência.",
       "forWho": "Eletricistas e profissionais de manutenção industrial que querem trabalhar com acionamento de motores.",
       "learn": [
         "Princípios de funcionamento do inversor",
@@ -410,30 +427,36 @@
         "Ligações e comando",
         "Prática de configuração e testes"
       ],
-      "img": "inversor-frequencia"
+      "img": "inversor-frequencia",
+      "duration": "40h",
+      "modality": "presencial"
     },
     {
       "id": "carregador-veicular",
       "title": "Carregador Elétrico Veicular",
       "segment": "energia-eletrica",
       "featured": false,
-      "short": "Aprenda a instalar e manter estações de recarga para veículos elétricos, um mercado em plena expansão.",
-      "forWho": "Eletricistas que querem entrar no mercado da eletromobilidade e instaladores de infraestrutura de recarga.",
+      "short": "Capacite-se para a mobilidade sustentável aprendendo sobre instalação e manutenção de infraestruturas de carregamento elétrico.",
+      "forWho": "Eletricistas, técnicos automotivos e entusiastas da tecnologia que querem atuar na mobilidade elétrica.",
       "learn": [
-        "Tipos de carregadores e conectores",
-        "Requisitos de instalação elétrica e proteção",
-        "Dimensionamento do ponto de recarga",
-        "Instalação e comissionamento",
-        "Manutenção e segurança"
+        "Fundamentos de veículos elétricos: baterias, motores e tecnologias de carregamento",
+        "Infraestrutura: carregadores residenciais, comerciais e públicos",
+        "Normas e regulamentações de segurança para instalação",
+        "Projeto, dimensionamento e instalação de sistemas de carregamento",
+        "Manutenção preventiva, corretiva e diagnóstico de falhas"
       ],
       "syllabus": [
-        "Introdução à eletromobilidade",
-        "Normas e infraestrutura de recarga",
-        "Projeto do ponto de recarga",
-        "Instalação na prática",
-        "Testes, manutenção e segurança"
+        "Introdução aos veículos elétricos",
+        "Infraestrutura de carregamento",
+        "Normas e regulamentações",
+        "Projeto e instalação",
+        "Manutenção e diagnóstico de problemas",
+        "Tecnologias emergentes e tendências",
+        "Prática em laboratório"
       ],
-      "img": "carregador-veicular"
+      "img": "carregador-veicular",
+      "duration": "24h",
+      "modality": "presencial"
     },
     {
       "id": "refrigeracao-domiciliar",

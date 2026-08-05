@@ -34,6 +34,28 @@ export function courseCode(data, course) {
   return `${segCode(course.segment)}-${String(n).padStart(2, "0")}`;
 }
 
+/** Rótulo de exibição da modalidade do curso. */
+const MODALITY_LABELS = {
+  presencial: "Presencial",
+  ead: "100% EAD",
+  semipresencial: "Semipresencial",
+};
+export function modalityLabel(course) {
+  return MODALITY_LABELS[course.modality] || "Presencial";
+}
+
+/** Chips de meta-informação do curso (hero da página de curso), sensíveis à modalidade. */
+export function courseMetaChips(course) {
+  const ead = course.modality === "ead";
+  const chips = [];
+  if (course.duration) chips.push({ icon: "clock", text: course.duration });
+  chips.push({ icon: ead ? "spark" : "users", text: modalityLabel(course) });
+  if (!ead) chips.push({ icon: "wrench", text: "Aulas práticas" });
+  chips.push({ icon: "cert", text: "Certificado incluso" });
+  if (!ead) chips.push({ icon: "shield", text: "EPIs fornecidos" });
+  return chips;
+}
+
 /** Benefícios inclusos comuns a todos os cursos (diferenciais da escola). */
 export const COURSE_INCLUDES = [
   "Aulas 100% práticas com ferramentas reais",
