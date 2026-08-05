@@ -37,13 +37,6 @@ export async function initCoursePage() {
   root.innerHTML = `
     <section class="page-hero${heroImg ? " page-hero--photo" : ""}"${heroStyle}>
       <div class="container page-hero__inner">
-        <nav class="breadcrumb" aria-label="Você está aqui">
-          <ol>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="cursos.html">Cursos</a></li>
-            <li>${course.title}</li>
-          </ol>
-        </nav>
         <span class="course-hero-code"><span class="tech-code" style="color:var(--green-bright)">${courseCode(data, course)}</span> <span class="tech-label" style="color:rgba(255,255,255,.65)">${seg ? seg.label : ""}</span></span>
         <h1>${course.title}</h1>
         <p class="lead">${course.short}</p>
