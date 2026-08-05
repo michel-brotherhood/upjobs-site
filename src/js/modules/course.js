@@ -49,24 +49,44 @@ export async function initCoursePage() {
     <section class="section">
       <div class="container course-layout">
         <div>
-          <div class="course-section" data-reveal>
+          ${
+            course.comingSoon
+              ? `<div class="course-section course-soon-notice" data-reveal>
+            <h2>Este curso está em preparação</h2>
+            <p class="lead" style="max-width:60ch">Estamos finalizando a grade e a data da primeira turma. Deixe seu WhatsApp para ser avisado assim que as inscrições abrirem.</p>
+          </div>`
+              : ""
+          }
+          ${
+            course.forWho
+              ? `<div class="course-section" data-reveal>
             <h2>Para quem é este curso</h2>
             <p class="lead" style="max-width:60ch">${course.forWho}</p>
-          </div>
+          </div>`
+              : ""
+          }
 
-          <div class="course-section" data-reveal>
+          ${
+            course.learn?.length
+              ? `<div class="course-section" data-reveal>
             <h2>O que você vai aprender</h2>
             <ul class="check-list" role="list">
               ${course.learn.map((i) => `<li>${i}</li>`).join("")}
             </ul>
-          </div>
+          </div>`
+              : ""
+          }
 
-          <div class="course-section" data-reveal>
+          ${
+            course.syllabus?.length
+              ? `<div class="course-section" data-reveal>
             <h2>Conteúdo do curso</h2>
             <ol class="syllabus" role="list">
               ${course.syllabus.map((i) => `<li>${i}</li>`).join("")}
             </ol>
-          </div>
+          </div>`
+              : ""
+          }
 
           <div class="course-section" data-reveal>
             <h2>Está incluso</h2>
@@ -77,7 +97,15 @@ export async function initCoursePage() {
         </div>
 
         <aside>
-          <div class="card enroll-card" data-reveal>
+          ${
+            course.comingSoon
+              ? `<div class="card enroll-card" data-reveal>
+            <h3>Seja avisado</h3>
+            <p class="price-note">Deixe seu contato e avisamos assim que este curso abrir para matrícula.</p>
+            <a class="btn btn--primary btn--block btn--lg" href="${waLink(waMsg)}" target="_blank" rel="noopener">${icon("whatsapp")} Quero ser avisado</a>
+            <a class="btn btn--ghost btn--block" href="cursos.html">Ver outros cursos</a>
+          </div>`
+              : `<div class="card enroll-card" data-reveal>
             <h3>Garanta sua vaga</h3>
             <p class="price-note">Valores, condições e próximas turmas informados na hora pelo WhatsApp.</p>
             <ul role="list">
@@ -88,7 +116,8 @@ export async function initCoursePage() {
             <a class="btn btn--primary btn--block btn--lg" href="matricula.html?curso=${encodeURIComponent(course.id)}">${icon("pencil")} Quero me matricular</a>
             <a class="btn btn--ghost btn--block" href="${waLink(waMsg)}" target="_blank" rel="noopener">${icon("whatsapp")} Falar no WhatsApp</a>
             <a class="btn btn--ghost btn--block" href="cursos.html">Ver outros cursos</a>
-          </div>
+          </div>`
+          }
         </aside>
       </div>
     </section>
