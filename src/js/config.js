@@ -8,8 +8,8 @@ export const SITE = {
   // WhatsApp de vendas (somente dígitos, com DDI 55)
   whatsapp: "5521999389009",
   whatsappDisplay: "(21) 99938-9009",
-  // Grupo VIP (WhatsApp) — link oficial a confirmar pelo cliente
-  vipGroupUrl: "https://chat.whatsapp.com/",
+  // Grupo VIP (WhatsApp) — link oficial
+  vipGroupUrl: "https://chat.whatsapp.com/HccEEY5kJLPLrf5DCgsgYu",
   phone: "552120420068",
   phoneDisplay: "(21) 2042-0068",
   emails: {

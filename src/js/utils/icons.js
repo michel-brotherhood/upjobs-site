@@ -71,6 +71,10 @@ const P = {
     '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 5 6 9H2v6h4l5 4V5ZM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>',
   play:
     '<path fill="currentColor" d="M8 5v14l11-7z"/>',
+  thumbsup:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 10v11H3V10h4Zm0 0 4.5-7a2 2 0 0 1 3.6 1.7L14 9h5a2 2 0 0 1 1.9 2.7l-2.7 7A2 2 0 0 1 16.3 20H7"/>',
+  rocket:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2c3 1 6 4 7 7-2 .5-4.5 2-6 4l-4 1-2-2 1-4c2-1.5 3.5-4 4-6ZM8 14l-4 1 1-4M9 17l-2 2M5 15l2-2M14.5 9.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"/>',
 };
 
 export function icon(name, cls = "") {
