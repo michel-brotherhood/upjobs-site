@@ -37,14 +37,32 @@ export async function initCatalog() {
   const params = new URLSearchParams(location.search);
   let current = params.get("seg") || "todos";
 
-  // Botões de filtro
+  // Botões de filtro (com contagem de cursos por segmento)
   const filters = [{ id: "todos", label: "Todos os cursos" }, ...data.segments.map((s) => ({ id: s.id, label: s.label }))];
-  toolbar.innerHTML = filters
-    .map(
-      (f) =>
-        `<button class="filter-btn" type="button" data-seg="${f.id}" aria-pressed="${f.id === current}">${f.label}</button>`
-    )
-    .join("");
+  toolbar.innerHTML = `
+    <span class="catalog-toolbar__title">Filtrar por área</span>
+    <div class="catalog-toolbar__list">
+      ${filters
+        .map((f) => {
+          const count = f.id === "todos" ? data.courses.length : data.courses.filter((c) => c.segment === f.id).length;
+          return `<button class="filter-btn" type="button" data-seg="${f.id}" aria-pressed="${f.id === current}"><span class="filter-btn__label">${f.label}</span><span class="filter-btn__count">${count}</span></button>`;
+        })
+        .join("")}
+    </div>
+    <span class="catalog-toolbar__hint" aria-hidden="true">${icon("arrow")}</span>
+  `;
+
+  // No mobile a lista rola na horizontal; o "hint" (sombra + seta) avisa que
+  // dá pra arrastar e some sozinho quando o usuário chega ao fim da lista.
+  const list = toolbar.querySelector(".catalog-toolbar__list");
+  const hint = toolbar.querySelector(".catalog-toolbar__hint");
+  const syncHint = () => {
+    const atEnd = list.scrollLeft + list.clientWidth >= list.scrollWidth - 4;
+    hint.classList.toggle("is-hidden", atEnd || list.scrollWidth <= list.clientWidth + 4);
+  };
+  list.addEventListener("scroll", syncHint, { passive: true });
+  window.addEventListener("resize", syncHint);
+  syncHint();
 
   function render() {
     const list = current === "todos" ? data.courses : data.courses.filter((c) => c.segment === current);

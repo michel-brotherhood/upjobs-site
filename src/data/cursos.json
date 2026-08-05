@@ -153,26 +153,33 @@
     },
     {
       "id": "ar-condicionado",
-      "title": "Ar Condicionado",
+      "title": "Ar Condicionado Split + Inverter",
       "segment": "refrigeracao",
       "featured": true,
-      "short": "Instalação e manutenção de ar-condicionado split e inverter — um dos serviços mais procurados do ano todo.",
-      "forWho": "Quem quer atuar como técnico autônomo instalando e fazendo manutenção de aparelhos de ar-condicionado.",
+      "short": "Instalação e manutenção de ar-condicionado split convencional e inverter — uma das áreas mais promissoras do mercado.",
+      "forWho": "Iniciantes que querem aprender uma profissão técnica, profissionais que já atuam com ar-condicionado, técnicos que querem se atualizar em inverter e quem busca renda extra ou quer trabalhar de forma autônoma.",
       "learn": [
-        "Fundamentos do ciclo de refrigeração aplicado ao ar-condicionado",
-        "Instalação de aparelhos split e inverter",
-        "Carga de gás, vácuo e teste de estanqueidade",
-        "Manutenção preventiva e corretiva de splits",
-        "Diagnóstico de defeitos e atendimento ao cliente"
+        "Diferenças entre sistemas split convencional e inverter",
+        "Componentes: unidade interna/externa, compressor, placas e sensores",
+        "Instalação de split convencional e inverter (tubulação, dreno, ligação elétrica)",
+        "Vácuo e carga de gás refrigerante",
+        "Manutenção preventiva e corretiva com diagnóstico de falhas"
       ],
       "syllabus": [
-        "Fundamentos da climatização",
-        "Ferramentas, manômetros e segurança",
-        "Instalação de split na prática",
-        "Carga de gás e recarga do sistema",
-        "Diagnóstico de falhas em aparelhos inverter"
+        "Fundamentos da refrigeração",
+        "Tipos de ar condicionado split",
+        "Componentes dos sistemas",
+        "Ferramentas e equipamentos",
+        "Instalação de split convencional",
+        "Instalação de split inverter",
+        "Vácuo e carga de gás refrigerante",
+        "Manutenção preventiva",
+        "Manutenção corretiva",
+        "Testes e funcionamento"
       ],
-      "img": "refrigeracao"
+      "img": "refrigeracao",
+      "duration": "60h",
+      "modality": "presencial"
     },
     {
       "id": "seguranca-eletronica-cftv",
@@ -463,23 +470,29 @@
       "title": "Refrigeração Domiciliar",
       "segment": "refrigeracao",
       "featured": false,
-      "short": "Aprenda manutenção e conserto de geladeiras e freezers. Transforme conhecimento em renda todos os meses.",
-      "forWho": "Quem quer atuar como técnico autônomo em refrigeração doméstica e comercial de pequeno porte.",
+      "short": "Aprenda a instalar, manter e consertar geladeiras, freezers, frigobares e ar-condicionado de janela — do princípio da refrigeração ao atendimento ao cliente.",
+      "forWho": "Quem quer se tornar técnico em refrigeração residencial, atuar por conta própria ou como funcionário, e oferecer serviços de manutenção de qualidade.",
       "learn": [
-        "Ciclo de refrigeração na prática",
-        "Componentes: compressor, condensador e evaporador",
-        "Carga de gás e detecção de vazamentos",
-        "Diagnóstico de falhas elétricas e mecânicas",
-        "Manutenção de geladeiras e freezers"
+        "Princípios de refrigeração e ciclo de compressão de vapor",
+        "Componentes: compressor, condensador, evaporador e válvula de expansão",
+        "Sistemas residenciais: geladeiras, freezers, split, janela e portáteis",
+        "Instalação, manutenção preventiva e resolução de problemas",
+        "Eficiência energética, normas de segurança e atendimento ao cliente",
+        "Bônus incluso: NR-10 (segurança em instalações elétricas)"
       ],
       "syllabus": [
-        "Fundamentos da refrigeração",
-        "Ferramentas e instrumentos",
-        "Sistema elétrico dos equipamentos",
-        "Solda e carga de gás",
-        "Diagnóstico e reparo na bancada"
+        "Princípios de refrigeração",
+        "Componentes do sistema de refrigeração",
+        "Tipos de sistemas de refrigeração residencial",
+        "Instalação e manutenção de equipamentos",
+        "Eficiência energética e sustentabilidade",
+        "Normas de segurança e legislação",
+        "Tecnologias emergentes",
+        "Atendimento ao cliente e boas práticas profissionais"
       ],
-      "img": "refrigeracao-domiciliar"
+      "img": "refrigeracao-domiciliar",
+      "duration": "40h",
+      "modality": "presencial"
     },
     {
       "id": "refrigeracao-comercial-industrial",
