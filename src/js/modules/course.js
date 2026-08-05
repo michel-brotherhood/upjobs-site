@@ -1,4 +1,4 @@
-import { loadCourses, segmentOf, COURSE_INCLUDES, courseCode } from "./courses-data.js";
+import { loadCourses, segmentOf, COURSE_INCLUDES, courseCode, courseMetaChips } from "./courses-data.js";
 import { icon } from "../utils/icons.js";
 import { waLink } from "../config.js";
 import { initForms } from "./forms.js";
@@ -37,21 +37,11 @@ export async function initCoursePage() {
   root.innerHTML = `
     <section class="page-hero${heroImg ? " page-hero--photo" : ""}"${heroStyle}>
       <div class="container page-hero__inner">
-        <nav class="breadcrumb" aria-label="Você está aqui">
-          <ol>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="cursos.html">Cursos</a></li>
-            <li>${course.title}</li>
-          </ol>
-        </nav>
         <span class="course-hero-code"><span class="tech-code" style="color:var(--green-bright)">${courseCode(data, course)}</span> <span class="tech-label" style="color:rgba(255,255,255,.65)">${seg ? seg.label : ""}</span></span>
         <h1>${course.title}</h1>
         <p class="lead">${course.short}</p>
         <div class="course-hero-meta">
-          <span>${icon("users")} Turmas reduzidas</span>
-          <span>${icon("wrench")} Aulas práticas</span>
-          <span>${icon("cert")} Certificado incluso</span>
-          <span>${icon("shield")} EPIs fornecidos</span>
+          ${courseMetaChips(course).map((c) => `<span>${icon(c.icon)} ${c.text}</span>`).join("")}
         </div>
       </div>
     </section>
@@ -92,7 +82,7 @@ export async function initCoursePage() {
             <p class="price-note">Valores, condições e próximas turmas informados na hora pelo WhatsApp.</p>
             <ul role="list">
               <li>${icon("check")} Matrícula rápida e sem burocracia</li>
-              <li>${icon("check")} Presencial em São Gonçalo/RJ</li>
+              <li>${icon("check")} ${course.modality === "ead" ? "100% online, estude no seu ritmo" : "Presencial em São Gonçalo/RJ"}</li>
               <li>${icon("check")} Apoio à empregabilidade</li>
             </ul>
             <a class="btn btn--primary btn--block btn--lg" href="matricula.html?curso=${encodeURIComponent(course.id)}">${icon("pencil")} Quero me matricular</a>

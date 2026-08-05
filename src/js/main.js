@@ -1,6 +1,7 @@
 import { mountHeader } from "./components/header.js";
 import { mountFooter } from "./components/footer.js";
 import { mountWaFloat } from "./components/wa-float.js";
+import { mountDiferenciaisStrip } from "./components/diferenciais-strip.js";
 import { initReveal } from "./modules/reveal.js";
 import { initForms } from "./modules/forms.js";
 import { waLink } from "./config.js";
@@ -10,6 +11,7 @@ const page = document.body.dataset.page || "";
 
 // Estrutura comum a todas as páginas
 mountHeader(page);
+mountDiferenciaisStrip();
 mountFooter();
 mountWaFloat();
 

@@ -105,7 +105,6 @@ function buildIndex() {
   <main id="main">
     <section class="page-hero">
       <div class="container page-hero__inner">
-        <nav class="breadcrumb" aria-label="Você está aqui"><ol><li><a href="index.html">Início</a></li><li>Blog</li></ol></nav>
         <span class="eyebrow eyebrow--light">Blog da Upjobs</span>
         <h1>Carreira, mercado e cursos profissionalizantes</h1>
         <p class="lead">Conteúdo prático sobre as profissões que mais crescem no Rio de Janeiro — e como se qualificar para elas.</p>
@@ -167,7 +166,6 @@ function buildPost(p) {
   <main id="main">
     <section class="page-hero">
       <div class="container page-hero__inner">
-        <nav class="breadcrumb" aria-label="Você está aqui"><ol><li><a href="index.html">Início</a></li><li><a href="blog.html">Blog</a></li><li>${esc(p.category)}</li></ol></nav>
         <span class="eyebrow eyebrow--light">${esc(p.category)}</span>
         <h1>${esc(p.seoTitle)}</h1>
         <p class="article-meta"><time datetime="${p.date}">${esc(p.dateLabel)}</time> · Upjobs Cursos e Treinamentos</p>

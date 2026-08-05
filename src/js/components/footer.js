@@ -12,7 +12,7 @@ export function mountFooter() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="public/images/upjobs-logo-verde-branco.webp" alt="${SITE.name}" width="150" height="84" loading="lazy">
+          <img src="public/images/upjobs-logo-rodape.webp" alt="${SITE.name}" width="150" height="87" loading="lazy">
           <p>Cursos profissionalizantes, técnicos, industriais e treinamentos de segurança do trabalho com foco em empregabilidade em São Gonçalo, Niterói e região metropolitana do Rio de Janeiro.</p>
           <div class="footer-social" style="margin-top:1.25rem">
             <a href="${SITE.social.facebook}" target="_blank" rel="noopener" aria-label="Facebook">${icon("facebook")}</a>
@@ -29,7 +29,6 @@ export function mountFooter() {
             <li><a href="matricula.html">Matrícula</a></li>
             <li><a href="quem-somos.html">Quem Somos</a></li>
             <li><a href="diferenciais.html">Diferenciais</a></li>
-            <li><a href="consultoria.html">Consultoria</a></li>
             <li><a href="infraestrutura.html">Infraestrutura</a></li>
             <li><a href="empregabilidade.html">Empregabilidade</a></li>
           </ul>

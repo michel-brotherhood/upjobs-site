@@ -1,4 +1,4 @@
-import { loadCourses, segmentOf, segCode, courseCode } from "./courses-data.js";
+import { loadCourses, segmentOf, segCode, courseCode, modalityLabel } from "./courses-data.js";
 import { icon } from "../utils/icons.js";
 import { waLink } from "../config.js";
 
@@ -17,7 +17,7 @@ export function courseCard(course, data) {
         <h3><a href="curso.html?id=${course.id}">${course.title}</a></h3>
         <p class="text-muted">${course.short}</p>
         <div class="course-card__meta">
-          <span>Presencial</span><span>Certificado</span><span>EPIs inclusos</span>
+          ${course.duration ? `<span>${course.duration}</span>` : ""}<span>${modalityLabel(course)}</span><span>Certificado</span>
         </div>
         <div class="course-card__foot">
           <a class="btn btn--ghost btn--block" href="curso.html?id=${course.id}">Ver ficha do curso ${icon("arrow")}</a>
