@@ -45,7 +45,7 @@ export async function initCatalog() {
       ${filters
         .map((f) => {
           const count = f.id === "todos" ? data.courses.length : data.courses.filter((c) => c.segment === f.id).length;
-          return `<button class="filter-btn" type="button" data-seg="${f.id}" aria-pressed="${f.id === current}">${f.label} <span class="filter-btn__count">${count}</span></button>`;
+          return `<button class="filter-btn" type="button" data-seg="${f.id}" aria-pressed="${f.id === current}"><span class="filter-btn__label">${f.label}</span><span class="filter-btn__count">${count}</span></button>`;
         })
         .join("")}
     </div>
