@@ -41,13 +41,29 @@
 .page-hero .lead { color: rgb(255 255 255 / 0.8); }
 
 /* ---------- Catálogo de cursos ---------- */
-.catalog-toolbar {
-  display: flex; flex-wrap: wrap; gap: var(--space-sm);
-  margin-bottom: var(--space-xl);
+
+/* Layout: filtro em coluna lateral fixa no desktop; empilhado no mobile. */
+.catalog-layout { display: block; }
+@media (min-width: 64rem) {
+  .catalog-layout { display: grid; grid-template-columns: 15.5rem 1fr; gap: var(--space-2xl); align-items: start; }
 }
+
+.catalog-toolbar { margin-bottom: var(--space-xl); }
+.catalog-toolbar__title {
+  display: none;
+  font-family: var(--font-mono, var(--font-display));
+  font-size: var(--fs-100);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+.catalog-toolbar__list { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
 .filter-btn {
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
   min-height: 44px;
   padding: 0.55rem 1.05rem;
   border-radius: var(--radius-pill);
@@ -56,8 +72,22 @@
   background: var(--white);
   border: 1.5px solid var(--color-border-strong);
   color: var(--color-text-muted);
+  white-space: nowrap;
   transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease), background var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
+.filter-btn__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: var(--fs-100);
+  font-family: var(--font-mono, inherit);
+}
+.filter-btn[aria-pressed="true"] .filter-btn__count { background: rgb(255 255 255 / 0.22); color: var(--white); }
 .filter-btn:hover { border-color: var(--green); color: var(--green); }
 .filter-btn[aria-pressed="true"] {
   background: var(--grad-green);
@@ -65,6 +95,36 @@
   color: var(--white);
   box-shadow: var(--shadow-green);
 }
+
+/* Mobile/tablet: barra de filtros vira um carrossel horizontal (sem quebra de linha) */
+@media (max-width: 63.99rem) {
+  .catalog-toolbar {
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+  }
+  .catalog-toolbar__list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    padding-bottom: 0.35rem;
+    scrollbar-width: none;
+  }
+  .catalog-toolbar__list::-webkit-scrollbar { display: none; }
+  .filter-btn { scroll-snap-align: start; }
+}
+
+/* Desktop: coluna fixa, botões em bloco (um por linha) */
+@media (min-width: 64rem) {
+  .catalog-toolbar {
+    position: sticky;
+    top: 6rem;
+  }
+  .catalog-toolbar__title { display: block; }
+  .catalog-toolbar__list { flex-direction: column; flex-wrap: nowrap; }
+  .filter-btn { justify-content: space-between; width: 100%; }
+}
+
 .catalog-grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
 .catalog-empty { padding: var(--space-2xl); text-align: center; color: var(--color-text-muted); }
 

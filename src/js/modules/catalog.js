@@ -37,14 +37,19 @@ export async function initCatalog() {
   const params = new URLSearchParams(location.search);
   let current = params.get("seg") || "todos";
 
-  // Botões de filtro
+  // Botões de filtro (com contagem de cursos por segmento)
   const filters = [{ id: "todos", label: "Todos os cursos" }, ...data.segments.map((s) => ({ id: s.id, label: s.label }))];
-  toolbar.innerHTML = filters
-    .map(
-      (f) =>
-        `<button class="filter-btn" type="button" data-seg="${f.id}" aria-pressed="${f.id === current}">${f.label}</button>`
-    )
-    .join("");
+  toolbar.innerHTML = `
+    <span class="catalog-toolbar__title">Filtrar por área</span>
+    <div class="catalog-toolbar__list">
+      ${filters
+        .map((f) => {
+          const count = f.id === "todos" ? data.courses.length : data.courses.filter((c) => c.segment === f.id).length;
+          return `<button class="filter-btn" type="button" data-seg="${f.id}" aria-pressed="${f.id === current}">${f.label} <span class="filter-btn__count">${count}</span></button>`;
+        })
+        .join("")}
+    </div>
+  `;
 
   function render() {
     const list = current === "todos" ? data.courses : data.courses.filter((c) => c.segment === current);
