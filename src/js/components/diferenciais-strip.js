@@ -77,6 +77,21 @@ export function mountDiferenciaisStrip() {
       </div>
     </section>
 
+    <section class="section upcapacita-strip" aria-labelledby="upcapacita-strip-title">
+      <div class="container">
+        <div class="split" style="align-items:center">
+          <div class="upcapacita-strip__logo">
+            <img src="public/images/upcapacita-logo.svg" alt="UPCAPACITA — Educação Corporativa" width="300" height="58" loading="lazy">
+          </div>
+          <div class="stack">
+            <h2 id="upcapacita-strip-title">Flexibilidade, Qualidade e Certificação Garantida</h2>
+            <p class="text-muted">Aprenda de forma fácil e flexível com a nossa plataforma intuitiva, disponível em computadores, celulares e tablets. Acesse material didático completo, incluindo vídeo aulas, apostilas e simulados, tudo em nossa plataforma exclusiva. Obtenha certificados reconhecidos em todo o Brasil, assinados por nossa equipe de engenheiros e profissionais habilitados. Comece sua jornada educacional com a UPCAPACITA hoje mesmo!</p>
+            <div><a class="btn btn--primary" href="https://upcapacita.com.br/" target="_blank" rel="noopener">Conheça a UPCAPACITA ${icon("arrow")}</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--surface" aria-labelledby="espaco-strip-title">
       <div class="container">
         <div class="section-head section-head--center">
