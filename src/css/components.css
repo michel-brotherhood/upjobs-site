@@ -242,19 +242,12 @@ html.nav-open, html.nav-open body { overflow: hidden; }
   .main-nav li { transform: none; }
 }
 
-/* ---------- Menu flutuante (speed-dial): Matrícula / Dúvidas / Contato ---------- */
+/* ---------- Botão flutuante: vai direto para o WhatsApp ---------- */
 .fab {
   position: fixed;
   right: clamp(0.9rem, 2vw, 1.75rem);
   bottom: clamp(0.9rem, 2vw, 1.75rem);
   z-index: var(--z-float);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.75rem;
-}
-.fab__toggle {
-  position: relative;
   display: grid;
   place-items: center;
   width: 3.5rem;
@@ -265,55 +258,9 @@ html.nav-open, html.nav-open body { overflow: hidden; }
   box-shadow: var(--shadow-green);
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
-.fab__toggle:hover { transform: scale(1.05); }
-.fab__toggle:active { transform: scale(0.96); }
-.fab__icon { position: absolute; inset: 0; display: grid; place-items: center; transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); }
-.fab__icon svg { width: 1.6rem; height: 1.6rem; }
-.fab__icon--close { opacity: 0; transform: rotate(-45deg) scale(0.6); }
-.fab.is-open .fab__icon--open { opacity: 0; transform: rotate(45deg) scale(0.6); }
-.fab.is-open .fab__icon--close { opacity: 1; transform: rotate(0) scale(1); }
-.fab.is-open .fab__toggle { box-shadow: 0 10px 26px rgb(0 0 0 / 0.35); }
-
-.fab__menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.6rem;
-  list-style: none;
-}
-.fab__menu li {
-  opacity: 0;
-  transform: translateY(10px) scale(0.9);
-  pointer-events: none;
-  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
-  transition-delay: 0ms;
-}
-.fab.is-open .fab__menu li {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-  transition-delay: calc(var(--i) * 45ms);
-}
-.fab__menu a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.65rem 1rem;
-  border-radius: var(--radius-pill);
-  background: var(--graphite);
-  color: var(--white);
-  font-size: var(--fs-200);
-  font-weight: var(--fw-semibold);
-  box-shadow: var(--shadow-md);
-  white-space: nowrap;
-  transition: background var(--dur) var(--ease), transform var(--dur-fast) var(--ease);
-}
-.fab__menu a:hover { background: var(--ink-500); transform: translateX(-2px); }
-.fab__menu a svg { width: 1.15rem; height: 1.15rem; color: var(--green-bright); }
-
-@media (prefers-reduced-motion: reduce) {
-  .fab__menu li, .fab__icon { transition-duration: 0.01ms !important; transition-delay: 0ms !important; }
-}
+.fab svg { width: 1.7rem; height: 1.7rem; }
+.fab:hover { transform: scale(1.05); color: var(--white); }
+.fab:active { transform: scale(0.96); }
 
 /* ---------- Cards ---------- */
 .card {
@@ -380,6 +327,31 @@ html.nav-open, html.nav-open body { overflow: hidden; }
 }
 .course-card__meta span { display: inline-flex; align-items: center; gap: 0.35em; }
 .course-card__foot { margin-top: var(--space-md); }
+
+/* Curso "em breve" (ainda sem turma/conteúdo publicado) */
+.course-card__ribbon {
+  position: absolute;
+  top: var(--space-sm); right: var(--space-sm);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: var(--amber, #f5a623);
+  color: #3a2a00;
+  font-family: var(--font-mono, var(--font-display));
+  font-size: var(--fs-100);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.course-card--soon .course-card__media { opacity: 0.75; }
+
+/* Aviso de curso em preparação (página de curso) */
+.course-soon-notice {
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background: rgb(245 166 35 / 0.1);
+  border: 1px solid rgb(245 166 35 / 0.35);
+}
+.course-soon-notice h2 { margin-bottom: 0.4rem; }
 
 /* Stat / número */
 .stat { display: flex; flex-direction: column; gap: 0.15rem; }

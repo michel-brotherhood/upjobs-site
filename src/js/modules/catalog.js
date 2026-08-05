@@ -7,20 +7,25 @@ export function courseCard(course, data) {
   const seg = segmentOf(data, course.segment);
   const code = courseCode(data, course);
   return `
-    <article class="card course-card card--link" data-reveal>
+    <article class="card course-card card--link${course.comingSoon ? " course-card--soon" : ""}" data-reveal>
       <a href="curso.html?id=${course.id}" class="course-card__media${course.img ? " course-card__media--photo" : ""}"${course.img ? ` style="background-image:url('public/images/cursos/cards/card-${course.img}.webp')"` : ""} aria-label="${course.title}">
         <span class="course-card__code tech-code">${code}</span>
         ${course.img ? "" : `<span class="icon-badge icon-badge--dark">${icon(seg ? seg.icon : "bolt")}</span>`}
+        ${course.comingSoon ? `<span class="course-card__ribbon">Em breve</span>` : ""}
       </a>
       <div class="course-card__body">
         <span class="tech-label course-card__seg">${seg ? seg.label : ""}</span>
         <h3><a href="curso.html?id=${course.id}">${course.title}</a></h3>
         <p class="text-muted">${course.short}</p>
-        <div class="course-card__meta">
+        ${
+          course.comingSoon
+            ? ""
+            : `<div class="course-card__meta">
           ${course.duration ? `<span>${course.duration}</span>` : ""}<span>${modalityLabel(course)}</span><span>Certificado</span>
-        </div>
+        </div>`
+        }
         <div class="course-card__foot">
-          <a class="btn btn--ghost btn--block" href="curso.html?id=${course.id}">Ver ficha do curso ${icon("arrow")}</a>
+          <a class="btn btn--ghost btn--block" href="curso.html?id=${course.id}">${course.comingSoon ? "Quero ser avisado" : "Ver ficha do curso"} ${icon("arrow")}</a>
         </div>
       </div>
     </article>
