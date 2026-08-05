@@ -49,7 +49,20 @@ export async function initCatalog() {
         })
         .join("")}
     </div>
+    <span class="catalog-toolbar__hint" aria-hidden="true">${icon("arrow")}</span>
   `;
+
+  // No mobile a lista rola na horizontal; o "hint" (sombra + seta) avisa que
+  // dá pra arrastar e some sozinho quando o usuário chega ao fim da lista.
+  const list = toolbar.querySelector(".catalog-toolbar__list");
+  const hint = toolbar.querySelector(".catalog-toolbar__hint");
+  const syncHint = () => {
+    const atEnd = list.scrollLeft + list.clientWidth >= list.scrollWidth - 4;
+    hint.classList.toggle("is-hidden", atEnd || list.scrollWidth <= list.clientWidth + 4);
+  };
+  list.addEventListener("scroll", syncHint, { passive: true });
+  window.addEventListener("resize", syncHint);
+  syncHint();
 
   function render() {
     const list = current === "todos" ? data.courses : data.courses.filter((c) => c.segment === current);

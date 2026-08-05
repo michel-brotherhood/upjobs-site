@@ -101,6 +101,7 @@
 /* Mobile/tablet: barra de filtros vira um carrossel horizontal (sem quebra de linha) */
 @media (max-width: 63.99rem) {
   .catalog-toolbar {
+    position: relative;
     margin-inline: calc(var(--gutter) * -1);
     padding-inline: var(--gutter);
   }
@@ -114,6 +115,35 @@
   }
   .catalog-toolbar__list::-webkit-scrollbar { display: none; }
   .filter-btn { scroll-snap-align: start; }
+
+  /* Sinaliza que a lista rola para o lado: sombra + seta na borda direita,
+     que somem sozinhas quando o usuário chega ao fim da lista. */
+  .catalog-toolbar__hint {
+    position: absolute;
+    top: 0; right: 0; bottom: 0.35rem;
+    width: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.35rem;
+    background: linear-gradient(to right, transparent, var(--color-bg, #fff) 65%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity var(--dur) var(--ease);
+  }
+  .catalog-toolbar__hint.is-hidden { opacity: 0; }
+  .catalog-toolbar__hint svg {
+    width: 1.1rem; height: 1.1rem;
+    color: var(--green);
+    animation: catalogHintNudge 1.4s ease-in-out infinite;
+  }
+  @keyframes catalogHintNudge {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .catalog-toolbar__hint svg { animation: none; }
+  }
 }
 
 /* Desktop: coluna fixa, botões em bloco (um por linha) */
