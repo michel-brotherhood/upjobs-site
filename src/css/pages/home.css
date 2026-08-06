@@ -153,6 +153,57 @@
 .quote-card cite { font-style: normal; font-weight: var(--fw-semibold); color: var(--color-heading); font-size: var(--fs-200); }
 .quote-card small { color: var(--color-text-muted); font-size: var(--fs-100); }
 
+/* Carrossel de depoimentos (dark) */
+.testimonial-carousel { position: relative; display: flex; align-items: center; gap: var(--space-md); }
+.testimonial-carousel__track {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-block: 0.25rem;
+  scrollbar-width: none;
+}
+.testimonial-carousel__track::-webkit-scrollbar { display: none; }
+.testimonial-card {
+  flex: 0 0 min(20rem, 82vw);
+  scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: var(--space-md);
+  margin: 0;
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+.testimonial-card blockquote { font-size: var(--fs-300); color: rgb(255 255 255 / 0.9); line-height: 1.6; }
+.testimonial-card figcaption { display: flex; align-items: center; gap: var(--space-sm); margin-top: auto; }
+.testimonial-avatar {
+  width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  display: grid; place-items: center; flex: none;
+  background: var(--grad-green);
+  overflow: hidden;
+}
+.testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.testimonial-card cite { font-style: normal; font-weight: var(--fw-semibold); color: var(--white); font-size: var(--fs-200); }
+.testimonial-card small { color: rgb(255 255 255 / 0.6); font-size: var(--fs-100); }
+.testimonial-carousel__nav {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.75rem; height: 2.75rem;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.16);
+  color: var(--white);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.testimonial-carousel__nav svg { width: 1.1rem; height: 1.1rem; }
+.testimonial-carousel__nav--prev svg { transform: rotate(180deg); }
+.testimonial-carousel__nav:hover { background: var(--green); border-color: var(--green); }
+@media (max-width: 40rem) {
+  .testimonial-carousel__nav { display: none; }
+}
+
 /* Barra de logos parceiros (placeholder) */
 .partner-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: var(--space-md); align-items: center; }
 .partner-ph {

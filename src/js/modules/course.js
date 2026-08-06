@@ -122,6 +122,17 @@ export async function initCoursePage() {
       </div>
     </section>
 
+    <section class="section section--surface">
+      <div class="container container--narrow">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Central de dúvidas</span>
+          <h2 class="section-title">Perguntas frequentes</h2>
+          <p class="section-intro">Não achou o que procurava? <a class="text-green" href="faq.html">Veja todas as perguntas</a> ou fale com a gente no WhatsApp.</p>
+        </div>
+        <div class="faq" id="faq-embed"><!-- renderizado via JS (src/js/modules/faq-widget.js) --></div>
+      </div>
+    </section>
+
     <section class="section section--tight">
       <div class="container">
         <div class="cta-band">
@@ -161,4 +172,5 @@ export async function initCoursePage() {
   // Reveal imediato (conteúdo injetado)
   root.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-visible"));
   initForms();
+  import("./faq-widget.js").then((m) => m.renderFaq("faq-embed"));
 }
