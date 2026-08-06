@@ -59,7 +59,7 @@ export function mountFooter() {
 
       <div class="footer-bottom">
         <p>© ${YEAR} ${SITE.name}. CNPJ ${SITE.cnpj}. Todos os direitos reservados.</p>
-        <p>Feito com foco em empregabilidade • São Gonçalo/RJ</p>
+        <p>Developed by <a href="https://idlab.art.br" target="_blank" rel="noopener">ID_LAB</a></p>
       </div>
     </div>
   `;

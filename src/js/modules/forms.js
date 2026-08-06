@@ -92,6 +92,18 @@ function bindForm(form) {
       status.textContent = "Redirecionando para o WhatsApp…";
     }
 
+    // Envio adicional (best-effort) por e-mail via função serverless — não bloqueia o WhatsApp.
+    const fields = {};
+    for (const key of ["nome", "telefone", "email", "empresa", "curso", "mensagem"]) {
+      const v = (data.get(key) || "").toString().trim();
+      if (v) fields[key] = v;
+    }
+    fetch("/api/contato", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ context, fields }),
+    }).catch(() => {});
+
     const url = waLink(msg);
     window.open(url, "_blank", "noopener");
     form.reset();
