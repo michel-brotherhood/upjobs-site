@@ -68,7 +68,11 @@ if (page === "curso") {
 if (page === "faq") {
   import("./modules/faq-widget.js").then((m) => m.renderFaq("faq-list", { openFirst: true }));
 }
-if (["quem-somos", "diferenciais", "contato", "inicio"].includes(page)) {
+if (
+  ["quem-somos", "diferenciais", "contato", "inicio", "cursos", "infraestrutura", "empregabilidade", "certificacoes", "esg", "grupo-vip", "treinamentos"].includes(
+    page
+  )
+) {
   import("./modules/faq-widget.js").then((m) => m.renderFaq("faq-embed"));
 }
 if (page === "treinamentos") {
