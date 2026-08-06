@@ -79,3 +79,6 @@ if (page === "treinamentos") {
 if (page === "matricula") {
   import("./modules/matricula.js").then((m) => m.initMatricula());
 }
+if (["inicio", "treinamentos"].includes(page)) {
+  import("./components/testimonials.js").then((m) => m.mountTestimonials("testimonials-embed"));
+}

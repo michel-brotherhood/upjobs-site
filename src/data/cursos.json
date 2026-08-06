@@ -52,18 +52,21 @@
       "short": "Aprenda na prática como instalar, manter e reparar sistemas elétricos em casas, apartamentos e prédios, seguindo todas as normas de segurança.",
       "forWho": "Iniciantes que querem começar do zero, profissionais que buscam se especializar e quem procura uma nova fonte de renda.",
       "learn": [
-        "Leitura e interpretação de projetos elétricos",
-        "Dimensionamento de circuitos, fios e disjuntores",
-        "Instalação de quadros, tomadas, iluminação e proteção",
-        "Aterramento, DR e boas práticas da NBR 5410",
-        "Diagnóstico de falhas e manutenção corretiva"
+        "Fundamentos da eletricidade: corrente, tensão, resistência e potência",
+        "Segurança em instalações elétricas (NR-10) e uso de EPIs",
+        "Leitura de diagramas e simbologia elétrica",
+        "Instalação elétrica residencial e predial",
+        "Manutenção, reparo e eficiência energética"
       ],
       "syllabus": [
-        "Fundamentos de eletricidade e segurança",
-        "Ferramentas, materiais e simbologia",
-        "Circuitos residenciais na prática",
-        "Quadros de distribuição e proteção",
-        "Instalações prediais e projeto final"
+        "Fundamentos da eletricidade",
+        "Segurança em instalações elétricas (NR-10)",
+        "Leitura de diagramas elétricos",
+        "Instalação elétrica residencial",
+        "Instalação elétrica predial",
+        "Manutenção e reparo elétrico",
+        "Eficiência energética",
+        "Normas e regulamentações elétricas"
       ],
       "img": "eletricista-predial",
       "duration": "60h",
@@ -77,18 +80,21 @@
       "short": "Ideal para quem deseja atuar na área industrial, aprendendo na prática a instalação, manutenção e comando de motores elétricos e sistemas automatizados.",
       "forWho": "Eletricistas que querem entrar ou se especializar na área industrial, técnicos de manutenção e quem busca uma profissão com alta empregabilidade.",
       "learn": [
-        "Leitura de diagramas de força e comando",
-        "Contatores, relés, disjuntores e proteção de motores",
-        "Partida direta, estrela-triângulo e reversão",
-        "Montagem e teste de painéis de comando",
-        "Introdução a inversores de frequência"
+        "Fundamentos de eletricidade aplicada à indústria",
+        "Segurança em instalações elétricas (NR-10) em ambientes industriais",
+        "Leitura e interpretação de diagramas de força e controle",
+        "Comandos elétricos: partida direta, reversão e intertravamentos",
+        "Montagem de painéis e manutenção elétrica industrial"
       ],
       "syllabus": [
-        "Componentes de força e comando",
-        "Diagramas e simbologia industrial",
-        "Partidas de motores na bancada",
-        "Montagem de painéis",
-        "Manutenção e diagnóstico"
+        "Fundamentos da eletricidade aplicada",
+        "Segurança em instalações elétricas (NR-10)",
+        "Leitura e interpretação de diagramas elétricos",
+        "Comandos elétricos",
+        "Dispositivos elétricos industriais",
+        "Montagem de painéis elétricos",
+        "Motores elétricos",
+        "Manutenção elétrica industrial"
       ],
       "img": "comandos-eletricos",
       "duration": "60h",
@@ -145,6 +151,7 @@
         "Sistemas grid-tied e off-grid",
         "Projeto e dimensionamento de sistemas solares",
         "Instalação e manutenção",
+        "Aplicações avançadas e tendências do mercado",
         "Aspectos técnicos e regulatórios"
       ],
       "img": "energia-solar",
@@ -183,49 +190,53 @@
     },
     {
       "id": "seguranca-eletronica-cftv",
-      "title": "Segurança Eletrônica — CFTV e Alarmes",
+      "title": "CFTV e Monitoramento Inteligente",
       "segment": "seguranca-eletronica",
       "featured": true,
-      "short": "Instale câmeras, alarmes e sistemas de monitoramento para residências e empresas.",
-      "forWho": "Quem quer empreender em instalação e manutenção de segurança eletrônica.",
+      "short": "Projete, instale e configure sistemas avançados de vigilância por vídeo, com câmeras analógicas e IP, DVR/NVR, acesso remoto e integração com interfonia e controle de acesso.",
+      "forWho": "Quem quer trabalhar como instalador de câmeras de segurança (CFTV) ou empreender com instalação e manutenção na área.",
       "learn": [
-        "Câmeras analógicas e IP, DVR e NVR",
-        "Cabeamento, conectores e infraestrutura",
-        "Configuração de alarmes e sensores",
-        "Acesso remoto e monitoramento",
-        "Redes e configuração básica de IP"
+        "Instalação de câmeras: do zero ao avançado, MultiHD e sistemas IP",
+        "Configuração avançada de DVR/NVR: gravação inteligente, detecção de eventos e mascaramento de privacidade",
+        "Configuração em rede: IP, máscaras, gateway, DNS e redirecionamento de portas",
+        "Acesso remoto via QR Code e DDNS próprio para visualização em tempo real",
+        "Bônus incluso: NR-10"
       ],
       "syllabus": [
-        "Introdução à segurança eletrônica",
-        "CFTV analógico e IP",
-        "Instalação e cabeamento",
-        "Alarmes e sensores",
-        "Acesso remoto e entrega"
+        "Instalação de câmeras de vigilância",
+        "Configuração do DVR/NVR",
+        "Configuração em rede",
+        "Acesso remoto"
       ],
-      "img": "seguranca-eletronica"
+      "img": "seguranca-eletronica",
+      "duration": "60h",
+      "modality": "presencial"
     },
     {
       "id": "automacao-portoes",
-      "title": "Automação de Portões",
+      "title": "Automação Residencial",
       "segment": "seguranca-eletronica",
       "featured": false,
-      "short": "Instalação e manutenção de motores e automatizadores de portões residenciais e comerciais.",
-      "forWho": "Profissionais que querem agregar um serviço rentável e de rápida execução.",
+      "short": "Crie rotinas integradas e inteligentes com a linha Izy da Intelbras — controle iluminação, eletrodomésticos, cortinas e portões pelo celular, de onde estiver.",
+      "forWho": "Eletricistas e instaladores que querem agregar um serviço de automação residencial rentável e de rápida execução.",
       "learn": [
-        "Tipos de automatizadores e aplicações",
-        "Instalação mecânica e elétrica",
-        "Ajuste de centrais e controles",
-        "Sensores de segurança e travas",
-        "Manutenção e solução de problemas"
+        "Linha Izy da Intelbras: cenários e rotinas programáveis",
+        "Automação de iluminação, eletrodomésticos, cortinas e portões",
+        "Controle remoto pelo celular de onde estiver",
+        "Monitoramento de câmeras e outros dispositivos de segurança integrados",
+        "Alertas em tempo real",
+        "Bônus incluso: NR-10"
       ],
       "syllabus": [
-        "Tipos de portões e motores",
-        "Instalação mecânica",
-        "Ligação elétrica e central",
-        "Sensores e segurança",
-        "Manutenção"
+        "Introdução à automação residencial",
+        "Linha Izy Intelbras: configuração e cenários",
+        "Automação de iluminação e eletrodomésticos",
+        "Automação de cortinas e portões",
+        "Integração com segurança e monitoramento remoto"
       ],
-      "img": "automacao-portoes"
+      "img": "automacao-portoes",
+      "duration": "20h",
+      "modality": "presencial"
     },
     {
       "id": "eletricista-naval",
@@ -295,26 +306,31 @@
     },
     {
       "id": "rotinas-administrativas",
-      "title": "Rotinas Administrativas",
+      "title": "Assistente Administrativo",
       "segment": "administrativo",
       "featured": false,
-      "short": "Prepare-se para vagas em escritório: atendimento, organização e ferramentas do dia a dia.",
-      "forWho": "Quem busca o primeiro emprego ou recolocação na área administrativa.",
+      "short": "Desenvolva as competências para atuar no apoio administrativo de uma empresa: rotina de pessoal, documentos, atendimento e movimentação de bens e serviços.",
+      "forWho": "Quem busca o primeiro emprego ou recolocação na área administrativa, atuando como apoio operacional em diversas áreas da organização.",
       "learn": [
-        "Rotinas de escritório e organização",
-        "Atendimento e comunicação profissional",
-        "Noções de departamento pessoal e financeiro",
-        "Ferramentas de produtividade",
-        "Postura e mercado de trabalho"
+        "Gestão de documentos e organização de arquivos",
+        "Comunicação profissional e atendimento ao cliente",
+        "Suporte administrativo e gestão de tempo e agenda",
+        "Tarefas financeiras básicas e uso de tecnologia de escritório",
+        "Organização de eventos, gestão de suprimentos e confidencialidade"
       ],
       "syllabus": [
-        "Rotina administrativa",
-        "Atendimento e comunicação",
-        "Documentos e processos",
-        "Ferramentas digitais",
-        "Preparação para o mercado"
+        "Gestão de documentos",
+        "Comunicação e atendimento ao cliente",
+        "Suporte administrativo",
+        "Gestão de tempo e agenda",
+        "Tarefas financeiras básicas",
+        "Uso de tecnologia de escritório",
+        "Organização de eventos e gestão de suprimentos",
+        "Confidencialidade, ética e colaboração em equipe"
       ],
-      "img": "administrativo"
+      "img": "administrativo",
+      "duration": "40h",
+      "modality": "presencial"
     },
     {
       "id": "nr-10",
@@ -445,7 +461,8 @@
         "Parametrização e configuração",
         "Controle de velocidade e rampas de aceleração",
         "Proteções e diagnóstico de falhas",
-        "Aplicações industriais reais"
+        "Aplicações industriais reais",
+        "Bônus inclusos: treinamento de NRs e mentoria de carreira"
       ],
       "syllabus": [
         "Motores elétricos e acionamentos",
