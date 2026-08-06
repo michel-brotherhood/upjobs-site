@@ -26,7 +26,7 @@ export function mountTestimonials(containerId) {
       <figure class="testimonial-card">
         <blockquote>&ldquo;${t.quote}&rdquo;</blockquote>
         <figcaption>
-          <span class="testimonial-avatar">${t.name.charAt(0)}</span>
+          <span class="testimonial-avatar"><img src="public/images/icone-circular.webp" alt="" width="44" height="44" loading="lazy"></span>
           <div><cite>${t.name}</cite><br><small>${t.course}</small></div>
         </figcaption>
       </figure>`

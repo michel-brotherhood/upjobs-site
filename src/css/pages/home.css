@@ -181,11 +181,9 @@
   width: 2.75rem; height: 2.75rem; border-radius: 50%;
   display: grid; place-items: center; flex: none;
   background: var(--grad-green);
-  color: var(--white);
-  font-family: var(--font-display);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-300);
+  overflow: hidden;
 }
+.testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .testimonial-card cite { font-style: normal; font-weight: var(--fw-semibold); color: var(--white); font-size: var(--fs-200); }
 .testimonial-card small { color: rgb(255 255 255 / 0.6); font-size: var(--fs-100); }
 .testimonial-carousel__nav {
