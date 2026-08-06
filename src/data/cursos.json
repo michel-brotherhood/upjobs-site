@@ -299,6 +299,7 @@
       "segment": "construcao-civil",
       "featured": false,
       "comingSoon": true,
+      "img": "pintor-residencial",
       "short": "Técnicas de pintura residencial profissional — preparo de superfícies, texturas e acabamento de alto padrão.",
       "forWho": "",
       "learn": [],
@@ -736,6 +737,7 @@
       "featured": false,
       "duration": "60h",
       "modality": "presencial",
+      "img": "alarme-incendio",
       "short": "Projete, instale e comissione sistemas automáticos de detecção e alarme de incêndio, com interface a sistemas de combate e supervisão predial.",
       "forWho": "Profissionais da área de combate a incêndio que querem se especializar na instalação e programação de centrais de alarme de incêndio.",
       "learn": [
