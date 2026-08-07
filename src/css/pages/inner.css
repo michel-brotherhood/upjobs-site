@@ -363,7 +363,14 @@
 .prose a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
 
 /* ---------- Seção do CEO (Quem Somos) ---------- */
+@media (min-width: 62rem) {
+  /* Coluna da foto mais estreita que o texto (a bio+empresas é longa) */
+  .leader-split { grid-template-columns: 0.72fr 1.28fr; align-items: start; }
+  /* Foto acompanha a rolagem do texto, em vez de ficar "perdida" lá em cima */
+  .leader-photo-col { position: sticky; top: 6rem; }
+}
 .leader-photo {
+  margin: 0; /* reset da margem padrão de <figure> — sem isso a foto ficava deslocada */
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--color-border);
@@ -372,6 +379,13 @@
   margin-inline: auto;
 }
 .leader-photo img { width: 100%; height: auto; display: block; }
+.leader-photo figcaption {
+  padding: var(--space-md);
+  background: var(--white);
+  display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap;
+}
+.leader-photo figcaption strong { color: var(--color-heading); font-size: var(--fs-300); }
+.leader-photo figcaption span { color: var(--color-text-muted); font-size: var(--fs-200); }
 .leader-companies { list-style: none; display: grid; gap: 0.6rem; margin-top: var(--space-sm); }
 .leader-companies li { display: flex; flex-direction: column; gap: 0.1rem; padding-block: 0.3rem; border-bottom: 1px solid var(--color-border); }
 .leader-companies li:last-child { border-bottom: none; }
