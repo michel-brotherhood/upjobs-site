@@ -1,0 +1,13 @@
+name = "upjobs-site"
+pages_build_output_dir = "."
+compatibility_date = "2024-09-01"
+
+# Depois de criar o banco (wrangler d1 create upjobs-courses), cole aqui o
+# database_id retornado e configure o mesmo binding "DB" no painel da
+# Cloudflare (Pages → upjobs-site → Settings → Functions → D1 database
+# bindings) — o painel web é o que vale em produção; isto aqui serve para
+# rodar `wrangler d1 execute` e testes locais.
+[[d1_databases]]
+binding = "DB"
+database_name = "upjobs-courses"
+database_id = "COLE_AQUI_O_DATABASE_ID"
