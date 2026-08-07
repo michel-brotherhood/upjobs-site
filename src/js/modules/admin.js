@@ -28,15 +28,21 @@ function renderLogin(errorMsg = "") {
     <form class="admin-login" id="login-form">
       <h1>Painel Upjobs</h1>
       <p class="admin-hint">Acesso restrito. Informe a senha do administrador.</p>
-      <input type="password" name="password" placeholder="Senha" required autofocus>
+      <input type="password" name="password" placeholder="Senha" required autofocus autocomplete="current-password">
+      <label class="admin-field--check" style="justify-content:flex-start">
+        <input type="checkbox" name="remember" id="f-remember" checked>
+        <span style="text-transform:none;letter-spacing:0;font-size:var(--fs-200);color:var(--color-text-muted)">Manter conectado por 30 dias</span>
+      </label>
       <button type="submit" class="btn btn--primary">Entrar</button>
       <p class="admin-login__error">${errorMsg}</p>
     </form>
   `;
   document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const password = new FormData(e.target).get("password");
-    const { ok, data } = await api("/api/admin/login", { method: "POST", body: JSON.stringify({ password }) });
+    const fd = new FormData(e.target);
+    const password = fd.get("password");
+    const remember = fd.get("remember") === "on";
+    const { ok, data } = await api("/api/admin/login", { method: "POST", body: JSON.stringify({ password, remember }) });
     if (ok && data?.ok) renderDashboard();
     else if (data?.error === "admin_not_configured") renderLogin("Painel ainda não configurado (falta a variável ADMIN_PASSWORD).");
     else renderLogin("Senha incorreta.");

@@ -24,6 +24,6 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ ok: false, error: "invalid_credentials" }, { status: 401 });
   }
 
-  const cookie = await createSessionCookie(env);
+  const cookie = await createSessionCookie(env, body?.remember === true);
   return jsonResponse({ ok: true }, { headers: { "Set-Cookie": cookie } });
 }
