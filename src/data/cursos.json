@@ -10,7 +10,7 @@
       "id": "refrigeracao",
       "label": "Refrigeração e Climatização",
       "icon": "snow",
-      "desc": "Instalação e manutenção de ar-condicionado e refrigeração."
+      "desc": "Instalação e manutenção de ar-condicionado e refrigeração — uma das áreas com maior procura por profissionais no Rio de Janeiro."
     },
     {
       "id": "seguranca-eletronica",
@@ -35,6 +35,12 @@
       "label": "Administrativo e Gestão",
       "icon": "briefcase",
       "desc": "Rotinas de escritório, atendimento e gestão."
+    },
+    {
+      "id": "informatica",
+      "label": "Informática",
+      "icon": "monitor",
+      "desc": "Pacote Office, planilhas avançadas e ferramentas de produtividade para o dia a dia profissional."
     },
     {
       "id": "nr-seguranca",
@@ -213,28 +219,29 @@
       "modality": "presencial"
     },
     {
-      "id": "automacao-portoes",
+      "id": "automacao-residencial",
       "title": "Automação Residencial",
       "segment": "seguranca-eletronica",
       "featured": false,
-      "short": "Crie rotinas integradas e inteligentes com a linha Izy da Intelbras — controle iluminação, eletrodomésticos, cortinas e portões pelo celular, de onde estiver.",
-      "forWho": "Eletricistas e instaladores que querem agregar um serviço de automação residencial rentável e de rápida execução.",
+      "short": "Transforme qualquer casa em uma casa inteligente com os dispositivos Wi-Fi da linha Izy Intelbras — tomadas, interruptores e integração com a Alexa.",
+      "forWho": "Eletricistas e instaladores que querem agregar um serviço de automação residencial (casa inteligente) rentável e de rápida execução.",
       "learn": [
-        "Linha Izy da Intelbras: cenários e rotinas programáveis",
-        "Automação de iluminação, eletrodomésticos, cortinas e portões",
-        "Controle remoto pelo celular de onde estiver",
-        "Monitoramento de câmeras e outros dispositivos de segurança integrados",
-        "Alertas em tempo real",
+        "Conceito de casa inteligente e dispositivos Wi-Fi Intelbras (linha Izy)",
+        "Instalação e configuração de tomadas inteligentes",
+        "Instalação e configuração de interruptores inteligentes",
+        "Cenários e rotinas programáveis para iluminação e eletrodomésticos",
+        "Integração com a Alexa e controle por comando de voz",
+        "Controle remoto pelo aplicativo, de onde estiver",
         "Bônus incluso: NR-10"
       ],
       "syllabus": [
-        "Introdução à automação residencial",
-        "Linha Izy Intelbras: configuração e cenários",
-        "Automação de iluminação e eletrodomésticos",
-        "Automação de cortinas e portões",
-        "Integração com segurança e monitoramento remoto"
+        "Introdução à casa inteligente e automação residencial",
+        "Linha Izy Intelbras: dispositivos e configuração via Wi-Fi",
+        "Tomadas e interruptores inteligentes",
+        "Cenários e rotinas de automação",
+        "Integração com Alexa e assistentes de voz"
       ],
-      "img": "automacao-portoes",
+      "img": "automacao-residencial",
       "duration": "20h",
       "modality": "presencial"
     },
@@ -504,6 +511,17 @@
       "modality": "presencial"
     },
     {
+      "id": "clp",
+      "title": "CLP — Controlador Lógico Programável",
+      "segment": "energia-eletrica",
+      "featured": false,
+      "comingSoon": true,
+      "short": "Programação e automação industrial com CLP — em breve na Upjobs.",
+      "forWho": "",
+      "learn": [],
+      "syllabus": []
+    },
+    {
       "id": "refrigeracao-domiciliar",
       "title": "Refrigeração Domiciliar",
       "segment": "refrigeracao",
@@ -662,6 +680,17 @@
       "modality": "semipresencial"
     },
     {
+      "id": "estruturas-navais",
+      "title": "Estruturas Navais",
+      "segment": "naval-offshore",
+      "featured": false,
+      "comingSoon": true,
+      "short": "Curso 100% EAD sobre estruturas e construção naval — em breve na Upjobs.",
+      "forWho": "",
+      "learn": [],
+      "syllabus": []
+    },
+    {
       "id": "assistente-dp-rh",
       "title": "Assistente de DP e RH",
       "segment": "administrativo",
@@ -708,29 +737,6 @@
       "img": "atendente-farmacia"
     },
     {
-      "id": "seguranca-geral-nrs",
-      "title": "Segurança Geral (NRs)",
-      "segment": "nr-seguranca",
-      "featured": false,
-      "short": "Treinamentos em Normas Regulamentadoras inclusos como bônus nos cursos da Upjobs.",
-      "forWho": "Todos os alunos que precisam de certificação em NRs para atuar com segurança no mercado.",
-      "learn": [
-        "Fundamentos de segurança do trabalho",
-        "Uso correto de EPIs e EPCs",
-        "Prevenção de acidentes",
-        "Normas Regulamentadoras aplicáveis",
-        "Boas práticas no ambiente de trabalho"
-      ],
-      "syllabus": [
-        "Introdução à segurança do trabalho",
-        "Riscos e prevenção",
-        "EPIs e EPCs",
-        "Normas Regulamentadoras",
-        "Avaliação e certificação"
-      ],
-      "img": "nr-seguranca"
-    },
-    {
       "id": "deteccao-alarme-incendio",
       "title": "Sistemas de Detecção e Alarme de Incêndio",
       "segment": "seguranca-eletronica",
@@ -754,6 +760,50 @@
         "Interface com sistemas de combate e supervisão predial",
         "Normas técnicas aplicáveis e boas práticas"
       ]
+    },
+    {
+      "id": "pacote-office",
+      "title": "Pacote Office",
+      "segment": "informatica",
+      "featured": false,
+      "comingSoon": true,
+      "short": "Word, Excel e PowerPoint na prática para o dia a dia do escritório — em breve na Upjobs.",
+      "forWho": "",
+      "learn": [],
+      "syllabus": []
+    },
+    {
+      "id": "excel-avancado",
+      "title": "Excel Avançado",
+      "segment": "informatica",
+      "featured": false,
+      "comingSoon": true,
+      "short": "Fórmulas, tabelas dinâmicas e automações para elevar sua produtividade — em breve na Upjobs.",
+      "forWho": "",
+      "learn": [],
+      "syllabus": []
+    },
+    {
+      "id": "power-bi",
+      "title": "Power BI",
+      "segment": "informatica",
+      "featured": false,
+      "comingSoon": true,
+      "short": "Transforme dados em dashboards e relatórios profissionais — em breve na Upjobs.",
+      "forWho": "",
+      "learn": [],
+      "syllabus": []
+    },
+    {
+      "id": "canva",
+      "title": "Canva",
+      "segment": "informatica",
+      "featured": false,
+      "comingSoon": true,
+      "short": "Crie artes e materiais gráficos profissionais para redes sociais e negócios — em breve na Upjobs.",
+      "forWho": "",
+      "learn": [],
+      "syllabus": []
     }
   ]
 }

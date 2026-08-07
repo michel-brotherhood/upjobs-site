@@ -27,6 +27,8 @@ const P = {
     '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 16h18l-2 5H5l-2-5ZM6 16V8l6-3 6 3v8M12 5V2"/>',
   bricks:
     '<path fill="none" stroke="currentColor" stroke-width="2" d="M3 8h18M3 16h18M3 4h18v16H3zM9 4v4M15 8v4M9 12v4M15 16v4"/>',
+  monitor:
+    '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 4h18v12H3zM8 20h8M12 16v4"/>',
   briefcase:
     '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 8h18v11H3zM8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/>',
   helmet:

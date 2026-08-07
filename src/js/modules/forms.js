@@ -6,8 +6,20 @@ import { SITE, waLink } from "../config.js";
  * Validação nativa + validação leve no cliente.
  *
  * Uso: <form data-wa-form data-context="Curso X"> ... </form>
- * Campos reconhecidos por name: nome, telefone, email, empresa, curso, mensagem, consentimento.
+ * Campos reconhecidos por name: nome, telefone, celular, email, endereco, empresa, curso, mensagem, consentimento.
  */
+const FIELD_LABELS = {
+  nome: "Nome",
+  telefone: "Telefone",
+  celular: "Celular",
+  email: "E-mail",
+  endereco: "Endereço",
+  empresa: "Empresa",
+  curso: "Curso",
+  mensagem: "Mensagem",
+};
+const FIELD_KEYS = Object.keys(FIELD_LABELS);
+
 export function initForms() {
   const forms = document.querySelectorAll("[data-wa-form]");
   forms.forEach(bindForm);
@@ -73,17 +85,13 @@ function bindForm(form) {
     const data = new FormData(form);
     const lines = ["*Novo contato pelo site Upjobs*"];
     if (context) lines.push(`Interesse: ${context}`);
-    const labels = {
-      nome: "Nome",
-      telefone: "Telefone",
-      email: "E-mail",
-      empresa: "Empresa",
-      curso: "Curso",
-      mensagem: "Mensagem",
-    };
-    for (const key of ["nome", "telefone", "email", "empresa", "curso", "mensagem"]) {
+    const fields = {};
+    for (const key of FIELD_KEYS) {
       const v = (data.get(key) || "").toString().trim();
-      if (v) lines.push(`${labels[key]}: ${v}`);
+      if (v) {
+        lines.push(`${FIELD_LABELS[key]}: ${v}`);
+        fields[key] = v;
+      }
     }
     const msg = lines.join("\n");
 
@@ -93,11 +101,6 @@ function bindForm(form) {
     }
 
     // Envio adicional (best-effort) por e-mail via função serverless — não bloqueia o WhatsApp.
-    const fields = {};
-    for (const key of ["nome", "telefone", "email", "empresa", "curso", "mensagem"]) {
-      const v = (data.get(key) || "").toString().trim();
-      if (v) fields[key] = v;
-    }
     fetch("/api/contato", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

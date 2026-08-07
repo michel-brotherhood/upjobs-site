@@ -35,7 +35,7 @@ export function mountHeader(active) {
     <a class="skip-link" href="#main">Pular para o conteúdo</a>
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="${SITE.name} — página inicial">
-        <img src="public/images/upjobs-logo-verde-branco.webp" alt="${SITE.name}" width="76" height="43" fetchpriority="high">
+        <img src="public/images/upjobs-logo-verde-branco.webp" alt="${SITE.name}" width="102" height="57" fetchpriority="high">
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <ul role="list">
