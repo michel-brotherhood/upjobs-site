@@ -16,7 +16,11 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ ok: false, error: "invalid_json" }, { status: 400 });
   }
 
-  if (!body?.password || body.password !== env.ADMIN_PASSWORD) {
+  // .trim() nos dois lados: protege contra espaço/quebra de linha que às vezes
+  // gruda ao colar a senha no campo de variável de ambiente da Cloudflare.
+  const submitted = String(body?.password || "").trim();
+  const expected = String(env.ADMIN_PASSWORD).trim();
+  if (!submitted || submitted !== expected) {
     return jsonResponse({ ok: false, error: "invalid_credentials" }, { status: 401 });
   }
 
