@@ -583,7 +583,7 @@ html.nav-open, html.nav-open body { overflow: hidden; }
 }
 @media (max-width: 60rem) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 34rem) { .footer-grid { grid-template-columns: 1fr; } }
-.footer-brand img { height: 2.5rem; margin-bottom: var(--space-md); }
+.footer-brand img { width: auto; height: 2.5rem; margin-bottom: var(--space-md); }
 .footer-col h4 { color: var(--white); font-size: var(--fs-200); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-md); }
 .footer-col ul { list-style: none; display: grid; gap: 0.6rem; font-size: var(--fs-200); }
 .footer-contact li { display: flex; gap: 0.6rem; align-items: flex-start; }
