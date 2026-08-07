@@ -1,11 +1,22 @@
-/** Carrega e memoriza cursos.json. */
+/**
+ * Carrega e memoriza os cursos. Fonte principal: /api/courses (banco D1,
+ * editável pelo painel /admin). Se a API falhar (ex.: banco ainda não
+ * configurado no ambiente), cai de volta para o arquivo estático como
+ * salvaguarda — o site nunca fica sem catálogo.
+ */
 let cache = null;
 
 export async function loadCourses() {
   if (cache) return cache;
-  const res = await fetch("src/data/cursos.json", { cache: "no-cache" });
-  if (!res.ok) throw new Error("Falha ao carregar cursos");
-  cache = await res.json();
+  try {
+    const res = await fetch("/api/courses", { cache: "no-cache" });
+    if (!res.ok) throw new Error("API de cursos indisponível");
+    cache = await res.json();
+  } catch {
+    const res = await fetch("src/data/cursos.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("Falha ao carregar cursos");
+    cache = await res.json();
+  }
   return cache;
 }
 

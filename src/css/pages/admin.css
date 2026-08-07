@@ -1,0 +1,65 @@
+/* Painel /admin — página isolada (sem header/footer do site público) */
+
+.admin-body { background: var(--color-surface-alt, #f2f2f2); min-height: 100vh; }
+.admin-shell { max-width: 72rem; margin-inline: auto; padding: var(--space-xl) var(--gutter) var(--space-2xl); }
+.admin-loading { color: var(--color-text-muted); padding: var(--space-2xl) 0; text-align: center; }
+
+/* ---------- Login ---------- */
+.admin-login { max-width: 22rem; margin: 12vh auto 0; display: grid; gap: var(--space-md); }
+.admin-login h1 { font-size: var(--fs-500); }
+.admin-login input {
+  width: 100%; padding: 0.85rem 1rem; border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong); font-size: var(--fs-300);
+}
+.admin-login__error { color: #d92d20; font-size: var(--fs-200); min-height: 1.2em; }
+
+/* ---------- Cabeçalho do painel ---------- */
+.admin-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); margin-bottom: var(--space-xl); flex-wrap: wrap; }
+.admin-header h1 { font-size: var(--fs-500); }
+.admin-header__actions { display: flex; gap: var(--space-sm); }
+
+/* ---------- Tabela de cursos ---------- */
+.admin-table-wrap { overflow-x: auto; background: var(--white); border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+.admin-table { width: 100%; border-collapse: collapse; font-size: var(--fs-200); min-width: 52rem; }
+.admin-table th, .admin-table td { text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border); white-space: nowrap; }
+.admin-table th { font-family: var(--font-mono, inherit); text-transform: uppercase; font-size: var(--fs-100); letter-spacing: 0.04em; color: var(--color-text-muted); }
+.admin-table tbody tr:last-child td { border-bottom: none; }
+.admin-table tbody tr[data-hidden="true"] { opacity: 0.55; }
+.admin-table td.admin-td-title { white-space: normal; max-width: 20rem; font-weight: var(--fw-semibold); color: var(--color-heading); }
+.admin-badge { display: inline-flex; align-items: center; gap: 0.3em; padding: 0.2rem 0.6rem; border-radius: var(--radius-pill); font-size: var(--fs-100); background: var(--color-surface-alt); color: var(--color-text-muted); }
+.admin-badge--hidden { background: rgb(217 45 32 / 0.1); color: #d92d20; }
+.admin-badge--soon { background: rgb(234 179 8 / 0.15); color: #92650a; }
+.admin-row-actions { display: flex; gap: 0.4rem; }
+.admin-row-actions button {
+  padding: 0.4rem 0.7rem; font-size: var(--fs-100); border-radius: var(--radius-xs);
+  border: 1px solid var(--color-border-strong); background: var(--white); cursor: pointer;
+  transition: border-color var(--dur, .2s) ease, color var(--dur, .2s) ease;
+}
+.admin-row-actions button:hover { border-color: var(--green); color: var(--green); }
+.admin-row-actions button.is-danger:hover { border-color: #d92d20; color: #d92d20; }
+
+/* ---------- Modal de edição/criação ---------- */
+.admin-modal-backdrop {
+  position: fixed; inset: 0; background: rgb(4 5 5 / 0.55); z-index: 50;
+  display: flex; align-items: center; justify-content: center; padding: var(--gutter);
+}
+.admin-modal {
+  background: var(--white); border-radius: var(--radius-md); width: 100%; max-width: 38rem;
+  max-height: 88vh; overflow-y: auto; padding: var(--space-xl);
+  display: grid; gap: var(--space-md);
+}
+.admin-modal h2 { font-size: var(--fs-400); }
+.admin-field { display: grid; gap: 0.35rem; }
+.admin-field label { font-size: var(--fs-100); font-weight: var(--fw-semibold); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+.admin-field input, .admin-field select, .admin-field textarea {
+  padding: 0.65rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border-strong); font-size: var(--fs-200); font-family: inherit;
+}
+.admin-field textarea { min-height: 5rem; resize: vertical; }
+.admin-field--row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.admin-field--check { flex-direction: row; align-items: center; display: flex; gap: 0.5rem; }
+.admin-field--check input { width: auto; }
+.admin-modal__actions { display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: var(--space-sm); }
+.admin-hint { font-size: var(--fs-100); color: var(--color-text-muted); }
+.admin-status { font-size: var(--fs-200); min-height: 1.2em; }
+.admin-status[data-state="error"] { color: #d92d20; }
+.admin-status[data-state="success"] { color: var(--green-700); }
