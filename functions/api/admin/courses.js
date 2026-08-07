@@ -59,10 +59,10 @@ export async function onRequestPut({ request, env }) {
   if (!existing) return jsonResponse({ ok: false, error: "not_found" }, { status: 404 });
 
   await env.DB.prepare(
-    `UPDATE courses SET title = ?, segment = ?, duration = ?, modality = ?, short = ?, for_who = ?, learn = ?, syllabus = ?, coming_soon = ?, updated_at = datetime('now')
+    `UPDATE courses SET title = ?, segment = ?, img = ?, duration = ?, modality = ?, short = ?, for_who = ?, learn = ?, syllabus = ?, coming_soon = ?, updated_at = datetime('now')
      WHERE id = ?`
   ).bind(
-    body.title, body.segment, body.duration || null, body.modality || null,
+    body.title, body.segment, body.img || null, body.duration || null, body.modality || null,
     body.short || "", body.forWho || "",
     JSON.stringify(body.learn || []), JSON.stringify(body.syllabus || []),
     body.comingSoon ? 1 : 0,

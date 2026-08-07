@@ -29,7 +29,12 @@ export async function initCoursePage() {
 
   const waMsg = `Olá! Tenho interesse no curso ${course.title}. Gostaria de saber valores, datas e como me matricular.`;
 
-  const heroImg = course.img ? `public/images/cursos/heros/hero-${course.img}.webp` : "";
+  // Cursos criados pelo painel guardam a URL completa da foto (R2); os
+  // cursos originais guardam só um nome-base que segue a convenção de
+  // arquivos hero-<img>.webp / card-<img>.webp em public/images/cursos/.
+  const heroImg = course.img
+    ? (/^https?:\/\//.test(course.img) ? course.img : `public/images/cursos/heros/hero-${course.img}.webp`)
+    : "";
   // Background aplicado inline (url resolve relativo ao HTML, não ao dist/).
   const heroStyle = heroImg
     ? ` style="background:linear-gradient(90deg,rgb(4 5 5 / 0.92) 0%,rgb(4 5 5 / 0.72) 48%,rgb(4 5 5 / 0.45) 100%),linear-gradient(0deg,rgb(4 5 5 / 0.85) 0%,rgb(4 5 5 / 0.25) 55%),url('${heroImg}') center / cover no-repeat, #050505"`

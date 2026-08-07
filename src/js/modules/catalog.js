@@ -6,9 +6,12 @@ import { waLink } from "../config.js";
 export function courseCard(course, data) {
   const seg = segmentOf(data, course.segment);
   const code = courseCode(data, course);
+  const cardImg = course.img
+    ? (/^https?:\/\//.test(course.img) ? course.img : `public/images/cursos/cards/card-${course.img}.webp`)
+    : "";
   return `
     <article class="card course-card card--link${course.comingSoon ? " course-card--soon" : ""}" data-reveal>
-      <a href="curso.html?id=${course.id}" class="course-card__media${course.img ? " course-card__media--photo" : ""}"${course.img ? ` style="background-image:url('public/images/cursos/cards/card-${course.img}.webp')"` : ""} aria-label="${course.title}">
+      <a href="curso.html?id=${course.id}" class="course-card__media${cardImg ? " course-card__media--photo" : ""}"${cardImg ? ` style="background-image:url('${cardImg}')"` : ""} aria-label="${course.title}">
         <span class="course-card__code tech-code">${code}</span>
         ${course.img ? "" : `<span class="icon-badge icon-badge--dark">${icon(seg ? seg.icon : "bolt")}</span>`}
         ${course.comingSoon ? `<span class="course-card__ribbon">Em breve</span>` : ""}

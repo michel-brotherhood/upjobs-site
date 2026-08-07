@@ -4,6 +4,7 @@
  */
 const COOKIE_NAME = "upjobs_admin_session";
 const SESSION_HOURS = 12;
+const REMEMBER_DAYS = 30;
 
 function parseCookies(request) {
   const header = request.headers.get("Cookie") || "";
@@ -28,11 +29,12 @@ export async function requireSession(request, env) {
   return true;
 }
 
-export async function createSessionCookie(env) {
+export async function createSessionCookie(env, remember = false) {
   const token = crypto.randomUUID();
-  const expiresAt = Date.now() + SESSION_HOURS * 60 * 60 * 1000;
+  const hours = remember ? REMEMBER_DAYS * 24 : SESSION_HOURS;
+  const expiresAt = Date.now() + hours * 60 * 60 * 1000;
   await env.DB.prepare("INSERT INTO sessions (token, expires_at) VALUES (?, ?)").bind(token, expiresAt).run();
-  const maxAge = SESSION_HOURS * 60 * 60;
+  const maxAge = hours * 60 * 60;
   return `${COOKIE_NAME}=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${maxAge}`;
 }
 

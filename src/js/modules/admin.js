@@ -28,18 +28,24 @@ function renderLogin(errorMsg = "") {
     <form class="admin-login" id="login-form">
       <h1>Painel Upjobs</h1>
       <p class="admin-hint">Acesso restrito. Informe a senha do administrador.</p>
-      <input type="password" name="password" placeholder="Senha" required autofocus>
+      <input type="password" name="password" placeholder="Senha" required autofocus autocomplete="current-password">
+      <label class="admin-field--check" style="justify-content:flex-start">
+        <input type="checkbox" name="remember" id="f-remember" checked>
+        <span style="text-transform:none;letter-spacing:0;font-size:var(--fs-200);color:var(--color-text-muted)">Manter conectado por 30 dias</span>
+      </label>
       <button type="submit" class="btn btn--primary">Entrar</button>
       <p class="admin-login__error">${errorMsg}</p>
     </form>
   `;
   document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const password = new FormData(e.target).get("password");
-    const { ok, data } = await api("/api/admin/login", { method: "POST", body: JSON.stringify({ password }) });
+    const fd = new FormData(e.target);
+    const password = fd.get("password");
+    const remember = fd.get("remember") === "on";
+    const { ok, data } = await api("/api/admin/login", { method: "POST", body: JSON.stringify({ password, remember }) });
     if (ok && data?.ok) renderDashboard();
     else if (data?.error === "admin_not_configured") renderLogin("Painel ainda não configurado (falta a variável ADMIN_PASSWORD).");
-    else renderLogin(`Senha incorreta. (recebido: ${data?.submittedLength ?? "?"} caractere(s) — apague este aviso depois de resolver)`);
+    else renderLogin("Senha incorreta.");
   });
 }
 
@@ -136,6 +142,17 @@ function openModal(course) {
         <label>Título</label>
         <input name="title" required value="${course?.title || ""}">
       </div>
+      <div class="admin-field">
+        <label>Foto do curso</label>
+        <input type="hidden" name="img" value="${/^https?:\/\//.test(course?.img || "") ? course.img : ""}">
+        <input type="file" accept="image/webp,image/jpeg,image/png" data-photo-input>
+        <p class="admin-hint" data-photo-status>${
+          course?.img
+            ? (/^https?:\/\//.test(course.img) ? "Foto enviada pelo painel." : `Curso usa a foto padrão (${course.img}) — escolha um arquivo pra substituir.`)
+            : "Nenhuma foto ainda."
+        }</p>
+        ${/^https?:\/\//.test(course?.img || "") ? `<img src="${course.img}" alt="" style="max-width:12rem;border-radius:.5rem;margin-top:.25rem">` : ""}
+      </div>
       <div class="admin-field--row">
         <div class="admin-field">
           <label>Segmento</label>
@@ -190,14 +207,36 @@ function openModal(course) {
   backdrop.addEventListener("click", (e) => { if (e.target === backdrop) close(); });
   backdrop.querySelector("[data-close]").addEventListener("click", close);
 
+  const photoInput = backdrop.querySelector("[data-photo-input]");
+  const photoStatus = backdrop.querySelector("[data-photo-status]");
+  const photoHidden = backdrop.querySelector('input[name="img"]');
+  photoInput.addEventListener("change", async () => {
+    const file = photoInput.files[0];
+    if (!file) return;
+    photoStatus.textContent = "Enviando foto…";
+    const body = new FormData();
+    body.append("file", file);
+    const res = await fetch("/api/admin/upload", { method: "POST", body, credentials: "same-origin" });
+    const data = await res.json().catch(() => null);
+    if (res.ok && data?.ok) {
+      photoHidden.value = data.url;
+      photoStatus.textContent = "Foto enviada. Salve o curso para confirmar.";
+    } else {
+      photoStatus.textContent = "Não foi possível enviar a foto. Tente novamente.";
+    }
+  });
+
   backdrop.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const status = backdrop.querySelector(".admin-status");
     const fd = new FormData(e.target);
+    // Se não subiu foto nova, preserva a foto padrão (convenção de arquivo) que o curso já tinha.
+    const legacyImg = course?.img && !/^https?:\/\//.test(course.img) ? course.img : null;
     const payload = {
       id: course?.id,
       title: fd.get("title"),
       segment: fd.get("segment"),
+      img: fd.get("img") || legacyImg,
       duration: fd.get("duration") || null,
       modality: fd.get("modality") || null,
       comingSoon: fd.get("comingSoon") === "on",
