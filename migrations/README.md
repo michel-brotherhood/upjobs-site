@@ -10,9 +10,16 @@ salvaguarda — veja `src/js/modules/courses-data.js`).
 1. Criar o banco: `npx wrangler d1 create upjobs-courses`
 2. No projeto Pages → Settings → Functions → D1 database bindings:
    variable name `DB`, banco `upjobs-courses`.
-3. Rodar as migrations no banco remoto:
-   `npx wrangler d1 migrations apply upjobs-courses --remote`
+3. Popular o banco — mais fácil pelo painel: D1 → upjobs-courses → **Studio**,
+   cole o conteúdo de `0001_init.sql`, rode; depois cole `0002_seed.sql` e use
+   a setinha ao lado de "Run" → **"Run all in sequence"** (rodar só "Run"
+   executa apenas 1 comando, não os 33 INSERTs). Alternativa via terminal:
+   `npx wrangler d1 migrations apply upjobs-courses --remote`.
 4. Settings → Environment variables → adicionar `ADMIN_PASSWORD`.
+5. Fotos enviadas pelo painel: criar um bucket R2 (Workers & Pages → R2 →
+   Create bucket, nome `upjobs-cursos-fotos`) e conectar em Settings →
+   Functions → R2 bucket bindings: variable name `IMAGES`, bucket
+   `upjobs-cursos-fotos`.
 
 ## Rodar localmente
 
