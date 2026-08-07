@@ -38,9 +38,8 @@ function renderLogin(errorMsg = "") {
     const password = new FormData(e.target).get("password");
     const { ok, data } = await api("/api/admin/login", { method: "POST", body: JSON.stringify({ password }) });
     if (ok && data?.ok) renderDashboard();
-    else renderLogin(data?.error === "admin_not_configured"
-      ? "Painel ainda não configurado (falta a variável ADMIN_PASSWORD)."
-      : "Senha incorreta.");
+    else if (data?.error === "admin_not_configured") renderLogin("Painel ainda não configurado (falta a variável ADMIN_PASSWORD).");
+    else renderLogin(`Senha incorreta. (recebido: ${data?.submittedLength ?? "?"} caractere(s) — apague este aviso depois de resolver)`);
   });
 }
 
