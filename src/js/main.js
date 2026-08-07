@@ -76,9 +76,7 @@ if (
   import("./modules/faq-widget.js").then((m) => m.renderFaq("faq-embed"));
 }
 if (page === "treinamentos") {
-  import("./modules/catalog.js").then((m) =>
-    m.initCourseList("nr-courses-grid", ["nr-10", "nr-33", "nr-34", "nr-35", "seguranca-geral-nrs"])
-  );
+  import("./modules/catalog.js").then((m) => m.initCourseList("nr-courses-grid", "nr-seguranca"));
 }
 if (page === "matricula") {
   import("./modules/matricula.js").then((m) => m.initMatricula());

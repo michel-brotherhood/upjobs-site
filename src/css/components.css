@@ -107,7 +107,7 @@
   min-height: 5rem;
 }
 .brand { display: inline-flex; align-items: center; }
-.brand img { height: 2.7rem; width: auto; }
+.brand img { height: 3.6rem; width: auto; }
 
 /* Redes sociais no header */
 .header-social { display: inline-flex; align-items: center; gap: 0.35rem; }
@@ -416,6 +416,7 @@ html.nav-open, html.nav-open body { overflow: hidden; }
 .field--check label { font-weight: var(--fw-regular); font-size: var(--fs-200); color: var(--color-text-muted); line-height: 1.45; }
 .field--check a { color: var(--green); text-decoration: underline; }
 
+.form-note { font-size: var(--fs-200); color: var(--color-text-muted); margin: -0.5rem 0 0.5rem; }
 .form__status { font-size: var(--fs-200); }
 .form__status[data-state="error"] { color: #d92d20; }
 .form__status[data-state="success"] { color: var(--green-700); }

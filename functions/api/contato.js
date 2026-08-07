@@ -13,7 +13,9 @@ const FROM_EMAIL = "Site Upjobs <site@upjobscursos.com.br>";
 const FIELD_LABELS = {
   nome: "Nome",
   telefone: "Telefone",
+  celular: "Celular",
   email: "E-mail",
+  endereco: "Endereço",
   empresa: "Empresa",
   curso: "Curso de interesse",
   mensagem: "Mensagem",

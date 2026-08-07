@@ -104,12 +104,18 @@ export async function initFeatured() {
   grid.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-visible"));
 }
 
-/** Renderiza uma lista fixa de cursos (por id, na ordem informada) num container. */
-export async function initCourseList(containerId, ids) {
+/**
+ * Renderiza cursos num container. Se `segmentId` for informado, lista todos os
+ * cursos daquele segmento automaticamente (novos cursos aparecem sem precisar
+ * editar o HTML/JS). Caso contrário, usa a lista fixa de ids na ordem informada.
+ */
+export async function initCourseList(containerId, segmentId, ids) {
   const grid = document.getElementById(containerId);
   if (!grid) return;
   const data = await loadCourses();
-  const list = ids.map((id) => data.courses.find((c) => c.id === id)).filter(Boolean);
+  const list = segmentId
+    ? data.courses.filter((c) => c.segment === segmentId)
+    : ids.map((id) => data.courses.find((c) => c.id === id)).filter(Boolean);
   grid.innerHTML = list.map((c) => courseCard(c, data)).join("");
   grid.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-visible"));
 }
